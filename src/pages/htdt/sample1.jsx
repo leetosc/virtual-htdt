@@ -31,7 +31,10 @@ export default function Sample1() {
           position="relative"
           overflow="auto"
         >
-          <MapInteractionCSS>
+          <MapInteractionCSS
+            showControls
+            defaultValue={{ scale: 1, translation: { x: -250, y: -150 } }}
+          >
             <Image src="/sample1.jpg" useMap="#image-map" maxW="unset" />
 
             <Box
@@ -43,7 +46,7 @@ export default function Sample1() {
               backgroundColor="green.500"
               onClick={(e) => {
                 console.log(
-                  !e.defaultPrevented ? "dragged" : "chi loan clicked"
+                  e.defaultPrevented ? "chiloan dragged" : "chi loan clicked"
                 );
                 if (!e.defaultPrevented) {
                   const newtestactions = [...testActions2, "Hi"];
@@ -51,6 +54,12 @@ export default function Sample1() {
                 }
               }}
               _hover={{ cursor: "pointer" }}
+              onTouchEnd={(e) => {
+                if (!e.defaultPrevented) {
+                  const newtestactions = [...testActions2, "Hi"];
+                  setTestActions2(newtestactions);
+                }
+              }}
             >
               {testActions2.map((i, index) => (
                 <Text key={index}>{i}</Text>
@@ -64,10 +73,18 @@ export default function Sample1() {
               height="45.86%"
               backgroundColor="green.500"
               onClick={(e) => {
-                console.log(e.defaultPrevented ? "dragged" : "kevin clicked");
+                console.log(
+                  e.defaultPrevented ? "kevin dragged" : "kevin clicked"
+                );
                 if (!e.defaultPrevented) {
                   const newtestactions = [...testActions, "Hi"];
                   setTestActions(newtestactions);
+                }
+              }}
+              onTouchEnd={(e) => {
+                if (!e.defaultPrevented) {
+                  const newtestactions = [...testActions2, "Hi"];
+                  setTestActions2(newtestactions);
                 }
               }}
               _hover={{ cursor: "pointer" }}
