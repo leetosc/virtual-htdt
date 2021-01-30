@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Box, Heading, Text, Button, Image } from "@chakra-ui/react";
+import Link from "next/link";
+import { Box, Heading, Text, Button, Image, Input } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import { MapInteractionCSS } from "react-map-interaction";
+import { useAppState } from "@/context/state";
+import Hud from "@/components/Hud/Hud";
+import Typist from "react-typist";
 
 export default function Sample1() {
-  const [testActions, setTestActions] = useState([]);
-  const [testActions2, setTestActions2] = useState([]);
+  const [chiLoanClicked, setChiLoanClicked] = useState(false);
+  const [puzzleInput, setPuzzleInput] = useState("");
+
+  const [information, setInformation] = useState("");
+
   return (
     <GameLayout>
       <Box
@@ -23,19 +30,12 @@ export default function Sample1() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Box
-          //   display="flex"
-          //   justifyContent="center"
-          h="100%"
-          //   w="100%"
-          position="relative"
-          overflow="auto"
-        >
+        <Box h="100%" position="relative" overflow="auto">
           <MapInteractionCSS
             showControls
-            defaultValue={{ scale: 1, translation: { x: -250, y: -150 } }}
+            defaultValue={{ scale: 0.8, translation: { x: -250, y: -150 } }}
           >
-            <Image src="/sample1.jpg" useMap="#image-map" maxW="unset" />
+            <Image src="/sample1.jpg" maxW="unset" />
 
             <Box
               position="absolute"
@@ -43,59 +43,83 @@ export default function Sample1() {
               top="23.08%"
               width="6.49%"
               height="35.68%"
-              backgroundColor="green.500"
+              //   backgroundColor="green.500"
               onClick={(e) => {
-                console.log(
-                  e.defaultPrevented ? "chiloan dragged" : "chi loan clicked"
-                );
                 if (!e.defaultPrevented) {
-                  const newtestactions = [...testActions2, "Hi"];
-                  setTestActions2(newtestactions);
+                  setChiLoanClicked(true);
+                  setInformation(`Chi Loan: I have a plane ticket that I don't need anymore.  I think I remember the flight number.  
+                  It was the year Doan Don Bosco was founded.  
+                  What a coincidence.`);
                 }
               }}
               _hover={{ cursor: "pointer" }}
               onTouchEnd={(e) => {
                 if (!e.defaultPrevented) {
-                  const newtestactions = [...testActions2, "Hi"];
-                  setTestActions2(newtestactions);
+                  setChiLoanClicked(true);
+                  setInformation(`Chi Loan: I have a plane ticket that I don't need anymore.  I think I remember the flight number.  
+                  It was the year Doan Don Bosco was founded.  
+                  What a coincidence.`);
                 }
               }}
-            >
-              {testActions2.map((i, index) => (
-                <Text key={index}>{i}</Text>
-              ))}
-            </Box>
+            ></Box>
             <Box
               position="absolute"
               left="41.5%"
               top="19.71%"
               width="12.6%"
               height="45.86%"
-              backgroundColor="green.500"
+              //   backgroundColor="green.500"
               onClick={(e) => {
-                console.log(
-                  e.defaultPrevented ? "kevin dragged" : "kevin clicked"
-                );
                 if (!e.defaultPrevented) {
-                  const newtestactions = [...testActions, "Hi"];
-                  setTestActions(newtestactions);
+                  setInformation(
+                    `Tr. Kevin: I saw an old man here earlier.  He said he had some important business in central Vietnam.  I wonder what that was all about.`
+                  );
                 }
               }}
               onTouchEnd={(e) => {
                 if (!e.defaultPrevented) {
-                  const newtestactions = [...testActions2, "Hi"];
-                  setTestActions2(newtestactions);
+                  setInformation(
+                    `Tr. Kevin: I saw an old man here earlier.  He said he had some important business in central Vietnam.  I wonder what that was all about.`
+                  );
                 }
               }}
               _hover={{ cursor: "pointer" }}
-            >
-              {testActions.map((i, index) => (
-                <Text key={index}>{i}</Text>
-              ))}
-            </Box>
+            ></Box>
           </MapInteractionCSS>
         </Box>
       </Box>
+
+      <Hud>
+        <Box></Box>
+        <Box>
+          Find out where to go
+          {chiLoanClicked && (
+            <Box mt={2}>
+              What is the ticket number?
+              <Input
+                my={2}
+                backgroundColor="white"
+                value={puzzleInput}
+                onChange={(e) => setPuzzleInput(e.target.value)}
+              />
+              <Link href="/htdt/sample2">
+                <Button colorScheme="cyan" isDisabled={puzzleInput !== "1993"}>
+                  Submit
+                </Button>
+              </Link>
+            </Box>
+          )}
+        </Box>
+        <Box whiteSpace="pre-line">
+          <Typist
+            key={information}
+            cursor={{ hideWhenDone: true, blink: true }}
+            avgTypingDelay={20}
+          >
+            {information}
+          </Typist>
+        </Box>
+      </Hud>
     </GameLayout>
   );
 }

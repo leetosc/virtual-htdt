@@ -10,7 +10,7 @@ const GameLayout = (props) => {
         <Box as="main" h="100%" display="flex" flexDir="column">
           {props.children}
         </Box>
-        <Hud />
+        {/* <Hud /> */}
       </Box>
     </>
   );
