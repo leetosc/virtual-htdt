@@ -98,7 +98,11 @@ export default function Sample2() {
         </Hud>
       </GameLayout>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal
+        isOpen={isOpen}
+        onClose={() => router.push("/htdt/sample1")}
+        closeOnOverlayClick={false}
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Wrong</ModalHeader>
