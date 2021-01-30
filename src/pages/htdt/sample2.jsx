@@ -54,11 +54,16 @@ export default function Sample2() {
         </Box>
 
         <Hud>
-          <Box>
-            <Link href="/htdt/sample1">
-              <a>Camp</a>
-            </Link>
-            <Text>Airport</Text>
+          <Box whiteSpace="pre-line">
+            <Typist
+              cursor={{ hideWhenDone: true, blink: true }}
+              avgTypingDelay={20}
+              onTypingDone={() => setTypingDone(true)}
+            >
+              You arrive at the airport. You make it through security and check
+              the ticket, but the destination is scratched out. You check the
+              departures and see there are 4 flights to Vietnam today.
+            </Typist>
           </Box>
           <Box>
             {typingDone && (
@@ -84,19 +89,15 @@ export default function Sample2() {
               </>
             )}
           </Box>
-          <Box whiteSpace="pre-line">
-            <Typist
-              cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={20}
-              onTypingDone={() => setTypingDone(true)}
-            >
-              You arrive at the airport. You make it through security and check
-              the ticket, but the destination is scratched out. You check the
-              departures and see there are 4 flights to Vietnam today.
-            </Typist>
+          <Box>
+            <Link href="/htdt/sample1">
+              <a>Camp</a>
+            </Link>
+            <Text>Airport</Text>
           </Box>
         </Hud>
       </GameLayout>
+
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

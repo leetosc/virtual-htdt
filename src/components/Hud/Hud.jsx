@@ -22,7 +22,7 @@ const Hud = ({ children }) => {
 
   //   const { information, objective, locations } = appState;
 
-  const boxTitles = ["Locations", "Objectives", "Information"];
+  const boxTitles = ["Information", "Objectives", "Locations"];
 
   return (
     <Flex
@@ -86,7 +86,15 @@ const Hud = ({ children }) => {
         </Box>
       </Box> */}
       {children.map((child, index) => (
-        <Box key={index} flex={1} flexDir="column" h="100%" pb={12} mx={2}>
+        <Box
+          key={index}
+          flex={1}
+          minW="xs"
+          flexDir="column"
+          h="100%"
+          pb={12}
+          mx={2}
+        >
           <Heading textColor="white" textAlign="center">
             {boxTitles[index]}
           </Heading>

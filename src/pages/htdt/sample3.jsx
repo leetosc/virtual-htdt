@@ -56,24 +56,6 @@ export default function Sample3() {
         </Box>
 
         <Hud>
-          <Box>
-            <Text>Airplane</Text>
-          </Box>
-          <Box w="100%" display="flex" pt={4}>
-            {modalOpened && (
-              <>
-                <Button
-                  colorScheme="cyan"
-                  mx="auto"
-                  onClick={() => {
-                    router.push("/storyline/finish");
-                  }}
-                >
-                  Arrive at destnation
-                </Button>
-              </>
-            )}
-          </Box>
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
@@ -95,8 +77,27 @@ export default function Sample3() {
               </Button>
             )}
           </Box>
+          <Box w="100%" display="flex" pt={4}>
+            {modalOpened && (
+              <>
+                <Button
+                  colorScheme="cyan"
+                  mx="auto"
+                  onClick={() => {
+                    router.push("/storyline/finish");
+                  }}
+                >
+                  Arrive at destnation
+                </Button>
+              </>
+            )}
+          </Box>
+          <Box>
+            <Text>Airplane</Text>
+          </Box>
         </Hud>
       </GameLayout>
+
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>

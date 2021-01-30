@@ -90,7 +90,15 @@ export default function Sample1() {
       </Box>
 
       <Hud>
-        <Box></Box>
+        <Box whiteSpace="pre-line">
+          <Typist
+            key={information}
+            cursor={{ hideWhenDone: true, blink: true }}
+            avgTypingDelay={20}
+          >
+            {information}
+          </Typist>
+        </Box>
         <Box>
           Find out where to go
           {chiLoanClicked && (
@@ -110,15 +118,7 @@ export default function Sample1() {
             </Box>
           )}
         </Box>
-        <Box whiteSpace="pre-line">
-          <Typist
-            key={information}
-            cursor={{ hideWhenDone: true, blink: true }}
-            avgTypingDelay={20}
-          >
-            {information}
-          </Typist>
-        </Box>
+        <Box></Box>
       </Hud>
     </GameLayout>
   );
