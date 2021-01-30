@@ -15,6 +15,7 @@ export default function Landing() {
       backgroundColor="gray.900"
       textColor="white"
       display="flex"
+      pt={14}
     >
       <Head>
         <title>Virtual HTDT</title>
