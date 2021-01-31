@@ -103,7 +103,7 @@ export default function Sample4() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                onClick={() => router.push("/htdt/sample5d")}
               >
                 Quán Bún Bò Huế
               </Button>
