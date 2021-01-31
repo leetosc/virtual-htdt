@@ -26,7 +26,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
 
-export default function Sample3() {
+export default function Sample5a() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
@@ -51,7 +51,7 @@ export default function Sample3() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sample3.png" maxW="unset" maxH="100%" />
+            <Image src="/sample5-hue-aodai.jpg" maxW="unset" maxH="100%" />
           </Box>
         </Box>
 
@@ -62,38 +62,29 @@ export default function Sample3() {
               avgTypingDelay={20}
               onTypingDone={() => setTypingDone(true)}
             >
-              What a nice plane. You settle in and see what's showing on the TV.
+              The Hue Imperial Citadel, or Hoàng Thành Huế, is famous as one of
+              the seven UNESCO World Heritage Sites of Vietnam. It was a walled
+              fortress as well and palace belonging to Hue ancient city, which
+              was the capital city of the Nguyen Dynasty for about 140 years
+              since 1805.
             </Typist>
-            {typingDone && (
-              <Button
-                colorScheme="teal"
-                mt={2}
-                onClick={() => {
-                  setModalOpened(true);
-                  onOpen();
-                }}
-              >
-                Open TV
-              </Button>
-            )}
           </Box>
           <Box w="100%" display="flex" pt={4}>
-            {modalOpened && (
-              <>
-                <Button
-                  colorScheme="cyan"
-                  mx="auto"
-                  onClick={() => {
-                    router.push("/htdt/sample4");
-                  }}
-                >
-                  Arrive at destnation
-                </Button>
-              </>
-            )}
+            <Button
+              colorScheme="teal"
+              mt={2}
+              onClick={() => {
+                setModalOpened(true);
+                onOpen();
+              }}
+            >
+              Talk to mysterious woman
+            </Button>
           </Box>
           <Box>
-            <Text>Airplane</Text>
+            <Link href="/htdt/sample4">
+              <a>Taxi</a>
+            </Link>
           </Box>
         </Hud>
       </GameLayout>
@@ -101,10 +92,23 @@ export default function Sample3() {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>In-Flight TV</ModalHeader>
+          <ModalHeader>Mysterious Woman</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <YouTube videoId="uCdVsZbj4Ag" opts={{ width: "100%" }} />
+            <Image src="/mysteriousWoman.png" h={28} m={2} float="left" />
+            <Text>
+              Are you looking for Uncle Tien? He told me to give you this
+              message:
+              <br />
+              <br />
+              Key: Vì ở đâu có hai ba người họp lại nhân danh Thầy, thì có Thầy
+              ở đấy, giữa họ. (Mt 18, 20)
+              <br />
+              <br />
+              Bản tin: T H I E U HA N H I YYE T H O A UTH M T H UO C B R NG .
+              /AR
+            </Text>
+            {/* solution: HAY YEU THUONG */}
           </ModalBody>
 
           <ModalFooter>
