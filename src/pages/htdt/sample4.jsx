@@ -89,11 +89,24 @@ export default function Sample4() {
               >
                 Imperial City
               </Button>
-              <Button colorScheme="cyan" onClick={() => window.alert("pagoda")}>
+              <Button
+                colorScheme="cyan"
+                onClick={() => router.push("/htdt/sample5b")}
+              >
                 Thien Mu Pagoda
               </Button>
-              <Button colorScheme="cyan">Dong Ba Market</Button>
-              <Button colorScheme="cyan">Quán Bún Bò Huế</Button>
+              <Button
+                colorScheme="cyan"
+                onClick={() => window.alert("not made yet")}
+              >
+                Dong Ba Market
+              </Button>
+              <Button
+                colorScheme="cyan"
+                onClick={() => window.alert("not made yet")}
+              >
+                Quán Bún Bò Huế
+              </Button>
             </Stack>
           </Box>
           <Box>
