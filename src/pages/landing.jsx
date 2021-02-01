@@ -32,15 +32,15 @@ export default function Landing() {
           <br />
           <br />
           Are you ready to begin your journey?
-          <Typist.Delay ms={1000} />
+          <Typist.Delay ms={500} />
           <br />
           <br />
           Get all team members into your team Discord channel.
-          <Typist.Delay ms={1000} />
+          <Typist.Delay ms={500} />
           <br />
           <br />
           When everyone is ready, press Start to begin.
-          <Typist.Delay ms={1000} />
+          <Typist.Delay ms={500} />
         </Typist>
         {typingDone && (
           <Link href="/storyline/introduction">
