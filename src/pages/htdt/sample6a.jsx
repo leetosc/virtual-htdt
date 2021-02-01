@@ -70,6 +70,9 @@ export default function Sample6a() {
           </Box>
           <Box>
             <Text mb={1}>What are the passwords?</Text>
+            <Text mb={1} textColor="gray.500" fontSize="sm">
+              Answers: "hay yeu thuong" and "dan israel"
+            </Text>
             <Input
               mb={2}
               backgroundColor="white"
@@ -85,7 +88,9 @@ export default function Sample6a() {
             />
             <Button
               colorScheme="cyan"
-              onClick={() => {}}
+              onClick={() => {
+                window.alert("next page not made yet");
+              }}
               mt={2}
               isDisabled={
                 puzzleInput1.toLowerCase() !== "hay yeu thuong" ||

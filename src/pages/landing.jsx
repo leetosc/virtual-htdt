@@ -32,11 +32,12 @@ export default function Landing() {
           <br />
           <br />
           Are you ready to begin your journey?
-          <Typist.Delay ms={500} />
           <br />
           <br />
           Get all team members into your team Discord channel.
-          <Typist.Delay ms={500} />
+          <br />
+          <br />
+          Note: This site is best viewed on a desktop.
           <br />
           <br />
           When everyone is ready, press Start to begin.
