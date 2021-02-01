@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import NextLink from "next/link";
 import {
   Box,
@@ -9,10 +10,20 @@ import {
   Text,
   Button,
   Link as ChakraLink,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 const Header = () => {
+  const router = useRouter();
   const [show, setShow] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleToggle = () => {
     setShow(!show);
@@ -42,33 +53,32 @@ const Header = () => {
   };
 
   return (
-    <Flex
-      as="nav"
-      alignItems="center"
-      justify="space-between"
-      flexWrap="wrap"
-      px={{ base: 2, sm: 4, md: 6 }}
-      py={2}
-      position="fixed"
-      zIndex={3}
-      bg="cyan.900"
-      w="100%"
-    >
-      <Flex alignItems="center" mr={2}>
-        <NextLink href="/">
-          <a>
-            <Image src="/dblogo.png" width={34} height={34} alt="Logo" />
-          </a>
-        </NextLink>
-        <NextLink href="/">
-          <a>
-            <Heading size="md" pl={2} color="white">
-              Virtual Camp - HTDT
-            </Heading>
-          </a>
-        </NextLink>
-      </Flex>
-      {/* <Button
+    <>
+      <Flex
+        as="nav"
+        alignItems="center"
+        justify="space-between"
+        flexWrap="wrap"
+        px={{ base: 2, sm: 4, md: 6 }}
+        py={3}
+        position="fixed"
+        zIndex={3}
+        bg="cyan.900"
+        w="100%"
+      >
+        <Flex
+          alignItems="center"
+          mr={2}
+          onClick={onOpen}
+          _hover={{ cursor: "pointer" }}
+        >
+          <Image src="/dblogo.png" width={34} height={34} alt="Logo" />
+
+          <Heading size="md" pl={2} color="white">
+            Virtual Camp - HTDT
+          </Heading>
+        </Flex>
+        {/* <Button
         variant="ghost"
         size="sm"
         display={{ base: "block", md: "none" }}
@@ -109,7 +119,7 @@ const Header = () => {
         )}
       </Button> */}
 
-      {/* <Box
+        {/* <Box
         w={{ base: "100%", md: "auto" }}
         grow="grow"
         display={{ base: show ? "flex" : "none", md: "flex" }}
@@ -126,7 +136,29 @@ const Header = () => {
           <MenuItem href="/register">Register</MenuItem>
         </>
       </Box> */}
-    </Flex>
+      </Flex>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Return to homepage?</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>You will lose all your progress.</ModalBody>
+
+          <ModalFooter>
+            <Button
+              colorScheme="cyan"
+              mr={3}
+              onClick={() => {
+                onClose();
+                router.push("/");
+              }}
+            >
+              Go
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 

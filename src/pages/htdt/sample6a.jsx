@@ -86,6 +86,7 @@ export default function Sample6a() {
             <Button
               colorScheme="cyan"
               onClick={() => {}}
+              mt={2}
               isDisabled={
                 puzzleInput1.toLowerCase() !== "hay yeu thuong" ||
                 puzzleInput2.toLowerCase() !== "dan israel"

@@ -24,7 +24,7 @@ export default function Landing() {
       <Box px={8} py={4} fontSize="xl">
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
-          avgTypingDelay={40}
+          avgTypingDelay={25}
           onTypingDone={() => setTypingDone(true)}
         >
           Welcome to Virtual Camp 2021 Hanh Trinh Duc Tin!
