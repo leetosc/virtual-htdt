@@ -3,6 +3,7 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 import Header from "../components/Header/Header";
 import Hud from "../components/Hud/Hud";
 import { ProvideAppState } from "../context/state";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function MyApp({ Component, pageProps }) {
   return (

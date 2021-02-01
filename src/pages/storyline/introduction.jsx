@@ -5,7 +5,7 @@ import Typist from "react-typist";
 import Link from "next/link";
 
 export default function Introduction() {
-  const [typingDone, setTypingDone] = useState(false);
+  const [typingDone, setTypingDone] = useState(true);
   return (
     <Box
       w="100%"

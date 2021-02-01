@@ -29,9 +29,6 @@ import YouTube from "react-youtube";
 export default function Sample3() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -51,7 +48,7 @@ export default function Sample3() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sample3.png" maxW="unset" maxH="100%" />
+            <Image src="/abiaToHue.png" maxW="unset" maxH="100%" />
           </Box>
         </Box>
 
@@ -62,59 +59,34 @@ export default function Sample3() {
               avgTypingDelay={20}
               onTypingDone={() => setTypingDone(true)}
             >
-              What a nice plane. You settle in and see what's showing on the TV.
+              You have arrived at Hue. Thank goodness you somehow found a direct
+              flight from Austin!
+              <br />
+              Time to start looking for clues around the city, which was the
+              former capital of Vietnam.
+              <br />
             </Typist>
-            {typingDone && (
-              <Button
-                colorScheme="teal"
-                mt={2}
-                onClick={() => {
-                  setModalOpened(true);
-                  onOpen();
-                }}
-              >
-                Open TV
-              </Button>
-            )}
           </Box>
           <Box w="100%" display="flex" pt={4}>
-            {modalOpened && (
+            {typingDone && (
               <>
                 <Button
                   colorScheme="cyan"
                   mx="auto"
                   onClick={() => {
-                    router.push("/htdt/sample3a");
+                    router.push("/htdt/sample4");
                   }}
                 >
-                  Arrive at destnation
+                  Find a Taxi
                 </Button>
               </>
             )}
           </Box>
           <Box>
-            <Text>Airplane</Text>
+            <Text>Airport</Text>
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>In-Flight TV</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            Insert a video here
-            <YouTube videoId="uCdVsZbj4Ag" opts={{ width: "100%" }} />
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

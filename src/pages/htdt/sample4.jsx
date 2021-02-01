@@ -97,7 +97,7 @@ export default function Sample4() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                onClick={() => router.push("/htdt/sample5c")}
               >
                 Dong Ba Market
               </Button>
@@ -106,6 +106,12 @@ export default function Sample4() {
                 onClick={() => router.push("/htdt/sample5d")}
               >
                 Quán Bún Bò Huế
+              </Button>
+              <Button
+                colorScheme="cyan"
+                onClick={() => router.push("/htdt/sample6")}
+              >
+                Phu Bai Airport
               </Button>
             </Stack>
           </Box>

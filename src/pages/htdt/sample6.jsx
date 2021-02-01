@@ -24,14 +24,15 @@ import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 
-export default function Sample3() {
+export default function Sample6() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
+  const [typingDone, setTypingDone] = useState(true);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [puzzleInput1, setPuzzleInput1] = useState("");
+  const [puzzleInput2, setPuzzleInput2] = useState("");
 
   return (
     <>
@@ -51,7 +52,7 @@ export default function Sample3() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sample3.png" maxW="unset" maxH="100%" />
+            <Image src="/hueAirport.jpg" maxW="unset" maxH="100%" h="100%" />
           </Box>
         </Box>
 
@@ -62,55 +63,59 @@ export default function Sample3() {
               avgTypingDelay={20}
               onTypingDone={() => setTypingDone(true)}
             >
-              What a nice plane. You settle in and see what's showing on the TV.
+              You arrive at the airport. Hue is a beautiful city. Maybe you will
+              visit again one day.
             </Typist>
-            {typingDone && (
-              <Button
-                colorScheme="teal"
-                mt={2}
-                onClick={() => {
-                  setModalOpened(true);
-                  onOpen();
-                }}
-              >
-                Open TV
-              </Button>
-            )}
           </Box>
-          <Box w="100%" display="flex" pt={4}>
-            {modalOpened && (
+          <Box>
+            {typingDone && (
               <>
-                <Button
-                  colorScheme="cyan"
-                  mx="auto"
-                  onClick={() => {
-                    router.push("/htdt/sample3a");
-                  }}
-                >
-                  Arrive at destnation
-                </Button>
+                <Text mb={1}>Where is your destination?</Text>
+                <Stack>
+                  <Button
+                    colorScheme="cyan"
+                    onClick={() => router.push("/htdt/sample6a")}
+                  >
+                    Ha Noi
+                  </Button>
+                  <Button colorScheme="cyan" onClick={onOpen}>
+                    Nha Trang
+                  </Button>
+                  <Button colorScheme="cyan" onClick={onOpen}>
+                    Ho Chi Minh City
+                  </Button>
+                </Stack>
               </>
             )}
           </Box>
           <Box>
-            <Text>Airplane</Text>
+            <Link href="/htdt/sample4">
+              <a>Taxi</a>
+            </Link>
           </Box>
         </Hud>
       </GameLayout>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+      <Modal
+        isOpen={isOpen}
+        onClose={() => router.push("/htdt/sample1")}
+        closeOnOverlayClick={false}
+      >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>In-Flight TV</ModalHeader>
+          <ModalHeader>Are you sure?</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Insert a video here
-            <YouTube videoId="uCdVsZbj4Ag" opts={{ width: "100%" }} />
+            Uncle Tien left some clues where to go next. You should find them!
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
+            <Button
+              colorScheme="red"
+              mr={3}
+              onClick={() => router.push("/htdt/sample4")}
+            >
+              Leave
             </Button>
           </ModalFooter>
         </ModalContent>

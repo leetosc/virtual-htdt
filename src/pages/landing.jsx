@@ -35,11 +35,11 @@ export default function Landing() {
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          Do you have everything you need?
+          Get all team members into your team Discord channel.
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          Press Start to begin.
+          When everyone is ready, press Start to begin.
           <Typist.Delay ms={1000} />
         </Typist>
         {typingDone && (

@@ -52,7 +52,11 @@ export default function Sample1() {
                   What a coincidence.`);
                 }
               }}
-              _hover={{ cursor: "pointer" }}
+              _hover={{
+                cursor: "pointer",
+                opacity: 0.15,
+                backgroundColor: "gray.900",
+              }}
               onTouchEnd={(e) => {
                 if (!e.defaultPrevented) {
                   setChiLoanClicked(true);
@@ -83,7 +87,11 @@ export default function Sample1() {
                   );
                 }
               }}
-              _hover={{ cursor: "pointer" }}
+              _hover={{
+                cursor: "pointer",
+                opacity: 0.15,
+                backgroundColor: "gray.900",
+              }}
             ></Box>
           </MapInteractionCSS>
         </Box>
@@ -100,7 +108,7 @@ export default function Sample1() {
           </Typist>
         </Box>
         <Box>
-          Find out where to go
+          Talk to the HTs to find out where to go.
           {chiLoanClicked && (
             <Box mt={2}>
               What is the ticket number?
