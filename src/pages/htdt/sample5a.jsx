@@ -59,7 +59,7 @@ export default function Sample5a() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={20}
+              avgTypingDelay={10}
               onTypingDone={() => setTypingDone(true)}
             >
               The Hue Imperial Citadel, or Hoàng Thành Huế, is famous as one of

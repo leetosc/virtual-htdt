@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import NextImage from "next/image";
 import { useRouter } from "next/router";
 import {
   Box,
@@ -47,7 +48,7 @@ export default function Sample3() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
+          <Box h="100%" overflow="auto">
             <Image src="/abiaToHue.png" maxW="unset" maxH="100%" />
           </Box>
         </Box>

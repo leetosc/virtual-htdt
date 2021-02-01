@@ -61,7 +61,9 @@ export default function Introduction() {
               size="lg"
               mt={4}
             >
-              Go to first location
+              {typingDone
+                ? `Go to first location`
+                : `Skip and Go to first location`}
             </Button>
           </Link>
         )}

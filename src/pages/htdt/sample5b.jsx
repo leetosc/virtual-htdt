@@ -59,7 +59,7 @@ export default function Sample5b() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={18}
+              avgTypingDelay={10}
               onTypingDone={() => setTypingDone(true)}
             >
               The name of the pagoda derives from a special legend. Long time
