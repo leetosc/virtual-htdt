@@ -25,8 +25,7 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
-import sound1 from "../../../public/hue-BanMuonDiDau.mp3";
-import sound2 from "../../../public/Hue-TakeAnywhere.mp3";
+import sound1 from "../../../public/hanoi-BanMuonDiDau.mp3";
 import useSound from "use-sound";
 
 export default function Sample4() {
@@ -34,7 +33,6 @@ export default function Sample4() {
   const clickCounter = useRef(0);
 
   const [diDau] = useSound(sound1);
-  const [takeAnywhere] = useSound(sound2);
 
   return (
     <>
@@ -58,14 +56,7 @@ export default function Sample4() {
               src="/hanoicyclo.jpg"
               maxW="unset"
               maxH="100%"
-              onClick={() => {
-                clickCounter.current += 1;
-                if (clickCounter.current % 2 === 0) {
-                  takeAnywhere();
-                } else {
-                  diDau();
-                }
-              }}
+              onClick={diDau}
             />
           </Box>
         </Box>
@@ -81,7 +72,7 @@ export default function Sample4() {
               together.
             </Typist>
           </Box>
-          <Box w="100%" pt={2}>
+          <Box w="100%">
             <Text mb={1}>Bạn muốn đi đâu?</Text>
             <Stack>
               <Button
