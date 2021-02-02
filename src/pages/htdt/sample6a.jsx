@@ -89,7 +89,7 @@ export default function Sample6a() {
             <Button
               colorScheme="cyan"
               onClick={() => {
-                window.alert("next page not made yet");
+                router.push("/htdt/sample7");
               }}
               mt={2}
               isDisabled={
