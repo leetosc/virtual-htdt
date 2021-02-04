@@ -56,6 +56,7 @@ export default function Sample5d() {
               maxW="unset"
               maxH="100%"
               onClick={() => setBowlClicked(true)}
+              _hover={{ cursor: "pointer" }}
             />
           </Box>
         </Box>

@@ -30,7 +30,7 @@ export default function Sample5c() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState(0);
+  const [puzzleInput, setPuzzleInput] = useState("");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 

@@ -95,7 +95,7 @@ export default function Sample4() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                onClick={() => router.push("/htdt/sample9d")}
               >
                 St Joseph's Cathedral
               </Button>
