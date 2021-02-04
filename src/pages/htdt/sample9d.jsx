@@ -91,8 +91,9 @@ export default function Sample9d() {
               the building.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}>
-            <Button colorScheme="cyan" onClick={onOpen}>
+          <Box w="100%" pt={1}>
+            <Text>Good timing! You arrive just in time for Mass!</Text>
+            <Button my={2} colorScheme="cyan" onClick={onOpen}>
               Attend Mass
             </Button>
           </Box>
