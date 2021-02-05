@@ -99,7 +99,7 @@ export default function Sample9d() {
           </Box>
           <Box>
             <Link href="/htdt/sample8">
-              <a>Cyclo</a>
+              <a>Back to Cyclo</a>
             </Link>
           </Box>
         </Hud>

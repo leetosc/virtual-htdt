@@ -83,7 +83,7 @@ export default function Sample5a() {
           </Box>
           <Box>
             <Link href="/htdt/sample4">
-              <a>Taxi</a>
+              <a>Back to Taxi</a>
             </Link>
           </Box>
         </Hud>
