@@ -77,7 +77,7 @@ export default function Sample4() {
             <Stack>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                onClick={() => router.push("/htdt/sample9a")}
               >
                 Hoàn Kiếm Lake
               </Button>
