@@ -83,15 +83,9 @@ export default function Sample4() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                onClick={() => router.push("/htdt/sample9b")}
               >
                 One Pillar Pagoda
-              </Button>
-              <Button
-                colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
-              >
-                Thăng Long Imperial Citadel
               </Button>
               <Button
                 colorScheme="cyan"
