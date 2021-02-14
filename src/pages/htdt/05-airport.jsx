@@ -72,7 +72,7 @@ export default function Airport() {
                 <Stack>
                   <Button
                     colorScheme="cyan"
-                    onClick={() => router.push("/htdt/sample3")}
+                    onClick={() => router.push("/htdt/06-plane")}
                   >
                     Ha Noi
                   </Button>
