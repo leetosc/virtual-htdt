@@ -51,7 +51,12 @@ export default function Sample5a() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sample5-hue-aodai.jpg" maxW="unset" maxH="100%" />
+            <Image
+              src="/sample5-hue-aodai.jpg"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 

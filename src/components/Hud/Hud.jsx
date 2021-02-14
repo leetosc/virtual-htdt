@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Box, Heading, Flex } from "@chakra-ui/react";
 
 const Hud = ({ children }) => {
-  const boxTitles = ["Information", "Objectives", "Locations"];
+  const boxTitles = ["Information", "Objectives", "Navigation"];
 
   return (
     <Flex

@@ -40,8 +40,8 @@ export default function Introduction() {
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          "My time has passed. I am entrusting the treasure to one of my
-          nephews. The first person to find it gets to keep it!"&nbsp;&nbsp;
+          "My time has passed. I am entrusting the treasure to one of my nephews
+          or nieces. The first person to find it gets to keep it!"&nbsp;&nbsp;
           <Typist.Delay ms={1000} />
           <br />
           "However, only the one who is familiar with our family history and
@@ -54,7 +54,7 @@ export default function Introduction() {
           "Good luck!"
         </Typist>
         {typingDone && (
-          <Link href="/htdt/sample1">
+          <Link href="/htdt/01-hvmcc">
             <Button
               colorScheme="cyan"
               textTransform="uppercase"
