@@ -25,6 +25,7 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
+import Typing from "react-typing-animation";
 
 export default function Hvmcc() {
   const router = useRouter();
@@ -61,7 +62,7 @@ export default function Hvmcc() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={10}
+              avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
               You take the plane ticket and head to the airport. Good thing you

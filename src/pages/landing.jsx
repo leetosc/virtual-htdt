@@ -24,7 +24,7 @@ export default function Landing() {
       <Box px={8} py={4} fontSize="xl">
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
-          avgTypingDelay={25}
+          avgTypingDelay={5}
           onTypingDone={() => setTypingDone(true)}
         >
           Welcome to Virtual Camp 2021 Hanh Trinh Duc Tin!
@@ -41,7 +41,6 @@ export default function Landing() {
           <br />
           <br />
           When everyone is ready, press Start to begin.
-          <Typist.Delay ms={500} />
         </Typist>
         {typingDone && (
           <Link href="/storyline/introduction">

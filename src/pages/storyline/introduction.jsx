@@ -22,7 +22,7 @@ export default function Introduction() {
       <Box px={8} py={4} fontSize="xl">
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
-          avgTypingDelay={20}
+          avgTypingDelay={5}
           onTypingDone={() => setTypingDone(true)}
         >
           Knock Knock.

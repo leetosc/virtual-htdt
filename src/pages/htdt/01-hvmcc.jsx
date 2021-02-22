@@ -56,7 +56,7 @@ export default function Hvmcc() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={10}
+              avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
               You start off at a familiar place: church. Maybe someone here will

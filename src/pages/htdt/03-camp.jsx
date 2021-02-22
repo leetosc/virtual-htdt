@@ -48,7 +48,7 @@ export default function Camp() {
                 if (!e.defaultPrevented) {
                   setChiLoanClicked(true);
                   setInformation(`Chi Loan: I have a plane ticket that I don't need anymore.  I think I remember the flight number.  
-                  It was the year Doan Don Bosco was founded.  
+                  It is the number of HT/HSTT in this picture.  
                   What a coincidence.`);
                 }
               }}
@@ -61,7 +61,7 @@ export default function Camp() {
                 if (!e.defaultPrevented) {
                   setChiLoanClicked(true);
                   setInformation(`Chi Loan: I have a plane ticket that I don't need anymore.  I think I remember the flight number.  
-                  It was the year Doan Don Bosco was founded.  
+                  It is the number of HT/HSTT in this picture.  
                   What a coincidence.`);
                 }
               }}
@@ -102,7 +102,7 @@ export default function Camp() {
           <Typist
             key={information}
             cursor={{ hideWhenDone: true, blink: true }}
-            avgTypingDelay={15}
+            avgTypingDelay={5}
           >
             {information}
           </Typist>
@@ -119,7 +119,7 @@ export default function Camp() {
                 onChange={(e) => setPuzzleInput(e.target.value)}
               />
               <Link href="/htdt/04-map">
-                <Button colorScheme="cyan" isDisabled={puzzleInput !== "1993"}>
+                <Button colorScheme="cyan" isDisabled={puzzleInput !== "28"}>
                   Submit
                 </Button>
               </Link>

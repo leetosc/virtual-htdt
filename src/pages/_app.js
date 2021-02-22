@@ -4,16 +4,16 @@ import Header from "../components/Header/Header";
 import Hud from "../components/Hud/Hud";
 import { ProvideAppState } from "../context/state";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { DragDropContext } from "react-beautiful-dnd";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <ProvideAppState>
-        <Header />
-        {/* <Box as="main" h="100vh" pt={14} pb={64} display="flex" flexDir="column"> */}
-        <Component {...pageProps} />
-        {/* <Hud /> */}
-        {/* </Box> */}
+        <DragDropContext>
+          <Header />
+          <Component {...pageProps} />
+        </DragDropContext>
       </ProvideAppState>
     </ChakraProvider>
   );
