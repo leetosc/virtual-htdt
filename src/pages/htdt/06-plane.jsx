@@ -85,7 +85,7 @@ export default function Plane() {
                   colorScheme="cyan"
                   mx="auto"
                   onClick={() => {
-                    router.push("/htdt/sample3a");
+                    router.push("/htdt/07-map");
                   }}
                 >
                   Arrive at destnation

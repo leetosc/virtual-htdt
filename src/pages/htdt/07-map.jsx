@@ -30,6 +30,7 @@ import Typing from "react-typing-animation";
 export default function Map() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
+  const [puzzleInput, setPuzzleInput] = useState("");
 
   return (
     <>
@@ -49,12 +50,7 @@ export default function Map() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/eagleWingToABIA.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/abiaToHanoi.png" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -65,20 +61,32 @@ export default function Map() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You take the plane ticket and head to the airport. Good thing you
-              were already packed and ready for camp, since it looks like you'll
-              be going on a trip!
+              After a long trip you arrive in Hanoi. You see a group of cyclo
+              drivers and approach them. What was your contact's name?
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
           <Box p={2}>
             {typingDone && (
-              <Button
-                colorScheme="cyan"
-                onClick={() => router.push("/htdt/05-airport")}
-              >
-                Arrive at airport
-              </Button>
+              <>
+                Contact's name
+                <Text textColor="red.500" fontWeight="semibold">
+                  ANSWER: "nghia"
+                </Text>
+                <Input
+                  my={2}
+                  backgroundColor="white"
+                  value={puzzleInput}
+                  onChange={(e) => setPuzzleInput(e.target.value)}
+                />
+                <Button
+                  isDisabled={puzzleInput.toLowerCase() !== "nghia"}
+                  colorScheme="cyan"
+                  onClick={() => router.push("/htdt/08-cyclo")}
+                >
+                  Submit
+                </Button>
+              </>
             )}
           </Box>
         </Hud>

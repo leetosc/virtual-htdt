@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -25,11 +25,14 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
+import sound1 from "../../../public/hanoi-BanMuonDiDau.mp3";
+import useSound from "use-sound";
 
-export default function Map() {
+export default function Cyclo() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
+  const clickCounter = useRef(0);
+
+  const [diDau] = useSound(sound1);
 
   return (
     <>
@@ -50,10 +53,11 @@ export default function Map() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/eagleWingToABIA.jpg"
+              src="/hanoicyclo.jpg"
               maxW="unset"
-              h="100%"
               maxH="100%"
+              h="100%"
+              onClick={diDau}
             />
           </Box>
         </Box>
@@ -62,24 +66,42 @@ export default function Map() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
+              avgTypingDelay={20}
             >
-              You take the plane ticket and head to the airport. Good thing you
-              were already packed and ready for camp, since it looks like you'll
-              be going on a trip!
+              The cyclo driver was a friend of your uncle, and says that they
+              liked to visit certain places around the city when they hung out
+              together.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
-          <Box p={2}>
-            {typingDone && (
+          <Box w="100%">Look for clues around the city</Box>
+          <Box>
+            <Text mb={1}>Bạn muốn đi đâu?</Text>
+            <Stack>
               <Button
                 colorScheme="cyan"
-                onClick={() => router.push("/htdt/05-airport")}
+                onClick={() => router.push("/htdt/sample9a")}
               >
-                Arrive at airport
+                Hoàn Kiếm Lake
               </Button>
-            )}
+              <Button
+                colorScheme="cyan"
+                onClick={() => router.push("/htdt/sample9b")}
+              >
+                One Pillar Pagoda
+              </Button>
+              <Button
+                colorScheme="cyan"
+                onClick={() => router.push("/htdt/09-stjoseph")}
+              >
+                St Joseph's Cathedral
+              </Button>
+              <Button
+                colorScheme="cyan"
+                onClick={() => window.alert("not made yet")}
+              >
+                Đồng Xuân Market
+              </Button>
+            </Stack>
           </Box>
         </Hud>
       </GameLayout>
