@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, Icon } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
+import { GiCook } from "react-icons/gi";
 
 export default function Introduction() {
   const [typingDone, setTypingDone] = useState(true);
@@ -49,6 +50,11 @@ export default function Introduction() {
           <br />
           "Will it be you?"
           <Typist.Delay ms={1000} />
+          <br />
+          <br />
+          "Oh, and if you talk to anyone about food{" "}
+          <Icon as={GiCook} h={6} w={6} />, pay attention. I think I will want
+          something good to eat later."
           <br />
           <br />
           "Good luck!"

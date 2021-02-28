@@ -87,7 +87,7 @@ export default function Tntt1() {
             See if anyone knows your uncle
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {modalOpened && (
               <>
                 <Button
                   colorScheme="cyan"

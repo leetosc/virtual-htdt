@@ -71,7 +71,8 @@ export default function Cyclo() {
             <Stack>
               <Button
                 colorScheme="cyan"
-                onClick={() => router.push("/htdt/sample9a")}
+                isDisabled={appState.locationsVisited.includes("11b-hoankiem")}
+                onClick={() => router.push("/htdt/11b-hoankiem")}
               >
                 Hoàn Kiếm Lake
               </Button>

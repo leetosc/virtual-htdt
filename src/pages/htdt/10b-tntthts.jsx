@@ -66,29 +66,15 @@ export default function Tntt1() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              Seeing the TNTT kids in Vietnam makes you realize how all of Thieu
-              Nhi is a family. You can visit any Doan in the country, or the
-              world, and feel welcomed and at home.
-              <br /> <br />
-              It also makes you remember Tr. Tony's lesson on the history of
-              TNTT in the USA.
+              One of the HTs comes up to you. <br />
+              <br />
+              "Uncle Tien? I know him. He was fond of visiting Sa Pa. You should
+              go there and check it out! You will need a password though. Maybe
+              you can find that in the market, Uncle Tien spent a lot of time
+              there."
             </Typist>
-            {typingDone && (
-              <Button
-                colorScheme="cyan"
-                onClick={() => {
-                  onOpen();
-                  setModalOpened(true);
-                }}
-                mt={2}
-              >
-                Review lesson
-              </Button>
-            )}
           </Box>
-          <Box w="100%" display="flex" pt={2}>
-            See if anyone knows your uncle
-          </Box>
+          <Box w="100%" display="flex" pt={2}></Box>
           <Box p={2}>
             {typingDone && (
               <>
