@@ -343,9 +343,16 @@ export default function Tnttkids() {
           <Box>
             <Text mb={2}>Talk to the kids and answer their questions.</Text>
             <Text mb={2}>Correct Answers:</Text>
-            {correctAnswers.map((i) =>
+            {correctAnswers.map((i, index) =>
               i === true ? (
-                <Icon as={FaCheck} w={8} h={8} color="green.500" mx={1} />
+                <Icon
+                  key={index}
+                  as={FaCheck}
+                  w={8}
+                  h={8}
+                  color="green.500"
+                  mx={1}
+                />
               ) : null
             )}
 

@@ -13,13 +13,17 @@ export const useAppState = () => {
 
 function useProvideState() {
   const [locations, setLocations] = useState([]);
+  const [locationsVisited, setLocationsVisited] = useState([]);
+  const [inventory, setInventory] = useState([]);
   const [navbarTitle, setNavbarTitle] = useState("Virtual Camp - HTDT");
 
-  const appState = { locations, navbarTitle };
+  const appState = { locations, navbarTitle, locationsVisited, inventory };
 
   return {
     appState,
     setLocations,
     setNavbarTitle,
+    setLocationsVisited,
+    setInventory,
   };
 }

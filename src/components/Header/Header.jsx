@@ -18,12 +18,23 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  Icon,
 } from "@chakra-ui/react";
+import { GiLightBackpack } from "react-icons/gi";
+import { useAppState } from "@/context/state";
 
 const Header = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: inventoryOpen,
+    onOpen: inventoryOnOpen,
+    onClose: inventoryOnClose,
+  } = useDisclosure();
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   const handleToggle = () => {
     setShow(!show);
@@ -78,46 +89,47 @@ const Header = () => {
             Virtual Camp - HTDT
           </Heading>
         </Flex>
-        {/* <Button
-        variant="ghost"
-        size="sm"
-        display={{ base: "block", md: "none" }}
-        _hover={{ backgroundColor: "cyan.900" }}
-        onClick={handleToggle}
-      >
-        {show ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="white"
-            height="1rem"
-            width="1rem"
-            viewBox="0 0 24 24"
-            stroke="white"
-          >
-            <title>Close</title>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={3}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            fill="white"
-            height="1rem"
-            width="1rem"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path
-              d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-              strokeWidth={4}
-            />
-          </svg>
-        )}
-      </Button> */}
+        <Button
+          variant="ghost"
+          size="sm"
+          display={{ base: "block" }}
+          _hover={{ backgroundColor: "cyan.900" }}
+          onClick={inventoryOnOpen}
+        >
+          <Icon as={GiLightBackpack} h={8} w={8} color="white" />
+          {/* {show ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="white"
+              height="1rem"
+              width="1rem"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <title>Close</title>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              fill="white"
+              height="1rem"
+              width="1rem"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path
+                d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                strokeWidth={4}
+              />
+            </svg> 
+          )} */}
+        </Button>
 
         {/* <Box
         w={{ base: "100%", md: "auto" }}
@@ -154,6 +166,27 @@ const Header = () => {
               }}
             >
               Go
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={inventoryOpen} onClose={inventoryOnClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Inventory</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {appState.inventory.length > 0 ? (
+              appState.inventory.map((i) => <Text key={i}>{i}</Text>)
+            ) : (
+              <Text>Inventory is empty</Text>
+            )}
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="gray" mr={3} onClick={inventoryOnClose}>
+              Close
             </Button>
           </ModalFooter>
         </ModalContent>

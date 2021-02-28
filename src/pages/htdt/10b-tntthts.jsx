@@ -34,6 +34,9 @@ export default function Tntt1() {
   const [modalOpened, setModalOpened] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const stateContext = useAppState();
+  const { appState } = stateContext;
+
   return (
     <>
       <GameLayout>
@@ -91,9 +94,15 @@ export default function Tntt1() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/10a-tnttkids")}
+                  onClick={() => {
+                    stateContext.setLocationsVisited([
+                      ...appState.locationsVisited,
+                      "09-stjoseph",
+                    ]);
+                    router.push("/htdt/08-cyclo");
+                  }}
                 >
-                  Talk to the TNTT kids
+                  Return to cyclo driver
                 </Button>
               </>
             )}

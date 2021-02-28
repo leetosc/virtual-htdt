@@ -10,29 +10,21 @@ import {
   Image,
   Input,
   Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 import sound1 from "../../../public/hanoi-BanMuonDiDau.mp3";
 import useSound from "use-sound";
 
 export default function Cyclo() {
   const router = useRouter();
-  const clickCounter = useRef(0);
 
   const [diDau] = useSound(sound1);
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   return (
     <>
@@ -85,15 +77,17 @@ export default function Cyclo() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => router.push("/htdt/sample9b")}
+                onClick={() => router.push("/htdt/11-pagoda")}
+                isDisabled={appState.locationsVisited.includes("11-pagoda")}
               >
                 One Pillar Pagoda
               </Button>
               <Button
                 colorScheme="cyan"
                 onClick={() => router.push("/htdt/09-stjoseph")}
+                isDisabled={appState.locationsVisited.includes("09-stjoseph")}
               >
-                St Joseph's Cathedral
+                St Joseph&apos;s Cathedral
               </Button>
               <Button
                 colorScheme="cyan"
