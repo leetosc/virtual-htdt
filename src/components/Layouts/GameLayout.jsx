@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box } from "@chakra-ui/react";
-import Hud from "@/components/Hud/Hud";
 
 const GameLayout = (props) => {
   return (
@@ -10,7 +9,6 @@ const GameLayout = (props) => {
         <Box as="main" h="100%" display="flex" flexDir="column">
           {props.children}
         </Box>
-        {/* <Hud /> */}
       </Box>
     </>
   );

@@ -1,37 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 
 export default function Bus() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -66,9 +43,8 @@ export default function Bus() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={15}
-              onTypingDone={() => setTypingDone(true)}
             >
-              It is a short ride and you reach your destination. It's camp!
+              It is a short ride and you reach your destination. It&apos;s camp!
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
