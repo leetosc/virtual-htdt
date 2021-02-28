@@ -94,6 +94,9 @@ export default function StJoseph() {
           </Box>
           <Box w="100%" pt={1}>
             <Text>Good timing! You arrive just in time for Mass!</Text>
+            <Text textColor="gray.800" fontSize="sm" mt={2}>
+              Click the image to see inside.
+            </Text>
             <Button my={2} colorScheme="cyan" onClick={onOpen}>
               Attend Mass
             </Button>
@@ -120,7 +123,13 @@ export default function StJoseph() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="cyan" mr={3} onClick={onClose}>
+            <Button
+              colorScheme="cyan"
+              mr={3}
+              onClick={() => {
+                router.push("/htdt/10-tntt1");
+              }}
+            >
               Go
             </Button>
           </ModalFooter>
