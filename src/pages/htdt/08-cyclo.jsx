@@ -65,7 +65,28 @@ export default function Cyclo() {
               together.
             </Typist>
           </Box>
-          <Box w="100%">Look for clues around the city</Box>
+          <Box w="100%">
+            {appState.locationsVisited.includes("11b-hoankiem") &&
+            appState.locationsVisited.includes("11-pagoda") &&
+            appState.locationsVisited.includes("09-stjoseph") &&
+            appState.locationsVisited.includes("12-dongxuan") ? (
+              <>
+                <Text>
+                  "It looks like you are heading to Sa Pa. I'll take you to the
+                  bus station"
+                </Text>
+                <Button
+                  mt={2}
+                  colorScheme="cyan"
+                  onClick={() => router.push("/htdt/13-hanoibus")}
+                >
+                  Go to bus station
+                </Button>
+              </>
+            ) : (
+              <Text>Look for clues around the city</Text>
+            )}
+          </Box>
           <Box>
             <Text mb={1}>Bạn muốn đi đâu?</Text>
             <Stack>
@@ -92,7 +113,8 @@ export default function Cyclo() {
               </Button>
               <Button
                 colorScheme="cyan"
-                onClick={() => window.alert("not made yet")}
+                isDisabled={appState.locationsVisited.includes("12-dongxuan")}
+                onClick={() => router.push("/htdt/12-dongxuan")}
               >
                 Đồng Xuân Market
               </Button>

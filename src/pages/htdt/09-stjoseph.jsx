@@ -59,8 +59,8 @@ export default function StJoseph() {
             <Image
               src={
                 clickCounter % 2 === 0
-                  ? "/hanoi-cathdral-inside.gif"
-                  : "/hanoi-cathedral.gif"
+                  ? "/hanoi/hanoi-cathdral-inside.gif"
+                  : "/hanoi/hanoi-cathedral.gif"
               }
               maxW="unset"
               maxH="100%"
