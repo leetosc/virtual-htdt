@@ -26,6 +26,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
+import ReactCardFlip from "react-card-flip";
 
 export default function Brochure() {
   const router = useRouter();
@@ -66,7 +67,10 @@ export default function Brochure() {
             ></Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text my={2}>A man on the bus hands you a brochure.</Text>
+            <Text my={2}>
+              A man on the bus hands you a brochure. It looks like there is
+              something on the back, but it doesn't really mean anything to you.
+            </Text>
             <Button
               colorScheme="cyan"
               onClick={() => {

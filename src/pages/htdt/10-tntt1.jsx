@@ -52,7 +52,12 @@ export default function Tntt1() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/hanoi-tntt2.jpg" maxW="unset" h="100%" maxH="100%" />
+            <Image
+              src="/hanoi/hanoi-tntt2.jpg"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 
