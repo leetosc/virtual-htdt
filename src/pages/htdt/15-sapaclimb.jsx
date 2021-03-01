@@ -14,7 +14,6 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  SimpleGrid,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
@@ -37,7 +36,7 @@ import soundbyte11 from "../../../public/sapa/soundbytes/11.m4a";
 import soundbyte12 from "../../../public/sapa/soundbytes/12.m4a";
 import soundbyte13 from "../../../public/sapa/soundbytes/13.m4a";
 
-export default function Brochure() {
+export default function SapaClimb() {
   const router = useRouter();
   const [modalOpened, setModalOpened] = useState(false);
   const [cardFlipped, setCardFlipped] = useState(false);
@@ -375,7 +374,7 @@ export default function Brochure() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/08-cyclo")}
+                  onClick={() => router.push("/htdt/16-mountaintop")}
                 >
                   Arrive at mountaintop
                 </Button>
@@ -385,12 +384,7 @@ export default function Brochure() {
         </Hud>
       </GameLayout>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
+      <Modal isOpen={isOpen} onClose={onClose} size="lg">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Brochure</ModalHeader>
@@ -438,6 +432,8 @@ export default function Brochure() {
               </Box>
             </ReactCardFlip>
           </ModalBody>
+
+          {/* answer: GO TO THE QUEEN OF SAPA AND TELL HER THE CODE WORD ASCENT */}
 
           <ModalFooter>
             <Button colorScheme="gray" mr={3} onClick={onClose}>
