@@ -45,7 +45,7 @@ export default function Cyclo() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/hanoicyclo.jpg"
+              src="/hanoi/hanoicyclo.jpg"
               maxW="unset"
               maxH="100%"
               h="100%"

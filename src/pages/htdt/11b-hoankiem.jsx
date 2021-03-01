@@ -56,8 +56,8 @@ export default function HoanKiem() {
             <Image
               src={
                 clickCounter % 2 === 0
-                  ? "/hanoi-hoankiem2.jpg"
-                  : "/hanoi-hoankiem.jpg"
+                  ? "/hanoi/hanoi-hoankiem2.jpg"
+                  : "/hanoi/hanoi-hoankiem.jpg"
               }
               maxW="unset"
               maxH="100%"

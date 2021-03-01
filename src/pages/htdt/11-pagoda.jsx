@@ -31,7 +31,12 @@ export default function OnePillarPagoda() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/hanoi-pagoda.jpg" maxW="unset" maxH="100%" h="100%" />
+            <Image
+              src="/hanoi/hanoi-pagoda.jpg"
+              maxW="unset"
+              maxH="100%"
+              h="100%"
+            />
           </Box>
         </Box>
 
