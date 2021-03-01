@@ -155,7 +155,7 @@ export default function Tnttkids() {
               showControls
               defaultValue={{ scale: 1, translation: { x: 0, y: 0 } }}
             >
-              <Image src="/hanoi-dongxuanmeat.jpg" maxW="unset" />
+              <Image src="/hanoi/hanoi-dongxuanmeat.jpg" maxW="unset" />
 
               <Box
                 position="absolute"

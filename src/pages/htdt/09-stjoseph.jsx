@@ -119,7 +119,7 @@ export default function StJoseph() {
               During mass you see a bunch of people in TNTT uniforms so you go
               sit with them. After mass they invite you to sinh hoat with them.
             </Text>
-            <Image src="/hanoi-tntt.jpg" maxH="100%" mt={2} />
+            <Image src="/hanoi/hanoi-tntt.jpg" maxH="100%" mt={2} />
           </ModalBody>
 
           <ModalFooter>

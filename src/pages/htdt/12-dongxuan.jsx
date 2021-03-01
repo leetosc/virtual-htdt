@@ -55,8 +55,8 @@ export default function DongXuan() {
             <Image
               src={
                 clickCounter % 2 === 0
-                  ? "/Hanoi-dongxuan1.jpg"
-                  : "/Hanoi-dongxuan2.gif"
+                  ? "/hanoi/Hanoi-dongxuan1.jpg"
+                  : "/hanoi/Hanoi-dongxuan2.gif"
               }
               maxW="unset"
               maxH="100%"
@@ -113,7 +113,12 @@ export default function DongXuan() {
           <ModalHeader>Shopkeeper</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src="/hanoi-dongxuanlady.png" h={32} m={2} float="left" />
+            <Image
+              src="/hanoi/hanoi-dongxuanlady.png"
+              h={32}
+              m={2}
+              float="left"
+            />
             <Text>
               "Uncle Tien was here just a while ago. He was talking to a lady in
               the meat market."

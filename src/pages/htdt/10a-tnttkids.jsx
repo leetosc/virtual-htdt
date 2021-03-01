@@ -41,7 +41,7 @@ export default function Tnttkids() {
 
   const Kid1Component = () => (
     <Box>
-      <Image src="/hanoi-tntt-kid1.png" h={28} m={2} float="left" />
+      <Image src="/hanoi/hanoi-tntt-kid1.png" h={28} m={2} float="left" />
       <Text>
         Do you know why we are wearing pink khăn? In Vietnam, little kids wear
         pink before going to Au Nhi where they wear green.
@@ -54,7 +54,7 @@ export default function Tnttkids() {
 
     return (
       <Box>
-        <Image src="/hanoi-tntt-kid3.png" h={28} m={2} float="left" />
+        <Image src="/hanoi/hanoi-tntt-kid3.png" h={28} m={2} float="left" />
         <Text>
           How many unique <b>chapters</b> of TNTT are there in the USA?
         </Text>
@@ -85,7 +85,7 @@ export default function Tnttkids() {
 
     return (
       <Box>
-        <Image src="/hanoi-tntt-kid5.png" h={28} m={2} float="left" />
+        <Image src="/hanoi/hanoi-tntt-kid5.png" h={28} m={2} float="left" />
         <Text>
           How many unique <b>cities</b> in the USA have TNTT Doans?
         </Text>
@@ -116,7 +116,7 @@ export default function Tnttkids() {
 
     return (
       <Box>
-        <Image src="/hanoi-tntt-kid4.png" h={28} m={2} float="left" />
+        <Image src="/hanoi/hanoi-tntt-kid4.png" h={28} m={2} float="left" />
         <Text>
           How many unique <b>states</b> in the USA have TNTT Doans?
         </Text>
@@ -147,7 +147,7 @@ export default function Tnttkids() {
 
     return (
       <Box>
-        <Image src="/hanoi-tntt-kid2.png" h={28} m={2} float="left" />
+        <Image src="/hanoi/hanoi-tntt-kid2.png" h={28} m={2} float="left" />
         <Text>
           How many total registered members were there in the 2019-2020 school
           year?
@@ -196,7 +196,7 @@ export default function Tnttkids() {
               showControls
               defaultValue={{ scale: 1, translation: { x: 0, y: 0 } }}
             >
-              <Image src="/hanoi-tnttkids.png" maxW="unset" />
+              <Image src="/hanoi/hanoi-tnttkids.png" maxW="unset" />
 
               <Box
                 position="absolute"

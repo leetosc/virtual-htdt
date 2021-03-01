@@ -27,7 +27,7 @@ import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 
-export default function Map() {
+export default function Countryside() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
@@ -50,7 +50,7 @@ export default function Map() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/hanoiToSaPa.png" maxW="unset" h="100%" maxH="100%" />
+            <Image src="/sapa/sapa1.png" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -61,16 +61,30 @@ export default function Map() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You settle in for a long bus ride.
+              Sa Pa is a small mountain town in the Lao Cai province, about 350
+              km (a bit over 200 miles) northwest of Hanoi. It was first home to
+              several different minority groups, including the Hmang, Dao, Tay,
+              Giay, but now it is mainly known for its natural beauty and
+              awe-inspiring landscape.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" pt={4}>
+            <Text>
+              Along the way, you see the beautiful landscape and think of how
+              blessed you are to be able to travel. Before continuing the
+              journey, each person share with your teammates:
+            </Text>
+            <Text fontWeight="semibold">
+              Of the places you have visited or traveled to, which is your
+              favorite?
+            </Text>
+          </Box>
           <Box p={2}>
             {typingDone && (
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/14a-countryside")}
+                  onClick={() => router.push("/htdt/14b-brochure")}
                 >
                   Continue
                 </Button>
