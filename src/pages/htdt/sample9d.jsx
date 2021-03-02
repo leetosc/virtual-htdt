@@ -116,7 +116,7 @@ export default function Sample9d() {
               my={2}
               size="sm"
               colorScheme="cyan"
-              onClick={playKey}
+              // onClick={playKey}
               rightIcon={<AiFillSound />}
             >
               Play
