@@ -25,8 +25,6 @@ import { useAppState } from "@/context/state";
 import { AiFillSound } from "react-icons/ai";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import sound1 from "../../../public/hanoi-onetakenonestay.mp3";
-import useSound from "use-sound";
 import YouTube from "react-youtube";
 
 export default function Sample9b() {
@@ -35,7 +33,6 @@ export default function Sample9b() {
   const [imageClicked, setImageClicked] = useState(false);
   const [clickCounter, setClickCounter] = useState(1);
 
-  const [playKey] = useSound(sound1);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
