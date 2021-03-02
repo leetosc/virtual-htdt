@@ -5134,6 +5134,11 @@ react-typist@^2.0.5:
   dependencies:
     prop-types "^15.5.10"
 
+react-youtube-background@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-youtube-background/-/react-youtube-background-1.0.0.tgz#b9bd4cbc425fdc74c80496f99b0a5b4fb7086814"
+  integrity sha512-EEnpEyPAjUIMi1QJM620r6NdBDHuC7Dg12/B3L8m0mA1hqYDCLOdEq0rjbk9demX7bVXQAU5zuRQ0MXpWoFY+w==
+
 react-youtube@^7.13.1:
   version "7.13.1"
   resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.13.1.tgz#3b327599a687bf22e071468818522920b36bcb57"

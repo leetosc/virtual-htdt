@@ -27,9 +27,10 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
+import { Carousel } from "react-responsive-carousel";
 import ReactCardFlip from "react-card-flip";
 
-export default function Queen() {
+export default function Cabin() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
@@ -57,7 +58,12 @@ export default function Queen() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sapa/queen.jpeg" maxW="unset" h="100%" maxH="100%" />
+            <Image
+              src="/sapa/sapa-cabin.jpg"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 
@@ -68,49 +74,29 @@ export default function Queen() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              "They call me the Queen of Sapa. I'm not actually a queen, I'm
-              just in charge of this village here. Uncle Tien liked to come to
-              my village to get away from the hustle and bustle of city life.
-              Before I tell you any more, I need the code word." <br />
-              <br />
+              It is a nice cozy cabin. Time to rest before continuing your
+              journey.
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text my={2}>What is the code word?</Text>
-            <Input
-              backgroundColor="white"
-              value={puzzleInput}
-              placeholder="Code word"
-              onChange={(e) => setPuzzleInput(e.target.value)}
-            />
             <Button
-              mt={2}
               colorScheme="cyan"
               onClick={() => {
-                if (!puzzleInput.toLowerCase() === "ascent") {
-                  toast({
-                    title: "Wrong",
-                    description: `"Sorry, you will have to leave."`,
-                    status: "warning",
-                    duration: 10000,
-                    isClosable: true,
-                  });
-                  router.push("/htdt/15-sapaclimb");
-                } else {
-                  setPuzzleCorrect(true);
-                }
+                setModalOpened(true);
+                onOpen();
               }}
             >
-              Submit
+              Read the reflection on Sa Pa
             </Button>
+            <Text></Text>
           </Box>
           <Box p={2}>
-            {puzzleCorrect && (
+            {modalOpened && (
               <>
-                <Text my={2}>"Great. I will take you to my village."</Text>
+                <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/17b-peoples")}
+                  onClick={() => router.push("/htdt/18b-activity")}
                 >
                   Continue
                 </Button>
@@ -128,18 +114,32 @@ export default function Queen() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Guide</ModalHeader>
+          <ModalHeader>Reflection</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <Image src="/sapa/guide.png" h={28} m={2} float="left" />
             <Text>
-              Oh, the Queen of Sapa! I know her. I will take you to her.
+              Sa Pa is a very secluded area, at least compared to the rest of
+              the world. They have a difficult time meeting face to face with
+              people outside of their region without ACTIVELY going out of their
+              way to do so. Because of this, everyone who lives in Sa Pa feels
+              like they are in their own big family, even if their heritage,
+              personalities, etc. are very different from one another. <br />{" "}
+              <br />
+              This is very similar to TNTT, in that whenever we go to Thieu Nhi,
+              our problems go away, and we are apart of our own Thieu Nhi
+              family, even if we may come from different backgrounds, we can all
+              bond with each other through our joy and our goal to spread God’s
+              love. This sense of family also allows us to relate to other
+              people who are in different Doans, in that we are sharing our love
+              of Thieu Nhi, as well as our love of God with other people, and we
+              are able to bond with them because of it, even if we live hundreds
+              to even thousands miles away.
             </Text>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="teal" mr={3} onClick={onClose}>
-              Go
+            <Button colorScheme="gray" mr={3} onClick={onClose}>
+              Close
             </Button>
           </ModalFooter>
         </ModalContent>
