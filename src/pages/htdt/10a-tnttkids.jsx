@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
@@ -339,7 +337,7 @@ export default function Tnttkids() {
                 >
                   veym.net
                 </ChakraLink>
-                . You wouldn't want to give these kids the wrong info!
+                . You wouldn&apos;t want to give these kids the wrong info!
               </Text>
             </Typist>
           </Box>
@@ -367,7 +365,7 @@ export default function Tnttkids() {
 
           <Box p={4}>
             {correctAnswers.every((i) => i === true) && (
-              <Text>Great! You have satisfied the kids' curiosity.</Text>
+              <Text>Great! You have satisfied the kids&apos; curiosity.</Text>
             )}
             <Button
               colorScheme="cyan"

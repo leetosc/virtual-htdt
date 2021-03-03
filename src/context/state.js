@@ -2,6 +2,7 @@ import { useState, createContext, useContext } from "react";
 
 const AppContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export function ProvideAppState({ children }) {
   const appState = useProvideState();
   return <AppContext.Provider value={appState}>{children}</AppContext.Provider>;

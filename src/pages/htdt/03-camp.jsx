@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Box, Heading, Text, Button, Image, Input } from "@chakra-ui/react";
+import { Box, Button, Image, Input } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";

@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,19 +16,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 
 export default function Tntt1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const [modalOpened, setModalOpened] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure();
 
   const stateContext = useAppState();
   const { appState } = stateContext;
@@ -73,10 +64,10 @@ export default function Tntt1() {
             >
               One of the HTs comes up to you. <br />
               <br />
-              "Uncle Tien? I know him. He was fond of visiting Sa Pa. You should
-              go there and check it out! You will need a password though. Maybe
-              you can find that in the market, Uncle Tien spent a lot of time
-              there."
+              &quot;Uncle Tien? I know him. He was fond of visiting Sa Pa. You
+              should go there and check it out! You will need a password though.
+              Maybe you can find that in the market, Uncle Tien spent a lot of
+              time there.&quot;
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={2}></Box>

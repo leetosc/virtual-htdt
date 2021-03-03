@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,17 +16,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 
 export default function Tntt1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
   const [modalOpened, setModalOpened] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -72,8 +63,8 @@ export default function Tntt1() {
               Nhi is a family. You can visit any Doan in the country, or the
               world, and feel welcomed and at home.
               <br /> <br />
-              It also makes you remember Tr. Tony's lesson on the history of
-              TNTT in the USA.
+              It also makes you remember Tr. Tony&apos;s lesson on the history
+              of TNTT in the USA.
             </Typist>
             {typingDone && (
               <Button

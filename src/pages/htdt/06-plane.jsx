@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
-  Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,8 +15,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
@@ -62,7 +55,8 @@ export default function Plane() {
               avgTypingDelay={20}
               onTypingDone={() => setTypingDone(true)}
             >
-              What a nice plane. You settle in and see what's showing on the TV.
+              What a nice plane. You settle in and see what&apos;s showing on
+              the TV.
             </Typist>
             {typingDone && (
               <Button

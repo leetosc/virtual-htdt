@@ -1,31 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 
 export default function Map() {
   const router = useRouter();
@@ -66,8 +45,8 @@ export default function Map() {
               onTypingDone={() => setTypingDone(true)}
             >
               You take the plane ticket and head to the airport. Good thing you
-              were already packed and ready for camp, since it looks like you'll
-              be going on a trip!
+              were already packed and ready for camp, since it looks like
+              you&quot;ll be going on a trip!
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>

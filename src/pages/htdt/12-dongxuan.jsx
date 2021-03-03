@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,15 +16,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 
 export default function DongXuan() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
+  const [, setTypingDone] = useState(false);
   const [imageClicked, setImageClicked] = useState(false);
   const [clickCounter, setClickCounter] = useState(1);
 
@@ -120,8 +113,8 @@ export default function DongXuan() {
               float="left"
             />
             <Text>
-              "Uncle Tien was here just a while ago. He was talking to a lady in
-              the meat market."
+              &quot;Uncle Tien was here just a while ago. He was talking to a
+              lady in the meat market.&ouot;
             </Text>
           </ModalBody>
 

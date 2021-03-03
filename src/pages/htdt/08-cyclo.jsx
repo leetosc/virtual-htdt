@@ -1,16 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image, Stack } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
