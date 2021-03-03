@@ -105,6 +105,13 @@ export default function Mountaintop() {
             </Button>
           </Box>
           <Box p={2}>
+            <Button
+              colorScheme="teal"
+              mr={3}
+              onClick={() => router.push("/htdt/15-sapaclimb")}
+            >
+              Go back down the mountain
+            </Button>
             {modalOpened && (
               <>
                 <Button
