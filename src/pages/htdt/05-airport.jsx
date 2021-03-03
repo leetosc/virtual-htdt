@@ -24,12 +24,16 @@ import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Airport() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(true);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   return (
     <>
@@ -85,6 +89,7 @@ export default function Airport() {
                   <Button colorScheme="cyan" onClick={onOpen}>
                     Ho Chi Minh City
                   </Button>
+                  {appState.SHOW_ANSWERS && <ShowAnswerButton answer="hanoi" />}
                 </Stack>
               </>
             )}

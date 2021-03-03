@@ -14,10 +14,12 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  Show,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import { FaPlay, FaStop } from "react-icons/fa";
+import { useAppState } from "@/context/state";
 import Typist from "react-typist";
 import ReactCardFlip from "react-card-flip";
 import useSound from "use-sound";
@@ -35,6 +37,7 @@ import soundbyte10 from "../../../public/sapa/soundbytes/10.m4a";
 import soundbyte11 from "../../../public/sapa/soundbytes/11.m4a";
 import soundbyte12 from "../../../public/sapa/soundbytes/12.m4a";
 import soundbyte13 from "../../../public/sapa/soundbytes/13.m4a";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function SapaClimb() {
   const router = useRouter();
@@ -42,6 +45,9 @@ export default function SapaClimb() {
   const [cardFlipped, setCardFlipped] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   const [
     playSound1,
@@ -368,6 +374,12 @@ export default function SapaClimb() {
             >
               Look at the brochure again
             </Button>
+            {appState.SHOW_ANSWERS && (
+              <>
+                <ShowAnswerButton answer="queen of sapa" />
+                <ShowAnswerButton answer="ascent" />
+              </>
+            )}
           </Box>
           <Box p={2}>
             {modalOpened && (

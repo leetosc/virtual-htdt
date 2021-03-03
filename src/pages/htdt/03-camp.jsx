@@ -7,12 +7,16 @@ import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Camp() {
   const [chiLoanClicked, setChiLoanClicked] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
 
   const [information, setInformation] = useState("");
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   return (
     <GameLayout>
@@ -122,6 +126,7 @@ export default function Camp() {
                 <Button colorScheme="cyan" isDisabled={puzzleInput !== "28"}>
                   Submit
                 </Button>
+                {appState.SHOW_ANSWERS && <ShowAnswerButton answer="28" />}
               </Link>
             </Box>
           )}

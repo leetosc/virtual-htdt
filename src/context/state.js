@@ -17,7 +17,15 @@ function useProvideState() {
   const [inventory, setInventory] = useState([]);
   const [navbarTitle, setNavbarTitle] = useState("Virtual Camp - HTDT");
 
-  const appState = { locations, navbarTitle, locationsVisited, inventory };
+  const SHOW_ANSWERS = true;
+
+  const appState = {
+    locations,
+    navbarTitle,
+    locationsVisited,
+    inventory,
+    SHOW_ANSWERS,
+  };
 
   return {
     appState,

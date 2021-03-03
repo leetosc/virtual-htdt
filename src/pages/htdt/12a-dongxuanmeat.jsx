@@ -29,6 +29,7 @@ import { FaCheck } from "react-icons/fa";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Tnttkids() {
   const router = useRouter();
@@ -299,6 +300,8 @@ export default function Tnttkids() {
                 />
               ) : null
             )}
+
+            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="31" />}
           </Box>
 
           <Box p={4}>
