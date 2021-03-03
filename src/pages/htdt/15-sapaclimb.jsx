@@ -365,6 +365,10 @@ export default function SapaClimb() {
               Figure out who you are looking for. Maybe the brochure the man
               gave you will help.
             </Text>
+            <Text my={3} fontSize="xs">
+              Hint: send the current page URL to each team member to work on the
+              mat thu together.
+            </Text>
             <Button
               colorScheme="cyan"
               onClick={() => {

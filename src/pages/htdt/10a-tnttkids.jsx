@@ -26,6 +26,7 @@ import { FaCheck } from "react-icons/fa";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Tnttkids() {
   const router = useRouter();
@@ -38,6 +39,9 @@ export default function Tnttkids() {
     false,
     false,
   ]);
+
+  const stateContext = useAppState();
+  const { appState } = stateContext;
 
   const Kid1Component = () => (
     <Box>
@@ -356,10 +360,9 @@ export default function Tnttkids() {
               ) : null
             )}
 
-            <Text textColor="red.500">
-              ANSWERS: 19377 registered members, 114 cities, 136 chapters, 35
-              states
-            </Text>
+            {appState.SHOW_ANSWERS && (
+              <ShowAnswerButton answer="19377 members, 14 cities, 136 doan, 35 states" />
+            )}
           </Box>
 
           <Box p={4}>
