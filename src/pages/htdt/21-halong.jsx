@@ -59,12 +59,6 @@ export default function HaLong1() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto" w="100%">
-            {/* <Image
-              src="/sapa/sapa-rice.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            /> */}
             <Box
               // overlay to prevent clicking video
               opacity={0}
