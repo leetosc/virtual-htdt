@@ -23,11 +23,11 @@
     "react-easy-sort": "^0.2.0",
     "react-icons": "^4.1.0",
     "react-map-interaction": "^2.0.0",
+    "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.11",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
     "react-youtube": "^7.13.1",
-    "react-youtube-background": "^1.0.0",
     "use-sound": "^2.0.1"
   },
   "devDependencies": {

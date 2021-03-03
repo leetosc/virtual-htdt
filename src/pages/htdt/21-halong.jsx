@@ -29,8 +29,9 @@ import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import { Carousel } from "react-responsive-carousel";
 import ReactCardFlip from "react-card-flip";
+import ReactPlayer from "react-player";
 
-export default function SapaActivity() {
+export default function HaLong1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
@@ -57,12 +58,30 @@ export default function SapaActivity() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/sapa/sapa-cabin-night.webp"
+          <Box h="100%" position="relative" overflow="auto" w="100%">
+            {/* <Image
+              src="/sapa/sapa-rice.jpg"
               maxW="unset"
               h="100%"
               maxH="100%"
+            /> */}
+            <Box
+              // overlay to prevent clicking video
+              opacity={0}
+              h="100%"
+              w="100%"
+              position="absolute"
+              top={0}
+              left={0}
+            />
+
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=ReDNdewioKs"
+              controls={false}
+              muted={true}
+              playing={true}
+              width="100%"
+              height="100%"
             />
           </Box>
         </Box>
@@ -74,15 +93,26 @@ export default function SapaActivity() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              Complete the team activity.
+              <Text>
+                You arrive at Ha Long Bay. The scenery is breathtaking.
+              </Text>
+              <br />
+              <Text fontSize="sm">
+                The unique beauty of the bay, with its towering limestone
+                karsts, make this a natural wonder worthy of a UNESCO World
+                Heritage listing.
+                <br />
+                <br />
+                There are more than 1,600 islets in the bay, their limestone
+                worn down by 500 million years of tropical downpours, and topped
+                by thick jungle growth. Some of the islands are hollow, and
+                visitors can take guided tours inside to explore majestic caves.
+                Some of the larger islands even have their own lakes.
+              </Text>
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text>
-              As you rest in Sa Pa, take 15 minutes to think about your virtual
-              camp experience with your teammates so far. For each teammate,
-              write one thing that you have learned or appreciate about them.{" "}
-            </Text>
+            <Text>Continue your journey</Text>
           </Box>
           <Box p={2}>
             {typingDone && (
@@ -90,7 +120,7 @@ export default function SapaActivity() {
                 <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/18c-morning")}
+                  onClick={() => router.push("/htdt/19-sapabus")}
                 >
                   Continue
                 </Button>
@@ -108,26 +138,19 @@ export default function SapaActivity() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Reflection</ModalHeader>
+          <ModalHeader>Note</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
             <Text>
-              Sa Pa is a very secluded area, at least compared to the rest of
-              the world. They have a difficult time meeting face to face with
-              people outside of their region without ACTIVELY going out of their
-              way to do so. Because of this, everyone who lives in Sa Pa feels
-              like they are in their own big family, even if their heritage,
-              personalities, etc. are very different from one another. <br />
-              This is very similar to TNTT, in that whenever we go to Thieu Nhi,
-              our problems go away, and we are apart of our own Thieu Nhi
-              family, even if we may come from different backgrounds, we can all
-              bond with each other through our joy and our goal to spread God’s
-              love. This sense of family also allows us to relate to other
-              people who are in different Doans, in that we are sharing our love
-              of Thieu Nhi, as well as our love of God with other people, and we
-              are able to bond with them because of it, even if we live hundreds
-              to even thousands miles away.
+              <Image src="/sapa/fansipan.png" h={48} mb={3} />I was going to
+              leave some clues for you at the top of <b>Fansipan</b> mountain,
+              but since it is the tallest mountain in Southeast Asia at 10,312
+              feet, it might be a tough climb.
+              <br />
+              Instead, you should visit one of the floating villages in Ha Long
+              Bay. I left something for you there.
             </Text>
+            <Text textAlign="right">-Uncle Tien</Text>
           </ModalBody>
 
           <ModalFooter>

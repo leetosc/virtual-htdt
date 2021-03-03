@@ -84,9 +84,8 @@ export default function Map() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/14a-countryside")}
+                  onClick={() => router.push("/htdt/21-halong")}
                 >
-                  {/* TODO: update link */}
                   Continue
                 </Button>
               </>

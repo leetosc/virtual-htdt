@@ -63,8 +63,8 @@ export default function Sapabus() {
               avgTypingDelay={10}
               onTypingDone={() => setTypingDone(true)}
             >
-              It is time to leave. You get back on the bus and depart for Ha
-              Long Bay.
+              It is time to leave. You bid farewell to the villagers, then get
+              back on the bus and depart for Ha Long Bay.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
