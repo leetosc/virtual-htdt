@@ -26,6 +26,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
+import ReactPlayer from "react-player";
 
 export default function Countryside() {
   const router = useRouter();
@@ -49,8 +50,32 @@ export default function Countryside() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sapa/sapa1.png" maxW="unset" h="100%" maxH="100%" />
+          <Box h="100%" position="relative" overflow="auto" w="100%">
+            <Box
+              // overlay to prevent clicking video
+              opacity={0}
+              h="100%"
+              w="100%"
+              position="absolute"
+              top={0}
+              left={0}
+            />
+
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=2_86KFKD1wE"
+              controls={false}
+              muted={true}
+              playing={true}
+              config={{
+                youtube: {
+                  playerVars: {
+                    start: 56,
+                  },
+                },
+              }}
+              width="100%"
+              height="100%"
+            />
           </Box>
         </Box>
 
