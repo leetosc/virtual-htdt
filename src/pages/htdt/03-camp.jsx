@@ -57,9 +57,8 @@ export default function Camp() {
                 }
               }}
               _hover={{
+                border: "2px solid blue",
                 cursor: "pointer",
-                opacity: 0.15,
-                backgroundColor: "gray.900",
               }}
               onTouchEnd={(e) => {
                 if (!e.defaultPrevented) {
@@ -92,9 +91,8 @@ export default function Camp() {
                 }
               }}
               _hover={{
+                border: "2px solid blue",
                 cursor: "pointer",
-                opacity: 0.15,
-                backgroundColor: "gray.900",
               }}
             ></Box>
           </MapInteractionCSS>
@@ -126,8 +124,8 @@ export default function Camp() {
                 <Button colorScheme="cyan" isDisabled={puzzleInput !== "28"}>
                   Submit
                 </Button>
-                {appState.SHOW_ANSWERS && <ShowAnswerButton answer="28" />}
               </Link>
+              {appState.SHOW_ANSWERS && <ShowAnswerButton answer="28" />}
             </Box>
           )}
         </Box>
