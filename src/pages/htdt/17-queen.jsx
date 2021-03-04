@@ -28,6 +28,7 @@ import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactCardFlip from "react-card-flip";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Queen() {
   const router = useRouter();
@@ -38,6 +39,8 @@ export default function Queen() {
   const [puzzleCorrect, setPuzzleCorrect] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+
+  const { appState } = useAppState();
 
   return (
     <>
@@ -103,6 +106,7 @@ export default function Queen() {
             >
               Submit
             </Button>
+            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="ascent" />}
           </Box>
           <Box p={2}>
             {puzzleCorrect && (
