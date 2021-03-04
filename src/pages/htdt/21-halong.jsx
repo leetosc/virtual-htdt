@@ -120,7 +120,7 @@ export default function HaLong1() {
                 <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/19-sapabus")}
+                  onClick={() => router.push("/htdt/22-halong2")}
                 >
                   Continue
                 </Button>
