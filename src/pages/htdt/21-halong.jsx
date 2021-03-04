@@ -40,6 +40,15 @@ export default function HaLong1() {
   const [puzzleCorrect, setPuzzleCorrect] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const [allowContinue, setAllowContinue] = useState(false);
+
+  const { appState } = useAppState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAllowContinue(true);
+    }, 180000);
+  }, []);
 
   return (
     <>
@@ -74,6 +83,8 @@ export default function HaLong1() {
               controls={false}
               muted={true}
               playing={true}
+              playbackRate={1.5}
+              loop={true}
               width="100%"
               height="100%"
             />
@@ -106,10 +117,19 @@ export default function HaLong1() {
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text>Continue your journey</Text>
+            <Text>
+              <Text>
+                The trip from Sa Pa to Ha Long Bay was long, especially on the
+                small mountain roads. You had a lot of free time on your hands.
+              </Text>
+              <Text>Each person share with your teammates:</Text>
+              <Text fontWeight="semibold">
+                What is your favorite pastime when on a long trip?
+              </Text>
+            </Text>
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {allowContinue && (
               <>
                 <Text my={2}></Text>
                 <Button
@@ -119,6 +139,14 @@ export default function HaLong1() {
                   Continue
                 </Button>
               </>
+            )}
+            {appState.SHOW_ANSWERS && (
+              <Button
+                colorScheme="red"
+                onClick={() => router.push("/htdt/22-halong2")}
+              >
+                Continue
+              </Button>
             )}
           </Box>
         </Hud>

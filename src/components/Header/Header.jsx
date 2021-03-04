@@ -17,10 +17,12 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Textarea,
   useDisclosure,
   Icon,
 } from "@chakra-ui/react";
 import { GiLightBackpack } from "react-icons/gi";
+import { TiEdit } from "react-icons/ti";
 import { useAppState } from "@/context/state";
 
 const Header = () => {
@@ -33,8 +35,14 @@ const Header = () => {
     onClose: inventoryOnClose,
   } = useDisclosure();
 
+  const {
+    isOpen: notesOpen,
+    onOpen: notesOnOpen,
+    onClose: notesOnClose,
+  } = useDisclosure();
+
   const stateContext = useAppState();
-  const { appState } = stateContext;
+  const { appState, setUserNotes } = stateContext;
 
   const handleToggle = () => {
     setShow(!show);
@@ -89,65 +97,26 @@ const Header = () => {
             Virtual Camp - HTDT
           </Heading>
         </Flex>
-        <Button
-          variant="ghost"
-          size="sm"
-          display={{ base: "block" }}
-          _hover={{ backgroundColor: "cyan.900" }}
-          onClick={inventoryOnOpen}
-        >
-          <Icon as={GiLightBackpack} h={8} w={8} color="white" />
-          {/* {show ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="white"
-              height="1rem"
-              width="1rem"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <title>Close</title>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={3}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              fill="white"
-              height="1rem"
-              width="1rem"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path
-                d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-                strokeWidth={4}
-              />
-            </svg> 
-          )} */}
-        </Button>
-
-        {/* <Box
-        w={{ base: "100%", md: "auto" }}
-        grow="grow"
-        display={{ base: show ? "flex" : "none", md: "flex" }}
-        justify="flex-end"
-        mt={{ base: 3, md: 0 }}
-        color="teal.50"
-        fontWeight="medium"
-        flexDir={{ base: "column", md: "row" }}
-      >
-        <MenuItem href="/users">Users</MenuItem>
-
-        <>
-          <MenuItem href="/login">Log In</MenuItem>
-          <MenuItem href="/register">Register</MenuItem>
-        </>
-      </Box> */}
+        <Box display="flex">
+          <Button
+            variant="ghost"
+            size="sm"
+            display={{ base: "block" }}
+            _hover={{ backgroundColor: "cyan.900" }}
+            onClick={notesOnOpen}
+          >
+            <Icon as={TiEdit} h={8} w={8} color="white" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            display={{ base: "block" }}
+            _hover={{ backgroundColor: "cyan.900" }}
+            onClick={inventoryOnOpen}
+          >
+            <Icon as={GiLightBackpack} h={8} w={8} color="white" />
+          </Button>
+        </Box>
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -186,6 +155,29 @@ const Header = () => {
 
           <ModalFooter>
             <Button colorScheme="gray" mr={3} onClick={inventoryOnClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={notesOpen} onClose={notesOnClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Notes</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody minH="50vh">
+            <Textarea
+              size="xs"
+              value={appState.userNotes}
+              h="100%"
+              rows={20}
+              onChange={(e) => setUserNotes(e.target.value)}
+            />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="gray" mr={3} onClick={notesOnClose}>
               Close
             </Button>
           </ModalFooter>

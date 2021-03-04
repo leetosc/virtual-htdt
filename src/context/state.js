@@ -17,6 +17,7 @@ function useProvideState() {
   const [locationsVisited, setLocationsVisited] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [navbarTitle, setNavbarTitle] = useState("Virtual Camp - HTDT");
+  const [userNotes, setUserNotes] = useState("");
 
   const SHOW_ANSWERS = true;
 
@@ -26,6 +27,7 @@ function useProvideState() {
     locationsVisited,
     inventory,
     SHOW_ANSWERS,
+    userNotes,
   };
 
   return {
@@ -34,5 +36,6 @@ function useProvideState() {
     setNavbarTitle,
     setLocationsVisited,
     setInventory,
+    setUserNotes,
   };
 }

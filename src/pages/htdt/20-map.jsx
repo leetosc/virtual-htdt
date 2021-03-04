@@ -69,16 +69,7 @@ export default function Map() {
               You settle in for a long bus ride.
             </Typist>
           </Box>
-          <Box w="100%" pt={1}>
-            <Text>
-              The trip from Sa Pa to Ha Long Bay is long, especially on the
-              small mountain roads. You have a lot of free time on your hands.
-            </Text>
-            <Text>Each person share with your teammates:</Text>
-            <Text fontWeight="semibold">
-              What is your favorite pastime when on a long trip?
-            </Text>
-          </Box>
+          <Box w="100%" pt={1}></Box>
           <Box p={2}>
             {typingDone && (
               <>
