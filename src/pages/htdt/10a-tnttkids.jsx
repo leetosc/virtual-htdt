@@ -359,7 +359,7 @@ export default function Tnttkids() {
             )}
 
             {appState.SHOW_ANSWERS && (
-              <ShowAnswerButton answer="19377 members, 14 cities, 136 doan, 35 states" />
+              <ShowAnswerButton answer="19377 members, 114 cities, 136 doan, 35 states" />
             )}
           </Box>
 
