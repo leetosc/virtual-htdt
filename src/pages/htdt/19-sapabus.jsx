@@ -30,7 +30,9 @@ export default function Sapabus() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
+  const [imageClicked, setImageClicked] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
+  const [clickCounter, setClickCounter] = useState(0);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -52,7 +54,21 @@ export default function Sapabus() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sapa/sapa-bus.jpg" maxW="unset" maxH="100%" h="100%" />
+            <Image
+              src={
+                clickCounter % 2 === 0
+                  ? "/sapa/sapa-bus.jpg"
+                  : "/sapa/peterbus.jpg"
+              }
+              maxW="unset"
+              maxH="100%"
+              h="100%"
+              onClick={() => {
+                setClickCounter(clickCounter + 1);
+                setImageClicked(true);
+              }}
+              _hover={{ cursor: "pointer" }}
+            />
           </Box>
         </Box>
 
@@ -67,7 +83,9 @@ export default function Sapabus() {
               back on the bus and depart for Ha Long Bay.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" display="flex" pt={4}>
+            <Text fontSize="sm">Click to see the inside of the bus</Text>
+          </Box>
           <Box p={2}>
             <Button
               colorScheme="cyan"

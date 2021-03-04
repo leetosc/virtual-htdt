@@ -24,6 +24,7 @@ import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 import YouTube from "react-youtube";
 
 export default function Hanoibus() {
@@ -33,6 +34,8 @@ export default function Hanoibus() {
   const [puzzleInput, setPuzzleInput] = useState("");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { appState } = useAppState();
 
   return (
     <>
@@ -84,7 +87,9 @@ export default function Hanoibus() {
               </Button>
             )}
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" display="flex" pt={4}>
+            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="31" />}
+          </Box>
           <Box p={2}>
             {modalOpened && puzzleInput === "31" && (
               <>
