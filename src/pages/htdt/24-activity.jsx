@@ -28,7 +28,7 @@ import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
-export default function HaLongContact() {
+export default function HaLongActivity() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
@@ -53,41 +53,11 @@ export default function HaLongContact() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          {videoEnded ? (
+          
             <Box h="100%" position="relative" overflow="auto">
-              <Image
-                src="/halong/halongphi.jpg"
-                maxW="unset"
-                h="100%"
-                maxH="100%"
-              />
+              <Image src="/placeholder.png" maxW="unset" h="100%" maxH="100%" />
             </Box>
-          ) : (
-            <Box h="100%" position="relative" overflow="auto" w="100%">
-              <Box
-                // overlay to prevent clicking video
-                opacity={0}
-                h="100%"
-                w="100%"
-                position="absolute"
-                top={0}
-                left={0}
-              />
-
-              <ReactPlayer
-                url="https://youtu.be/o0qZiWvFyok"
-                controls={false}
-                muted={true}
-                playing={true}
-                playbackRate={0.75}
-                onEnded={() => {
-                  setVideoEnded(true);
-                }}
-                width="100%"
-                height="100%"
-              />
-            </Box>
-          )}
+          
         </Box>
 
         <Hud>
@@ -97,8 +67,15 @@ export default function HaLongContact() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              Overlooking the bay, you encounter a man standing in the shadows.
+              Follow the instructions to build the boat.
             </Typist>
+          </Box>
+          <Box w="100%" pt={1}>
+            <Text>
+              You arrive at the floating village. The village leader comes out
+              to greet you.
+            </Text>
+            <Text mt={6} fontSize="sm">Open your Care Package and find the envelope marked "HTDT".</Text>
             {videoEnded && typingDone && (
               <Button
                 mt={2}
@@ -108,12 +85,9 @@ export default function HaLongContact() {
                   onOpen();
                 }}
               >
-                Talk to the man
+                Talk to the village leader
               </Button>
             )}
-          </Box>
-          <Box w="100%" pt={1}>
-            <Text>Look for clues from your uncle.</Text>
           </Box>
           <Box p={2}>
             {modalOpened && (
@@ -138,16 +112,17 @@ export default function HaLongContact() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Man in the shadows</ModalHeader>
+          <ModalHeader>Village leader</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <Image src="/halong/halongphi2.png" h={96} m={2} float="left" />
+            <Image src="/halong/halongphi2.png" h={48} m={2} float="left" />
 
-            <Text>"What are you doing here?"</Text>
-            <Text mt={6}>
-              "Oh, you're looking for Uncle Tien? He spent some time at one of
-              the floating villages. I can take you there."
+            <Text>
+              "You're looking for Uncle Tien? He was here recently and left a
+              package on one of the islands. If you want to reach it you will
+              need to build a special boat."
             </Text>
+            <Text mt={6} fontSize="sm">Open your Care Package and find the envelope marked "HTDT".</Text>
           </ModalBody>
 
           <ModalFooter>

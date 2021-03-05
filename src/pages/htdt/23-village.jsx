@@ -28,15 +28,13 @@ import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
-export default function HaLong2() {
+export default function HaLongVillage() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
-
-  const { appState } = useAppState();
 
   return (
     <>
@@ -57,12 +55,7 @@ export default function HaLong2() {
 
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
-              <Image
-                src="/halong/halong1.jpg"
-                maxW="unset"
-                h="100%"
-                maxH="100%"
-              />
+              <Image src="/placeholder.png" maxW="unset" h="100%" maxH="100%" />
             </Box>
           ) : (
             <Box h="100%" position="relative" overflow="auto" w="100%">
@@ -77,11 +70,11 @@ export default function HaLong2() {
               />
 
               <ReactPlayer
-                url="https://youtu.be/gZlKpYCoG88"
+                url="https://youtu.be/o0qZiWvFyok"
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={1}
+                playbackRate={0.75}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}
@@ -99,44 +92,45 @@ export default function HaLong2() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at Ha Long Bay and go out on the water to explore the
-              area. Your guide tells you a bit of folklore about the place.
+              Ha Long Bay is home to many traditional floating villages whose
+              inhabitants live on boats and floating wooden houses in the core
+              zone of Hạ Long bay. Their main livelihood is fishing and
+              aquaculture. Traditionally, each boat in the floating village is a
+              separate household, though the raft or boat always serves more
+              than one function. It is a home, a means of transport, and a
+              source of income. The residents are inextricably linked to their
+              setting, forming an integrated cultural landscape and living
+              tradition.
             </Typist>
-            {videoEnded && (
+          </Box>
+          <Box w="100%" pt={1}>
+            <Text>
+              You arrive at the floating village. The village leader comes out
+              to greet you.
+            </Text>
+            {videoEnded && typingDone && (
               <Button
+                mt={2}
                 colorScheme="cyan"
                 onClick={() => {
                   setModalOpened(true);
                   onOpen();
                 }}
               >
-                Legend of Ha Long Bay
+                Talk to the village leader
               </Button>
             )}
-          </Box>
-          <Box w="100%" pt={1}>
-            <Text>Look for clues from your uncle.</Text>
-            {modalOpened && <Text my={6}>You reach an isle with some people.</Text>}
           </Box>
           <Box p={2}>
             {modalOpened && (
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/22b-contact")}
+                  onClick={() => router.push("/htdt/22c-boat")}
                 >
-                  Continue to the isle
+                  Build the boat
                 </Button>
               </>
-            )}
-
-            {appState.SHOW_ANSWERS && (
-              <Button
-                colorScheme="red"
-                onClick={() => router.push("/htdt/22b-contact")}
-              >
-                Continue
-              </Button>
             )}
           </Box>
         </Hud>
@@ -150,36 +144,17 @@ export default function HaLong2() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Legend of Ha Long Bay</ModalHeader>
+          <ModalHeader>Village leader</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
+            <Image src="/halong/halongphi2.png" h={48} m={2} float="left" />
+
             <Text>
-              Legend says that long ago, when the country was newly formed, the
-              Vietnamese forefathers had to fight against fierce invaders coming
-              from the North by sea. <br />
-              <br />
-              The gods from the heavens watched on before sending the Mother
-              Dragon and her children to help the ancient Vietnamese people to
-              defend their country. <br />
-              <br />
-              The dragons descended upon the earth, incinerated the invaders and
-              spat jewels of emerald and jade that upon hitting the land, turned
-              into great islands and islets that formed invincible defensive
-              walls that the invaders could not overcome. The enemies fled and
-              peace finally returned to this Southeast Asian country. <br />
-              <br />
-              After the battle, The Mother Dragon and her children did not
-              return to the heavens, but stayed in the mortal world. To this
-              day, the dragons lay on the lands they helped protect. The seas
-              rose but it is the dragons that form the bays iconic mountainous
-              landscape. <br />
-              <br />
-              The dragon children lay on the lands that are known as Bai Tu Long
-              which literally means ‘Thanks to the Dragon children’ and their
-              tails form the area of Bach Long Vi. The great Mother Dragon forms
-              Ha Long Bay, which literally translates as ‘Descending Dragon
-              Bay’.
+              "You're looking for Uncle Tien? He was here recently and left a
+              package on one of the islands. If you want to reach it you will
+              need to build a special boat."
             </Text>
+          
           </ModalBody>
 
           <ModalFooter>
