@@ -39,7 +39,7 @@ export default function Camp() {
             showControls
             defaultValue={{ scale: 0.8, translation: { x: -250, y: -150 } }}
           >
-            <Image src="/sample1.jpg" maxW="unset" />
+            <Image src="/camphts.jpg" maxW="unset" />
 
             <Box
               position="absolute"

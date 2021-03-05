@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
@@ -17,7 +15,6 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Link as ChakraLink,
   Icon,
   UnorderedList,
   ListItem,
@@ -87,7 +84,8 @@ export default function DongXuanMarket() {
       <Box>
         <Image src="/hanoi/hanoi-dongxuanmeat2.png" h={28} m={3} float="left" />
         <Text>
-          "Hey, are you Uncle Tien's cháu? Here is the meat he ordered."
+          &quot;Hey, are you Uncle Tien&apos;s cháu? Here is the meat he
+          ordered.&quot;
         </Text>
         <UnorderedList listStylePosition="inside">
           <ListItem>5kg Beef</ListItem>
@@ -96,8 +94,8 @@ export default function DongXuanMarket() {
           <ListItem>1kg Pate</ListItem>
         </UnorderedList>
         <Text my={2}>
-          "When you get on the bus, tell the driver how many pounds of meat you
-          got."
+          &quot;When you get on the bus, tell the driver how many pounds of meat
+          you got.&quot;
         </Text>
         <Text fontSize="sm">
           Let me make sure you got it right. How much does it weigh? Round to

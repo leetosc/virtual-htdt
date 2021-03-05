@@ -1,43 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image, Input, useToast } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import ReactCardFlip from "react-card-flip";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Queen() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
 
   const [puzzleInput, setPuzzleInput] = useState("");
   const [puzzleCorrect, setPuzzleCorrect] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
   const { appState } = useAppState();
@@ -69,12 +44,12 @@ export default function Queen() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
-              "They call me the Queen of Sapa. I'm not actually a queen, I'm
-              just in charge of this village here. Uncle Tien liked to come to
-              my village to get away from the hustle and bustle of city life.
-              Before I tell you any more, I need the code word." <br />
+              &quot;They call me the Queen of Sapa. I&apos;m not actually a
+              queen, I&apos;m just in charge of this village here. Uncle Tien
+              liked to come to my village to get away from the hustle and bustle
+              of city life. Before I tell you any more, I need the code
+              word.&quot; <br />
               <br />
             </Typist>
           </Box>
@@ -111,7 +86,9 @@ export default function Queen() {
           <Box p={2}>
             {puzzleCorrect && (
               <>
-                <Text my={2}>"Great. I will take you to my village."</Text>
+                <Text my={2}>
+                  &quot;Great. I will take you to my village.&quot;
+                </Text>
                 <Button
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/17b-peoples")}
@@ -123,31 +100,6 @@ export default function Queen() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Guide</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody overflow="auto" maxH="100%">
-            <Image src="/sapa/guide.png" h={28} m={2} float="left" />
-            <Text>
-              Oh, the Queen of Sapa! I know her. I will take you to her.
-            </Text>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="teal" mr={3} onClick={onClose}>
-              Go
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

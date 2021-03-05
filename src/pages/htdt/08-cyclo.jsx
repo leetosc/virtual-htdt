@@ -63,8 +63,8 @@ export default function Cyclo() {
             appState.locationsVisited.includes("12-dongxuan") ? (
               <>
                 <Text>
-                  "It looks like you are heading to Sa Pa. I'll take you to the
-                  bus station"
+                  &quot;It looks like you are heading to Sa Pa. I&apos;ll take
+                  you to the bus station&quot;
                 </Text>
                 <Button
                   mt={2}

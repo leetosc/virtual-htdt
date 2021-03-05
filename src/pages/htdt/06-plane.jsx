@@ -44,7 +44,7 @@ export default function Plane() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/sample3.png" maxW="unset" maxH="100%" h="100%" />
+            <Image src="/planeinside.png" maxW="unset" maxH="100%" h="100%" />
           </Box>
         </Box>
 

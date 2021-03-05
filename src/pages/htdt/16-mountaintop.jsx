@@ -25,8 +25,6 @@ import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Mountaintop() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
 
   const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -66,14 +64,13 @@ export default function Mountaintop() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               You reach the mountaintop. It is a beautiful view. <br />
               <br />
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text my={2}>"Who are you looking for?"</Text>
+            <Text my={2}>&quot;Who are you looking for?&quot;</Text>
             <Input
               backgroundColor="white"
               value={puzzleInput}
@@ -111,16 +108,6 @@ export default function Mountaintop() {
             >
               Go back down the mountain
             </Button>
-            {modalOpened && (
-              <>
-                <Button
-                  colorScheme="cyan"
-                  onClick={() => router.push("/htdt/15-sapaclimb")}
-                >
-                  Continue
-                </Button>
-              </>
-            )}
           </Box>
         </Hud>
       </GameLayout>
