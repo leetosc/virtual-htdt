@@ -230,19 +230,25 @@ export default function Tnttkids() {
                 width="13.59%"
                 height="40.62%"
                 _hover={{
-                  border: "2px solid blue",
+                  border: correctAnswers[0]
+                    ? "2px solid green"
+                    : "2px solid blue",
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(2);
-                    onOpen();
+                  if (!correctAnswers[0]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(2);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(2);
-                    onOpen();
+                  if (!correctAnswers[0]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(2);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -254,18 +260,24 @@ export default function Tnttkids() {
                 height="31.93%"
                 _hover={{
                   cursor: "pointer",
-                  border: "2px solid blue",
+                  border: correctAnswers[1]
+                    ? "2px solid green"
+                    : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(3);
-                    onOpen();
+                  if (!correctAnswers[1]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(3);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(3);
-                    onOpen();
+                  if (!correctAnswers[1]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(3);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -277,18 +289,24 @@ export default function Tnttkids() {
                 height="31.93%"
                 _hover={{
                   cursor: "pointer",
-                  border: "2px solid blue",
+                  border: correctAnswers[2]
+                    ? "2px solid green"
+                    : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(4);
-                    onOpen();
+                  if (!correctAnswers[2]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(4);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(4);
-                    onOpen();
+                  if (!correctAnswers[2]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(4);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -300,18 +318,24 @@ export default function Tnttkids() {
                 height="47.34%"
                 _hover={{
                   cursor: "pointer",
-                  border: "2px solid blue",
+                  border: correctAnswers[3]
+                    ? "2px solid green"
+                    : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(5);
-                    onOpen();
+                  if (!correctAnswers[3]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(5);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(5);
-                    onOpen();
+                  if (!correctAnswers[3]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(5);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
