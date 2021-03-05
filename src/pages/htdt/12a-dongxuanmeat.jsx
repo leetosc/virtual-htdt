@@ -31,7 +31,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
-export default function Tnttkids() {
+export default function DongXuanMarket() {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
