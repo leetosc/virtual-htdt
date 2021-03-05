@@ -36,6 +36,8 @@ export default function HaLongVillage() {
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
 
+  const { appState } = useAppState();
+
   return (
     <>
       <GameLayout>
@@ -55,7 +57,12 @@ export default function HaLongVillage() {
 
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
-              <Image src="/placeholder.png" maxW="unset" h="100%" maxH="100%" />
+              <Image
+                src="/halong/floatingvillage.jpg"
+                maxW="unset"
+                h="100%"
+                maxH="100%"
+              />
             </Box>
           ) : (
             <Box h="100%" position="relative" overflow="auto" w="100%">
@@ -70,13 +77,20 @@ export default function HaLongVillage() {
               />
 
               <ReactPlayer
-                url="https://youtu.be/o0qZiWvFyok"
+                url="https://youtu.be/MCgSduvi0s8"
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={0.75}
+                playbackRate={1.75}
                 onEnded={() => {
                   setVideoEnded(true);
+                }}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      start: 30,
+                    },
+                  },
                 }}
                 width="100%"
                 height="100%"
@@ -89,7 +103,7 @@ export default function HaLongVillage() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={5}
+              avgTypingDelay={15}
               onTypingDone={() => setTypingDone(true)}
             >
               Ha Long Bay is home to many traditional floating villages whose
@@ -126,7 +140,17 @@ export default function HaLongVillage() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/22c-boat")}
+                  onClick={() => router.push("/htdt/24-activity")}
+                >
+                  Build the boat
+                </Button>
+              </>
+            )}
+            {appState.SHOW_ANSWERS && (
+              <>
+                <Button
+                  colorScheme="red"
+                  onClick={() => router.push("/htdt/24-activity")}
                 >
                   Build the boat
                 </Button>
@@ -147,14 +171,13 @@ export default function HaLongVillage() {
           <ModalHeader>Village leader</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <Image src="/halong/halongphi2.png" h={48} m={2} float="left" />
+            <Image src="/halong/villager.png" h={48} m={2} float="left" />
 
             <Text>
               "You're looking for Uncle Tien? He was here recently and left a
               package on one of the islands. If you want to reach it you will
               need to build a special boat."
             </Text>
-          
           </ModalBody>
 
           <ModalFooter>

@@ -56,7 +56,7 @@ export default function HaLongBoat() {
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
               <Image
-                src="/placeholder.png"
+                src="/halong/halongkhoa.png"
                 maxW="unset"
                 h="100%"
                 maxH="100%"
@@ -75,11 +75,11 @@ export default function HaLongBoat() {
               />
 
               <ReactPlayer
-                url="https://youtu.be/o0qZiWvFyok"
+                url="https://youtu.be/qWW-WGbHySA"
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={0.75}
+                playbackRate={1.5}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}
@@ -97,9 +97,9 @@ export default function HaLongBoat() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              The man takes you onto a boat and heads out into the bay.  
+              The man takes you onto a boat and you head out into the bay.
             </Typist>
-            {videoEnded && typingDone && (
+            {/* {videoEnded && typingDone && (
               <Button
                 colorScheme="cyan"
                 onClick={() => {
@@ -109,17 +109,17 @@ export default function HaLongBoat() {
               >
                 Talk to the man
               </Button>
-            )}
+            )} */}
           </Box>
           <Box w="100%" pt={1}>
             <Text>ddd</Text>
           </Box>
           <Box p={2}>
-            {modalOpened && (
+            {typingDone && (
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/21-halong")}
+                  onClick={() => router.push("/htdt/23-village")}
                 >
                   Continue
                 </Button>

@@ -53,11 +53,14 @@ export default function HaLongActivity() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          
-            <Box h="100%" position="relative" overflow="auto">
-              <Image src="/placeholder.png" maxW="unset" h="100%" maxH="100%" />
-            </Box>
-          
+          <Box h="100%" position="relative" overflow="auto">
+            <Image
+              src="/halong/fruitboat.jpg"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
+          </Box>
         </Box>
 
         <Hud>
@@ -71,11 +74,9 @@ export default function HaLongActivity() {
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
-            <Text>
-              You arrive at the floating village. The village leader comes out
-              to greet you.
+            <Text mt={3} fontSize="sm">
+              Open your Care Package and find the envelope marked "HTDT".
             </Text>
-            <Text mt={6} fontSize="sm">Open your Care Package and find the envelope marked "HTDT".</Text>
             {videoEnded && typingDone && (
               <Button
                 mt={2}
@@ -122,7 +123,9 @@ export default function HaLongActivity() {
               package on one of the islands. If you want to reach it you will
               need to build a special boat."
             </Text>
-            <Text mt={6} fontSize="sm">Open your Care Package and find the envelope marked "HTDT".</Text>
+            <Text mt={6} fontSize="sm">
+              Open your Care Package and find the envelope marked "HTDT".
+            </Text>
           </ModalBody>
 
           <ModalFooter>

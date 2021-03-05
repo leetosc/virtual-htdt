@@ -58,7 +58,7 @@ export default function HaLong2() {
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
               <Image
-                src="/halong/halong1.jpg"
+                src="/halong/kayak.jpg"
                 maxW="unset"
                 h="100%"
                 maxH="100%"
@@ -100,23 +100,35 @@ export default function HaLong2() {
               onTypingDone={() => setTypingDone(true)}
             >
               You arrive at Ha Long Bay and go out on the water to explore the
-              area. Your guide tells you a bit of folklore about the place.
+              area.
             </Typist>
             {videoEnded && (
-              <Button
-                colorScheme="cyan"
-                onClick={() => {
-                  setModalOpened(true);
-                  onOpen();
-                }}
-              >
-                Legend of Ha Long Bay
-              </Button>
+              <>
+                <Text mt={3}>
+                  The person paddling your kayak turns out to be none other than
+                  Tr. Tam! She and her family proceed to tell you a bit of
+                  folklore about the region.
+                </Text>
+                <Button
+                  colorScheme="cyan"
+                  onClick={() => {
+                    setModalOpened(true);
+                    onOpen();
+                  }}
+                  mt={2}
+                >
+                  Legend of Ha Long Bay
+                </Button>
+              </>
             )}
           </Box>
           <Box w="100%" pt={1}>
-            <Text>Look for clues from your uncle.</Text>
-            {modalOpened && <Text my={6}>You reach an isle with some people.</Text>}
+            {modalOpened && (
+              <Text my={2}>
+                By the time she finishes her story, you reach an isle that looks
+                like a good place to rest after all the rowing.
+              </Text>
+            )}
           </Box>
           <Box p={2}>
             {modalOpened && (
@@ -153,8 +165,9 @@ export default function HaLong2() {
           <ModalHeader>Legend of Ha Long Bay</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
+            <Image src="/halong/tamhong.png" h={32} m={2} float="left" />
             <Text>
-              Legend says that long ago, when the country was newly formed, the
+              "Legend says that long ago, when the country was newly formed, the
               Vietnamese forefathers had to fight against fierce invaders coming
               from the North by sea. <br />
               <br />
@@ -178,7 +191,7 @@ export default function HaLong2() {
               which literally means ‘Thanks to the Dragon children’ and their
               tails form the area of Bach Long Vi. The great Mother Dragon forms
               Ha Long Bay, which literally translates as ‘Descending Dragon
-              Bay’.
+              Bay’".
             </Text>
           </ModalBody>
 
