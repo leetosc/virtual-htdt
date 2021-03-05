@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
   Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -21,13 +18,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import ReactCardFlip from "react-card-flip";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function Mountaintop() {
   const router = useRouter();
@@ -37,6 +31,8 @@ export default function Mountaintop() {
   const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+
+  const { appState } = useAppState();
 
   return (
     <>
@@ -103,6 +99,9 @@ export default function Mountaintop() {
             >
               Submit
             </Button>
+            {appState.SHOW_ANSWERS && (
+              <ShowAnswerButton answer="queen of sapa" />
+            )}
           </Box>
           <Box p={2}>
             <Button

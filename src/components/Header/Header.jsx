@@ -171,6 +171,7 @@ const Header = () => {
               size="xs"
               value={appState.userNotes}
               h="100%"
+              placeholder="Jot down any notes here"
               rows={20}
               onChange={(e) => setUserNotes(e.target.value)}
             />

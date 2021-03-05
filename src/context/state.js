@@ -19,7 +19,7 @@ function useProvideState() {
   const [navbarTitle, setNavbarTitle] = useState("Virtual Camp - HTDT");
   const [userNotes, setUserNotes] = useState("");
 
-  const SHOW_ANSWERS = true;
+  const SHOW_ANSWERS = userNotes.toLowerCase() === "i am a huynh truong";
 
   const appState = {
     locations,
