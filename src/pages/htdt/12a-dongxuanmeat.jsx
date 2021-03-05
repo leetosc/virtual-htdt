@@ -165,25 +165,31 @@ export default function DongXuanMarket() {
                 width="17.19%"
                 height="50.59%"
                 _hover={{
-                  border: "2px solid blue",
+                  border: personClicked[0]
+                    ? "2px solid green"
+                    : "2px solid blue",
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(1);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[0] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[0]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(1);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[0] = true;
+                      setPersonClicked(newPersonClicked);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(1);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[0] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[0]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(1);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[0] = true;
+                      setPersonClicked(newPersonClicked);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -194,25 +200,31 @@ export default function DongXuanMarket() {
                 width="7.94%"
                 height="20.7%"
                 _hover={{
-                  border: "2px solid blue",
+                  border: personClicked[1]
+                    ? "2px solid green"
+                    : "2px solid blue",
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(2);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[1] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[1]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(2);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[1] = true;
+                      setPersonClicked(newPersonClicked);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(2);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[1] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[1]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(2);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[1] = true;
+                      setPersonClicked(newPersonClicked);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -224,24 +236,32 @@ export default function DongXuanMarket() {
                 height="15.23%"
                 _hover={{
                   cursor: "pointer",
-                  border: "2px solid blue",
+                  border: personClicked[2]
+                    ? "2px solid green"
+                    : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(3);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[2] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[2]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(3);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[2] = true;
+                      setPersonClicked(newPersonClicked);
+
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(3);
-                    const newPersonClicked = [...personClicked];
-                    newPersonClicked[2] = true;
-                    setPersonClicked(newPersonClicked);
-                    onOpen();
+                  if (!personClicked[2]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(3);
+                      const newPersonClicked = [...personClicked];
+                      newPersonClicked[2] = true;
+                      setPersonClicked(newPersonClicked);
+
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
@@ -253,20 +273,24 @@ export default function DongXuanMarket() {
                 height="40.82%"
                 _hover={{
                   cursor: "pointer",
-                  border: "2px solid blue",
+                  border: personClicked[3]
+                    ? "2px solid green"
+                    : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(4);
-
-                    onOpen();
+                  if (!personClicked[3]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(4);
+                      onOpen();
+                    }
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!e.defaultPrevented) {
-                    setCurrentKid(4);
-
-                    onOpen();
+                  if (!personClicked[3]) {
+                    if (!e.defaultPrevented) {
+                      setCurrentKid(4);
+                      onOpen();
+                    }
                   }
                 }}
               ></Box>
