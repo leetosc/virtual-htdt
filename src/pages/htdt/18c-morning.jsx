@@ -93,7 +93,7 @@ export default function SapaMorning() {
             <Text>Continue your journey</Text>
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {modalOpened && (
               <>
                 <Text my={2}></Text>
                 <Button

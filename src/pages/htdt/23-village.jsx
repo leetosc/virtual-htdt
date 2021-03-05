@@ -35,8 +35,15 @@ export default function HaLongVillage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [allowContinue, setAllowContinue] = useState(false);
 
   const { appState } = useAppState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAllowContinue(true);
+    }, 50);
+  }, []);
 
   return (
     <>
@@ -81,14 +88,14 @@ export default function HaLongVillage() {
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={1.75}
+                playbackRate={1.5}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}
                 config={{
                   youtube: {
                     playerVars: {
-                      start: 30,
+                      start: 50,
                     },
                   },
                 }}
@@ -122,7 +129,7 @@ export default function HaLongVillage() {
               You arrive at the floating village. The village leader comes out
               to greet you.
             </Text>
-            {videoEnded && typingDone && (
+            {allowContinue && typingDone && (
               <Button
                 mt={2}
                 colorScheme="cyan"

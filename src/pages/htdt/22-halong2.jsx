@@ -81,7 +81,7 @@ export default function HaLong2() {
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={1}
+                playbackRate={1.25}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}

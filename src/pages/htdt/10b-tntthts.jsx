@@ -19,6 +19,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ReactPlayer from "react-player";
 
 export default function Tntt1() {
   const router = useRouter();
@@ -45,12 +46,33 @@ export default function Tntt1() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/hanoi/hanoi-tntt3.jpg"
-              maxW="unset"
+          <Box h="100%" position="relative" overflow="auto" w="100%">
+            <Box
+              // overlay to prevent clicking video
+              opacity={0}
               h="100%"
-              maxH="100%"
+              w="100%"
+              position="absolute"
+              top={0}
+              left={0}
+            />
+
+            <ReactPlayer
+              url="https://youtu.be/xao5thOUCvo"
+              controls={false}
+              muted={true}
+              playing={true}
+              playbackRate={1.25}
+              loop={true}
+              config={{
+                youtube: {
+                  playerVars: {
+                    start: 10,
+                  },
+                },
+              }}
+              width="100%"
+              height="100%"
             />
           </Box>
         </Box>

@@ -3,9 +3,12 @@ import Head from "next/head";
 import { Box, Text, Button } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
+import { useAppState } from "@/context/state";
 
 export default function Landing() {
   const [typingDone, setTypingDone] = useState(false);
+
+  const { appState } = useAppState();
   return (
     <Box
       w="100%"
@@ -37,10 +40,13 @@ export default function Landing() {
           <br />
           Note: This site is best viewed on a desktop.
           <Text fontWeight="semibold">
-            One person on your team will be the <b>main</b> player. The main
-            player can share the URL of the page they are on to the rest of the
-            team to help find clues or solve puzzles, but should only navigate
-            using the buttons on the page.
+            One person on your team will be the <b>main</b> player.
+            <br />
+            The main player will share their screen in the team Discord channel.
+            <br />
+            When needed, the main player can share the URL of the page they are
+            on to the rest of the team to help find clues or solve puzzles, but
+            the main player should only navigate using the buttons on the page.
           </Text>
           <Text fontWeight="bold" my={2}>
             Main player: Do NOT refresh the page or go back and forth using the
@@ -55,6 +61,18 @@ export default function Landing() {
           <Link href="/storyline/introduction">
             <Button
               colorScheme="cyan"
+              textTransform="uppercase"
+              size="lg"
+              mt={4}
+            >
+              Start
+            </Button>
+          </Link>
+        )}
+        {appState.SHOW_ANSWERS && (
+          <Link href="/storyline/introduction">
+            <Button
+              colorScheme="red"
               textTransform="uppercase"
               size="lg"
               mt={4}

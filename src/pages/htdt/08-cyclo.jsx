@@ -77,6 +77,15 @@ export default function Cyclo() {
             ) : (
               <Text>Look for clues around the city</Text>
             )}
+            {appState.SHOW_ANSWERS && (
+              <Button
+                mt={2}
+                colorScheme="red"
+                onClick={() => router.push("/htdt/13-hanoibus")}
+              >
+                Go to bus station
+              </Button>
+            )}
           </Box>
           <Box>
             <Text mb={1}>Bạn muốn đi đâu?</Text>

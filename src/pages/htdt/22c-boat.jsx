@@ -94,7 +94,7 @@ export default function HaLongBoat() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={5}
+              avgTypingDelay={25}
               onTypingDone={() => setTypingDone(true)}
             >
               The man takes you onto a boat and you head out into the bay.
@@ -112,10 +112,10 @@ export default function HaLongBoat() {
             )} */}
           </Box>
           <Box w="100%" pt={1}>
-            <Text>ddd</Text>
+            <Text></Text>
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {videoEnded && (
               <>
                 <Button
                   colorScheme="cyan"

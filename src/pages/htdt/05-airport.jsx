@@ -86,12 +86,13 @@ export default function Airport() {
                   <Button colorScheme="cyan" onClick={onOpen}>
                     Ho Chi Minh City
                   </Button>
-                  {appState.SHOW_ANSWERS && <ShowAnswerButton answer="hanoi" />}
                 </Stack>
               </>
             )}
           </Box>
           <Box p={2}>
+            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="hanoi" />}
+
             <Link href="/htdt/03-camp">
               <Button colorScheme="cyan">Back to camp</Button>
             </Link>

@@ -4,9 +4,11 @@ import { Box, Heading, Text, Button, Icon } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 import { GiCook } from "react-icons/gi";
+import { useAppState } from "@/context/state";
 
 export default function Introduction() {
-  const [typingDone, setTypingDone] = useState(true);
+  const [typingDone, setTypingDone] = useState(false);
+  const { appState } = useAppState();
   return (
     <Box
       w="100%"
@@ -63,6 +65,20 @@ export default function Introduction() {
           <Link href="/htdt/01-hvmcc">
             <Button
               colorScheme="cyan"
+              textTransform="uppercase"
+              size="lg"
+              mt={4}
+            >
+              {typingDone
+                ? `Go to first location`
+                : `Skip and Go to first location`}
+            </Button>
+          </Link>
+        )}
+        {appState.SHOW_ANSWERS && (
+          <Link href="/htdt/01-hvmcc">
+            <Button
+              colorScheme="red"
               textTransform="uppercase"
               size="lg"
               mt={4}
