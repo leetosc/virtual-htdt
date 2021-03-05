@@ -32,6 +32,7 @@ export default function Brochure() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
+  const [cardFlipped, setCardFlipped] = useState(false);
 
   const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -69,7 +70,8 @@ export default function Brochure() {
           <Box w="100%" pt={2}>
             <Text my={2}>
               A man on the bus hands you a brochure. It looks like there is
-              something on the back, but it doesn't really mean anything to you.
+              something written at the bottom, but it doesn't really mean
+              anything to you.
             </Text>
             <Button
               colorScheme="cyan"
@@ -96,33 +98,34 @@ export default function Brochure() {
         </Hud>
       </GameLayout>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
+      <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent minW="50vw">
           <ModalHeader>Brochure</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            {/* <Image src="/trtony.png" h={28} m={2} float="left" /> */}
-            <Text>
-              History of Sa Pa: Originally, Sa Pa was inhabited by an unknown
-              group of people, but experts believe those people left around the
-              15th century. Then, the Hmong and Yao people came, along with the
-              Giay and Tay, all of whom still live in the Sa Pa province today.
-              When the French found this area in the late 1880s, Sa Pa began to
-              be put on maps. From here until the 1960s, a series of wars and
-              conflicts started to plague the region, many buildings were
-              destroyed and many people were forced to flee. However, by the
-              early 1960s, the new migration schemes set up by the new Socialist
-              regime started to have more inhabitants migrate to Sa Pa. By 1993,
-              the decision was made to open up tourism to Sa Pa, and became an
-              extremely popular tourist destination in Vietnam, what it is
-              primarily known for today.
-            </Text>
+            <ModalBody overflow="auto" maxH="100%">
+              <Text textColor="blue.800" fontWeight="bold" mb={3}>
+                Click to flip
+              </Text>
+              <ReactCardFlip isFlipped={cardFlipped} flipDirection="horizontal">
+                <Box
+                  onClick={() => setCardFlipped(!cardFlipped)}
+                  _hover={{ cursor: "pointer" }}
+                  minH={64}
+                >
+                  <Image src="/sapa/brochure1.png" />
+                </Box>
+
+                <Box
+                  onClick={() => setCardFlipped(!cardFlipped)}
+                  _hover={{ cursor: "pointer" }}
+                  minH={64}
+                >
+                  <Image src="/sapa/brochure2.png" />
+                </Box>
+              </ReactCardFlip>
+            </ModalBody>
           </ModalBody>
 
           <ModalFooter>

@@ -362,8 +362,8 @@ export default function SapaClimb() {
           </Box>
           <Box w="100%" pt={1}>
             <Text my={2}>
-              Figure out who you are looking for. Maybe the brochure the man
-              gave you will help.
+              Figure out who you are looking for. Maybe the writing at the
+              bottom of the brochure the man gave you will help.
             </Text>
             <Text my={3} fontSize="xs">
               Hint: send the current page URL to each team member to work on the
@@ -402,54 +402,19 @@ export default function SapaClimb() {
 
       <Modal isOpen={isOpen} onClose={onClose} size="lg">
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent minW="50vw">
           <ModalHeader>Brochure</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <ReactCardFlip isFlipped={cardFlipped} flipDirection="horizontal">
-              <Box
-                onClick={() => setCardFlipped(!cardFlipped)}
-                _hover={{ cursor: "pointer" }}
-                h={64}
-              >
-                <Text textColor="blue.800" fontWeight="bold" mb={3}>
-                  Click to flip
-                </Text>
-                <Text>
-                  History of Sa Pa: Originally, Sa Pa was inhabited by an
-                  unknown group of people, but experts believe those people left
-                  around the 15th century. Then, the Hmong and Yao people came,
-                  along with the Giay and Tay, all of whom still live in the Sa
-                  Pa province today. When the French found this area in the late
-                  1880s, Sa Pa began to be put on maps. From here until the
-                  1960s, a series of wars and conflicts started to plague the
-                  region, many buildings were destroyed and many people were
-                  forced to flee. However, by the early 1960s, the new migration
-                  schemes set up by the new Socialist regime started to have
-                  more inhabitants migrate to Sa Pa. By 1993, the decision was
-                  made to open up tourism to Sa Pa, and became an extremely
-                  popular tourist destination in Vietnam, what it is primarily
-                  known for today.
-                </Text>
-              </Box>
-
-              <Box
-                onClick={() => setCardFlipped(!cardFlipped)}
-                _hover={{ cursor: "pointer" }}
-                h={64}
-              >
-                <Text fontSize="lg" fontWeight="semibold" mt={6}>
-                  UYWYWNVFGVVHYQZXLXXHRWVPPNVDWNVJYRVTYDRXZJVHW
-                </Text>
-                <Text fontSize="sm" my={2}>
-                  Solve the sound-bytes for the correct Letter Substitution
-                </Text>
-                <Text my={2}>Hint: Hiking is very TIME-consuming</Text>
-              </Box>
-            </ReactCardFlip>
+            <Image src="/sapa/brochure2.png" />
+            <Text fontSize="lg" fontWeight="semibold" mt={6}>
+              UYWYWNVFGVVHYQZXLXXHRWVPPNVDWNVJYRVTYDRXZJVHW
+            </Text>
+            <Text fontSize="sm" my={2}>
+              Solve the sound-bytes for the correct Letter Substitution
+            </Text>
+            <Text my={2}>Hint: Hiking is very TIME-consuming</Text>
           </ModalBody>
-
-          {/* answer: GO TO THE QUEEN OF SAPA AND TELL HER THE CODE WORD ASCENT */}
 
           <ModalFooter>
             <Button colorScheme="gray" mr={3} onClick={onClose}>
