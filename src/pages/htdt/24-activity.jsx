@@ -27,6 +27,7 @@ import Typist from "react-typist";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function HaLongActivity() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function HaLongActivity() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const { appState } = useAppState();
 
   return (
     <>
@@ -91,15 +93,23 @@ export default function HaLongActivity() {
             )}
           </Box>
           <Box p={2}>
-            {modalOpened && (
-              <>
-                <Button
-                  colorScheme="cyan"
-                  onClick={() => router.push("/htdt/22c-boat")}
-                >
-                  Continue
-                </Button>
-              </>
+            <Text>What is the message?</Text>
+            <Input
+              value={puzzleInput}
+              my={2}
+              onChange={(e) => setPuzzleInput(e.target.value)}
+              backgroundColor="white"
+            />
+
+            <Button
+              colorScheme="cyan"
+              disabled={puzzleInput !== "boat mat thu"}
+              onClick={() => router.push("/htdt/24a-island")}
+            >
+              Continue
+            </Button>
+            {appState.SHOW_ANSWERS && (
+              <ShowAnswerButton answer="boat mat thu" />
             )}
           </Box>
         </Hud>
