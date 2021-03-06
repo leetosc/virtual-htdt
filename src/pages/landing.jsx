@@ -39,7 +39,7 @@ export default function Landing() {
           <br />
           <br />
           Note: This site is best viewed on a desktop.
-          <Text fontWeight="semibold">
+          <Text fontWeight="semibold" fontSize="2xl" mt={2}>
             One person on your team will be the <b>main</b> player.
             <br />
             The main player will share their screen in the team Discord channel.
@@ -48,7 +48,7 @@ export default function Landing() {
             on to the rest of the team to help find clues or solve puzzles, but
             the main player should only navigate using the buttons on the page.
           </Text>
-          <Text fontWeight="bold" my={2}>
+          <Text fontWeight="bold" my={4} fontSize="2xl">
             Main player: Do NOT refresh the page or go back and forth using the
             browser back/forward buttons. ONLY navigate using the buttons on the
             page.

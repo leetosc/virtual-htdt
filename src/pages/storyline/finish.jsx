@@ -25,7 +25,7 @@ export default function Finish() {
           avgTypingDelay={20}
           onTypingDone={() => setTypingDone(true)}
         >
-          Congratulations! You have found the treasure!
+          that is the end of the story for now
         </Typist>
         {/* {typingDone && (
           <Link href="/htdt/sample1">

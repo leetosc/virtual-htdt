@@ -115,13 +115,31 @@ export default function SaigonFamily() {
               <Button
                 mt={2}
                 colorScheme="red"
-                onClick={() => router.push("/htdt/31d-airport")}
+                onClick={() => router.push("/storyline/finish")}
               >
                 Continue
               </Button>
             )}
           </Box>
-          <Box p={2}></Box>
+          <Box p={2}>
+            {appState.locationsVisited.includes("/htdt/37a-teacherday1") &&
+              appState.locationsVisited.includes("/htdt/37c-trungthu1") &&
+              appState.locationsVisited.includes("/htdt/37e-tet1") && (
+                <>
+                  <Text>
+                    After telling you about their favorite festivals, your
+                    cousins want to take you around the city.
+                  </Text>
+                  <Button
+                    mt={2}
+                    colorScheme="cyan"
+                    onClick={() => router.push("/storyline/finish")}
+                  >
+                    Go
+                  </Button>
+                </>
+              )}
+          </Box>
         </Hud>
       </GameLayout>
 
