@@ -50,12 +50,7 @@ export default function ImperialCity() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/sample5-hue-aodai.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/hue/hue-aodai.jpg" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -78,6 +73,7 @@ export default function ImperialCity() {
             <Button
               colorScheme="cyan"
               mt={2}
+              disabled={modalOpened}
               onClick={() => {
                 setModalOpened(true);
                 stateContext.setInventory([
@@ -109,7 +105,7 @@ export default function ImperialCity() {
           <ModalHeader>Mysterious Woman</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src="/mysteriousWoman.png" h={28} m={2} float="left" />
+            <Image src="/hue/mysteriousWoman.png" h={28} m={2} float="left" />
             <Text>
               &quot;Hi there. Uncle Tien told me to give this to you.&quot;
             </Text>

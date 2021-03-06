@@ -109,7 +109,34 @@ export default function Hue() {
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
-            <Text>Look for clues from your uncle.</Text>
+            {appState.locationsVisited.includes("/htdt/31a-imperialcity") &&
+            appState.locationsVisited.includes("/htdt/31b-pagoda") &&
+            appState.locationsVisited.includes("/htdt/31c-dongba") ? (
+              <>
+                <Text>
+                  Taxi driver: &quot;It looks like you are heading to Saigon.
+                  I&apos;ll take you to the airport&quot;
+                </Text>
+                <Button
+                  mt={2}
+                  colorScheme="cyan"
+                  onClick={() => router.push("/htdt/31d-airport")}
+                >
+                  Go to airport
+                </Button>
+              </>
+            ) : (
+              <Text>Look for clues around the city</Text>
+            )}
+            {appState.SHOW_ANSWERS && (
+              <Button
+                mt={2}
+                colorScheme="red"
+                onClick={() => router.push("/htdt/31d-airport")}
+              >
+                Go to airport
+              </Button>
+            )}
           </Box>
           <Box p={2}>
             <Stack>
@@ -133,8 +160,10 @@ export default function Hue() {
               </Button>
               <Button
                 colorScheme="cyan"
-                isDisabled={appState.locationsVisited.includes("11b-hoankiem")}
-                onClick={() => router.push("/htdt/sample5c")}
+                isDisabled={appState.locationsVisited.includes(
+                  "/htdt/31c-dongba"
+                )}
+                onClick={() => router.push("/htdt/31c-dongba")}
               >
                 Dong Ba Market
               </Button>

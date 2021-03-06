@@ -132,7 +132,8 @@ export default function ThienMu() {
             </Text>
             <Text my={2}>
               "These special ingriedients are for you: Coriander Seeds, Star
-              Anise, Fennel Seeds, Cinnamon, and Peppercorn."
+              Anise, Fennel Seeds, Cinnamon, and Peppercorn. Take them with you
+              to Saigon."
             </Text>
             <Text my={2}>
               <Icon as={GiCook} h={6} w={6} /> These spices are needed to make

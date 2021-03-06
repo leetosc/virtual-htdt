@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function HaLongToHue() {
+export default function LaVangToHue() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -28,12 +28,7 @@ export default function HaLongToHue() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/halong/haLongToHue.png"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/hue/hueToHCM.png" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -41,10 +36,10 @@ export default function HaLongToHue() {
           <Box whiteSpace="pre-line">
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
-              avgTypingDelay={5}
+              avgTypingDelay={65}
               onTypingDone={() => setTypingDone(true)}
             >
-              You settle in for another long bus ride.
+              It is a short flight, and cheap too!
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -53,7 +48,7 @@ export default function HaLongToHue() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/27-trip")}
+                  onClick={() => router.push("/htdt/30-hue")}
                 >
                   Continue
                 </Button>
