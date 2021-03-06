@@ -92,7 +92,7 @@ export default function SaigonWalk() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/24-activity")}
+                  onClick={() => router.push("/htdt/35-house")}
                 >
                   Continue
                 </Button>
@@ -102,7 +102,7 @@ export default function SaigonWalk() {
               <>
                 <Button
                   colorScheme="red"
-                  onClick={() => router.push("/htdt/24-activity")}
+                  onClick={() => router.push("/htdt/35-house")}
                 >
                   Continue
                 </Button>
