@@ -156,8 +156,8 @@ export default function HaLongContact() {
             <Image src="/halong/treasurechest.jpg" h={32} m={2} float="left" />
 
             <Text>
-              The chest is empty, except for a bag of ginger and a bottle of
-              fish sauce.
+              The chest is empty, except for a note, a bag of ginger and a
+              bottle of fish sauce.
             </Text>
             <Text mt={6}>
               "This used to be where I hid the family treasure, but so many

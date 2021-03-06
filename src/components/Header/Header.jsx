@@ -96,6 +96,11 @@ const Header = () => {
           <Heading size="md" pl={2} color="white">
             Virtual Camp - HTDT
           </Heading>
+          {appState.SHOW_ANSWERS && (
+            <Heading size="md" pl={2} color="red.500">
+              {`HUYNH TRUONG MODE`}
+            </Heading>
+          )}
         </Flex>
         <Box display="flex">
           <Button
