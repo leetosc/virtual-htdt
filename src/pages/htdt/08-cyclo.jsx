@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Box, Text, Button, Image, Stack } from "@chakra-ui/react";
@@ -8,11 +8,13 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import sound1 from "../../../public/hanoi-BanMuonDiDau.mp3";
 import useSound from "use-sound";
+import ReactPlayer from "react-player";
 
 export default function Cyclo() {
   const router = useRouter();
 
   const [diDau] = useSound(sound1);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   const stateContext = useAppState();
   const { appState } = stateContext;
@@ -34,15 +36,49 @@ export default function Cyclo() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/hanoi/hanoicyclo.jpg"
-              maxW="unset"
-              maxH="100%"
-              h="100%"
-              onClick={diDau}
-            />
-          </Box>
+          {videoEnded ? (
+            <Box h="100%" position="relative" overflow="auto">
+              <Image
+                src="/hanoi/hanoicyclo.jpg"
+                maxW="unset"
+                maxH="100%"
+                h="100%"
+                onClick={diDau}
+              />
+            </Box>
+          ) : (
+            <Box h="100%" position="relative" overflow="auto" w="100%">
+              <Box
+                // overlay to prevent clicking video
+                opacity={0}
+                h="100%"
+                w="100%"
+                position="absolute"
+                top={0}
+                left={0}
+              />
+
+              <ReactPlayer
+                url="https://youtu.be/bSBhEiJE-74"
+                controls={false}
+                muted={true}
+                playing={true}
+                playbackRate={1.25}
+                onEnded={() => {
+                  setVideoEnded(true);
+                }}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      start: Math.floor(Math.random() * 350),
+                    },
+                  },
+                }}
+                width="100%"
+                height="100%"
+              />
+            </Box>
+          )}
         </Box>
 
         <Hud>

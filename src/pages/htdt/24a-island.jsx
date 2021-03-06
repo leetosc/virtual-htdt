@@ -137,7 +137,7 @@ export default function HaLongContact() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/22c-boat")}
+                  onClick={() => router.push("/htdt/25-halongbus")}
                 >
                   Continue
                 </Button>

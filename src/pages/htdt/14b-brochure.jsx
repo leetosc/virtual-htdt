@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,21 +16,16 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactCardFlip from "react-card-flip";
 
 export default function Brochure() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
+  const [, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
   const [cardFlipped, setCardFlipped] = useState(false);
 
-  const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -70,7 +61,7 @@ export default function Brochure() {
           <Box w="100%" pt={2}>
             <Text my={2}>
               A man on the bus hands you a brochure. It looks like there is
-              something written at the bottom, but it doesn't really mean
+              something written at the bottom, but it doesn&apos;t really mean
               anything to you.
             </Text>
             <Button
