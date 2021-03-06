@@ -95,8 +95,8 @@ export default function SapaMarket() {
     <Box>
       <Image src="/sapa/marketp5.png" h={28} m={2} float="left" />
       <Text>
-        <Icon as={GiCook} h={6} w={6} /> Onions go well in all dishes! You
-        should try them in Banh Xeo!
+        <Icon as={GiCook} h={6} w={6} /> Onions go well in all dishes, but I
+        personally would never put them in Banh Xeo!
       </Text>
     </Box>
   );

@@ -148,14 +148,8 @@ export default function DongBa() {
           </ModalBody>
 
           <ModalFooter>
-            <Button
-              colorScheme="cyan"
-              mr={3}
-              onClick={() => {
-                router.push("/htdt/12a-dongxuanmeat");
-              }}
-            >
-              Go inside
+            <Button colorScheme="gray" mr={3} onClick={onClose}>
+              Close
             </Button>
           </ModalFooter>
         </ModalContent>

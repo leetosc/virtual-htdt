@@ -169,25 +169,21 @@ export default function DongXuanMarket() {
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[0]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(1);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[0] = true;
-                      setPersonClicked(newPersonClicked);
-                      onOpen();
-                    }
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(1);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[0] = true;
+                    setPersonClicked(newPersonClicked);
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[0]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(1);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[0] = true;
-                      setPersonClicked(newPersonClicked);
-                      onOpen();
-                    }
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(1);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[0] = true;
+                    setPersonClicked(newPersonClicked);
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -204,25 +200,21 @@ export default function DongXuanMarket() {
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[1]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(2);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[1] = true;
-                      setPersonClicked(newPersonClicked);
-                      onOpen();
-                    }
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(2);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[1] = true;
+                    setPersonClicked(newPersonClicked);
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[1]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(2);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[1] = true;
-                      setPersonClicked(newPersonClicked);
-                      onOpen();
-                    }
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(2);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[1] = true;
+                    setPersonClicked(newPersonClicked);
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -239,27 +231,23 @@ export default function DongXuanMarket() {
                     : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[2]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(3);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[2] = true;
-                      setPersonClicked(newPersonClicked);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(3);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[2] = true;
+                    setPersonClicked(newPersonClicked);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[2]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(3);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[2] = true;
-                      setPersonClicked(newPersonClicked);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(3);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[2] = true;
+                    setPersonClicked(newPersonClicked);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>

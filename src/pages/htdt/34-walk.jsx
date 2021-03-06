@@ -83,7 +83,8 @@ export default function SaigonWalk() {
               Before continuing, each person share with your teammates:
             </Text>
             <Text fontWeight="semibold">
-              Do you have any family members in Vietnam?
+              Do you have any family members in Vietnam? What is your favorite
+              thing about being Vietnamese?
             </Text>
           </Box>
           <Box p={2}>
