@@ -103,7 +103,7 @@ export default function Trip() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/22c-boat")}
+                  onClick={() => router.push("/htdt/27a-phone")}
                 >
                   Continue
                 </Button>
@@ -112,7 +112,7 @@ export default function Trip() {
             {appState.SHOW_ANSWERS && (
               <Button
                 colorScheme="red"
-                onClick={() => router.push("/htdt/27-trip")}
+                onClick={() => router.push("/htdt/27a-phone")}
               >
                 Continue
               </Button>
