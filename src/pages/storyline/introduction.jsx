@@ -28,11 +28,7 @@ export default function Introduction() {
           avgTypingDelay={5}
           onTypingDone={() => setTypingDone(true)}
         >
-          Knock Knock.
-          <Typist.Delay ms={500} />
-          <br />
-          <br />
-          An old Vietnamese man is at your door. &nbsp;&nbsp;
+          An old Vietnamese man shows up at your door. &nbsp;&nbsp;
           <Typist.Delay ms={500} />
           You let him in.
           <Typist.Delay ms={1000} />

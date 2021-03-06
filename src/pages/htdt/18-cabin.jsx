@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -18,27 +14,16 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  useToast,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import { Carousel } from "react-responsive-carousel";
-import ReactCardFlip from "react-card-flip";
 
 export default function Cabin() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
 
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const [puzzleCorrect, setPuzzleCorrect] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const toast = useToast();
 
   return (
     <>
@@ -72,7 +57,6 @@ export default function Cabin() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               It is a nice cozy cabin. Time to rest before continuing your
               journey.

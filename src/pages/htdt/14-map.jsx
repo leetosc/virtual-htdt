@@ -28,7 +28,12 @@ export default function Map() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/hanoiToSaPa.png" maxW="unset" h="100%" maxH="100%" />
+            <Image
+              src="/hanoi/hanoiToSaPa.png"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 

@@ -14,14 +14,12 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Show,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import { FaPlay, FaStop } from "react-icons/fa";
 import { useAppState } from "@/context/state";
 import Typist from "react-typist";
-import ReactCardFlip from "react-card-flip";
 import useSound from "use-sound";
 
 import soundbyte1 from "../../../public/sapa/soundbytes/1.m4a";
@@ -42,7 +40,6 @@ import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 export default function SapaClimb() {
   const router = useRouter();
   const [modalOpened, setModalOpened] = useState(false);
-  const [cardFlipped, setCardFlipped] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
