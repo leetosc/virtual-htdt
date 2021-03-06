@@ -65,6 +65,11 @@ export default function Saigon() {
                 muted={true}
                 playing={true}
                 playbackRate={1.5}
+                onProgress={({ playedSeconds }) => {
+                  if (playedSeconds > 180) {
+                    setVideoEnded(true);
+                  }
+                }}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}
@@ -109,7 +114,7 @@ export default function Saigon() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/24-activity")}
+                  onClick={() => router.push("/htdt/34-walk")}
                 >
                   Continue
                 </Button>
@@ -119,7 +124,7 @@ export default function Saigon() {
               <>
                 <Button
                   colorScheme="red"
-                  onClick={() => router.push("/htdt/24-activity")}
+                  onClick={() => router.push("/htdt/34-walk")}
                 >
                   Continue
                 </Button>
