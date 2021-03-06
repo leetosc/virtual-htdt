@@ -28,7 +28,7 @@ import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
-export default function Hue() {
+export default function SaigonFamily() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
