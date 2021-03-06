@@ -79,10 +79,10 @@ export default function Plane() {
                   colorScheme="cyan"
                   mx="auto"
                   onClick={() => {
-                    router.push("/htdt/07-map");
+                    router.push("/htdt/06b-plane2");
                   }}
                 >
-                  Arrive at destnation
+                  Continue
                 </Button>
               </>
             )}
@@ -96,7 +96,7 @@ export default function Plane() {
           <ModalHeader>In-Flight TV</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Insert a video here
+            TODO: VIDEO TELLING THE KIDS ABOUT THE TRIP
             <YouTube videoId="uCdVsZbj4Ag" opts={{ width: "100%" }} />
           </ModalBody>
 

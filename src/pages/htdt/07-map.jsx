@@ -42,29 +42,19 @@ export default function Map() {
               onTypingDone={() => setTypingDone(true)}
             >
               After a long trip you arrive in Hanoi. You see a group of cyclo
-              drivers and approach them. What was your contact's name?
+              drivers and approach them. One of the cyclo drivers says he knows
+              your uncle.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
           <Box p={2}>
             {typingDone && (
               <>
-                INSERT TAM HONG'S MAT THU HERE
-                <Text textColor="red.500" fontWeight="semibold">
-                  ANSWER: "nghia"
-                </Text>
-                <Input
-                  my={2}
-                  backgroundColor="white"
-                  value={puzzleInput}
-                  onChange={(e) => setPuzzleInput(e.target.value)}
-                />
                 <Button
-                  isDisabled={puzzleInput.toLowerCase() !== "nghia"}
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/08-cyclo")}
                 >
-                  Submit
+                  Continue
                 </Button>
               </>
             )}
