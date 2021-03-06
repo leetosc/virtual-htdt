@@ -53,7 +53,7 @@ export default function LaVangToHue() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/28-lavang")}
+                  onClick={() => router.push("/htdt/30-hue")}
                 >
                   Continue
                 </Button>

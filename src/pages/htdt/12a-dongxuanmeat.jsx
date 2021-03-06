@@ -337,10 +337,6 @@ export default function DongXuanMarket() {
               colorScheme="cyan"
               isDisabled={!personClicked.every((i) => i === true)}
               onClick={() => {
-                stateContext.setLocationsVisited([
-                  ...appState.locationsVisited,
-                  "12-dongxuan",
-                ]);
                 router.push("/htdt/08-cyclo");
               }}
             >

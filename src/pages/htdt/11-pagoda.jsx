@@ -70,10 +70,6 @@ export default function OnePillarPagoda() {
               my={2}
               colorScheme="cyan"
               onClick={() => {
-                stateContext.setLocationsVisited([
-                  ...appState.locationsVisited,
-                  "11-pagoda",
-                ]);
                 router.push("/htdt/08-cyclo");
               }}
             >

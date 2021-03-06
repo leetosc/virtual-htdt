@@ -114,10 +114,6 @@ export default function HoanKiem() {
               my={2}
               colorScheme="cyan"
               onClick={() => {
-                stateContext.setLocationsVisited([
-                  ...appState.locationsVisited,
-                  "11b-hoankiem",
-                ]);
                 router.push("/htdt/08-cyclo");
               }}
             >

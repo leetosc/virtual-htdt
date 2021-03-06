@@ -74,9 +74,6 @@ export default function HaLongContact() {
                 muted={true}
                 playing={true}
                 playbackRate={1.25}
-                // onEnded={() => {
-                //   setVideoEnded(true);
-                // }}
                 onProgress={({ playedSeconds }) => {
                   if (playedSeconds > 154) {
                     setVideoEnded(true);

@@ -63,7 +63,7 @@ export default function Cyclo() {
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={1.25}
+                playbackRate={1}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}
@@ -93,10 +93,10 @@ export default function Cyclo() {
             </Typist>
           </Box>
           <Box w="100%">
-            {appState.locationsVisited.includes("11b-hoankiem") &&
-            appState.locationsVisited.includes("11-pagoda") &&
-            appState.locationsVisited.includes("09-stjoseph") &&
-            appState.locationsVisited.includes("12-dongxuan") ? (
+            {appState.locationsVisited.includes("/htdt/11b-hoankiem") &&
+            appState.locationsVisited.includes("/htdt/11-pagoda") &&
+            appState.locationsVisited.includes("/htdt/09-stjoseph") &&
+            appState.locationsVisited.includes("/htdt/12-dongxuan") ? (
               <>
                 <Text>
                   &quot;It looks like you are heading to Sa Pa. I&apos;ll take
@@ -128,7 +128,9 @@ export default function Cyclo() {
             <Stack>
               <Button
                 colorScheme="cyan"
-                isDisabled={appState.locationsVisited.includes("11b-hoankiem")}
+                isDisabled={appState.locationsVisited.includes(
+                  "/htdt/11b-hoankiem"
+                )}
                 onClick={() => router.push("/htdt/11b-hoankiem")}
               >
                 Hoàn Kiếm Lake
@@ -136,20 +138,26 @@ export default function Cyclo() {
               <Button
                 colorScheme="cyan"
                 onClick={() => router.push("/htdt/11-pagoda")}
-                isDisabled={appState.locationsVisited.includes("11-pagoda")}
+                isDisabled={appState.locationsVisited.includes(
+                  "/htdt/11-pagoda"
+                )}
               >
                 One Pillar Pagoda
               </Button>
               <Button
                 colorScheme="cyan"
                 onClick={() => router.push("/htdt/09-stjoseph")}
-                isDisabled={appState.locationsVisited.includes("09-stjoseph")}
+                isDisabled={appState.locationsVisited.includes(
+                  "/htdt/10a-tnttkids"
+                )}
               >
                 St Joseph&apos;s Cathedral
               </Button>
               <Button
                 colorScheme="cyan"
-                isDisabled={appState.locationsVisited.includes("12-dongxuan")}
+                isDisabled={appState.locationsVisited.includes(
+                  "/htdt/12-dongxuan"
+                )}
                 onClick={() => router.push("/htdt/12-dongxuan")}
               >
                 Đồng Xuân Market
