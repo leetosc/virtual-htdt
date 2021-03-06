@@ -49,7 +49,7 @@ export default function Map() {
           <Box p={2}>
             {typingDone && (
               <>
-                Contact's name
+                INSERT TAM HONG'S MAT THU HERE
                 <Text textColor="red.500" fontWeight="semibold">
                   ANSWER: "nghia"
                 </Text>
