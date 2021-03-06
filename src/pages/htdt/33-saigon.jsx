@@ -99,8 +99,8 @@ export default function Saigon() {
               the 2019 census, Ho Chi Minh City has a population of over 8.9
               million within the city proper and over 21 million within its
               metropolitan area. Ho Chi Minh City is an economic and financial
-              centre and plays an important role in the country's cultural and
-              scientific developments.
+              centre and plays an important role in the country&apos;s cultural
+              and scientific developments.
             </Typist>
           </Box>
           <Box w="100%" pt={1}>

@@ -44,9 +44,9 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              You arrive at your family member&apos;s house. Like most of the
+              houses in the area, they have a small business on the first level
+              and live on the upper floors.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>

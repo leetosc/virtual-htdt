@@ -10,7 +10,6 @@ import Typist from "react-typist";
 export default function Map() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
 
   return (
     <>

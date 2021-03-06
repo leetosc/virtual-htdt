@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,18 +16,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
 export default function HaLong2() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -97,7 +88,6 @@ export default function HaLong2() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               You arrive at Ha Long Bay and go out on the water to explore the
               area.
@@ -167,9 +157,9 @@ export default function HaLong2() {
           <ModalBody overflow="auto" maxH="100%">
             <Image src="/halong/tamhong.png" h={32} m={2} float="left" />
             <Text>
-              "Legend says that long ago, when the country was newly formed, the
-              Vietnamese forefathers had to fight against fierce invaders coming
-              from the North by sea. <br />
+              &quot;Legend says that long ago, when the country was newly
+              formed, the Vietnamese forefathers had to fight against fierce
+              invaders coming from the North by sea. <br />
               <br />
               The gods from the heavens watched on before sending the Mother
               Dragon and her children to help the ancient Vietnamese people to
@@ -191,7 +181,7 @@ export default function HaLong2() {
               which literally means ‘Thanks to the Dragon children’ and their
               tails form the area of Bach Long Vi. The great Mother Dragon forms
               Ha Long Bay, which literally translates as ‘Descending Dragon
-              Bay’".
+              Bay’&quot;.
             </Text>
           </ModalBody>
 

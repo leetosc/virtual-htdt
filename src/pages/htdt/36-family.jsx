@@ -81,7 +81,8 @@ export default function SaigonFamily() {
           <Box w="100%" pt={1}>
             <Stack>
               <Text>
-                Your cousins each have a favorite festival. Click to learn more.
+                Your cousins each have a favorite festival. Click to hear each
+                story.
               </Text>
               <Button
                 colorScheme="cyan"

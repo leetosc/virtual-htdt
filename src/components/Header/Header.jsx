@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,7 +9,6 @@ import {
   Flex,
   Text,
   Button,
-  Link as ChakraLink,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -27,7 +26,6 @@ import { useAppState } from "@/context/state";
 
 const Header = () => {
   const router = useRouter();
-  const [show, setShow] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: inventoryOpen,
@@ -44,10 +42,6 @@ const Header = () => {
   const stateContext = useAppState();
   const { appState, setUserNotes } = stateContext;
 
-  const handleToggle = () => {
-    setShow(!show);
-  };
-
   const MenuItem = ({ href, children }) => (
     <NextLink href={href} passHref>
       <Text
@@ -58,7 +52,6 @@ const Header = () => {
         py={{ base: 1, md: 0 }}
         mx={{ base: 0, md: 4 }}
         mt={{ base: 2, md: 0 }}
-        onClick={() => setShow(false)}
         w={{ base: "100%", md: "auto" }}
       >
         {children}

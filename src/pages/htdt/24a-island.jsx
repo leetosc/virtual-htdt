@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
   Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -21,13 +18,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import { GiCook } from "react-icons/gi";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
@@ -111,8 +105,8 @@ export default function HaLongContact() {
             {videoEnded && typingDone && (
               <>
                 <Text>
-                  Inside, you find a chest labeled with the letter "T". It seems
-                  to need a code to unlock.
+                  Inside, you find a chest labeled with the letter
+                  &quot;T&quot;. It seems to need a code to unlock.
                 </Text>
                 <Input
                   backgroundColor="white"
@@ -173,10 +167,10 @@ export default function HaLongContact() {
               bottle of fish sauce.
             </Text>
             <Text mt={6}>
-              "This used to be where I hid the family treasure, but so many
+              &quot;This used to be where I hid the family treasure, but so many
               tourists come here now. I had to move it to a safer location. Go
               to Hue to find out more. Also, here are some ingredients that will
-              come in handy later."
+              come in handy later.&quot;
             </Text>
             <Text mt={2}>
               <Icon as={GiCook} h={6} w={6} />
