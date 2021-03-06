@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function Tet2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -28,12 +28,7 @@ export default function SaigonHouse() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/saigon/saigonhouses.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/saigon/tet3.png" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -44,9 +39,13 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              It is also a time when families reunite to celebrate and welcome
+              the coming of the new year. Homes will be decorated, and families
+              will prepare meals to feast together. As a custom, children often
+              chuc (give Tet greetings) their elders in exchange for li xi
+              (lucky money), which are generally given in red envelopes. These
+              greetings tend to include wishes of luck and prosperity in the
+              upcoming year.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -55,7 +54,7 @@ export default function SaigonHouse() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/37f-tet2")}
                 >
                   Continue
                 </Button>

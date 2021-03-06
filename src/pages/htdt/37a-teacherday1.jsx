@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function TeacherDay1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -29,7 +29,7 @@ export default function SaigonHouse() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/saigonhouses.jpg"
+              src="/saigon/teacherday1.png"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -44,9 +44,13 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              Ngày Nhà Giáo, or Vietnamese Teachers’ Day, is a festival held
+              every year on November 20th. This day is dedicated to honoring
+              teachers for their work and efforts in educating the youth of
+              Vietnam. Each school holds their own ceremony. In the days leading
+              up to the festival, students at each school form teams which
+              prepare a performance (song, dance, play, etc.) to showcase to
+              their teachers and peers.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -55,7 +59,7 @@ export default function SaigonHouse() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/37b-teacherday2")}
                 >
                   Continue
                 </Button>

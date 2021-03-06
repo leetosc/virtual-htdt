@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function TrungThu1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -29,7 +29,7 @@ export default function SaigonHouse() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/saigonhouses.jpg"
+              src="/saigon/trungthu1.png"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -44,9 +44,11 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              Tet Trung Thu (Mid-Autumn festival) is a festival that marks the
+              end of the harvest season. It is typically celebrated in the month
+              of September during a full moon. The locals give thanks to the
+              moon for a successful harvest season. A full moon represents
+              prosperity.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -55,7 +57,7 @@ export default function SaigonHouse() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/37d-trungthu2")}
                 >
                   Continue
                 </Button>

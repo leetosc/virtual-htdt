@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function TrungThu2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -29,7 +29,7 @@ export default function SaigonHouse() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/saigonhouses.jpg"
+              src="/saigon/trungthu2.jpg"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -44,9 +44,13 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              Tet Trung Thu is also known as the ‘Children’s Festival’. This is
+              because parents often found themselves away from their children,
+              busy tending to their harvest. However, this festival was a way
+              for them to relax and spend time with their kids. On this day, you
+              will see the streets lit up with lanterns and filled with children
+              running around with laughter - some even wearing costumes. It is a
+              joyous time for friends and family to enjoy.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -57,7 +61,7 @@ export default function SaigonHouse() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/36-family")}
                 >
-                  Continue
+                  Back to family
                 </Button>
               </>
             )}

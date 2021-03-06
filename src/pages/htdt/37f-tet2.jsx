@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function Tet2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -28,12 +28,7 @@ export default function SaigonHouse() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/saigon/saigonhouses.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/saigon/tet2.jpg" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -44,9 +39,11 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              You will also hear a lot of loud noises from firecrackers, gongs,
+              drums, and more as lion dancers parade throughout the streets.
+              They perform what is called mua lan (lion dancing). The dancing
+              and loud noises are used to ward off evil spirits in preparation
+              for the new year.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -55,7 +52,7 @@ export default function SaigonHouse() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/37g-tet3")}
                 >
                   Continue
                 </Button>

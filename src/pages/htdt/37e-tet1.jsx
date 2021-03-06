@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function Tet1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -28,12 +28,7 @@ export default function SaigonHouse() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image
-              src="/saigon/saigonhouses.jpg"
-              maxW="unset"
-              h="100%"
-              maxH="100%"
-            />
+            <Image src="/saigon/tet1.png" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 
@@ -44,9 +39,12 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              Tet Nguyen Dan, which we often just shorten to Tet, is the biggest
+              holiday in Vietnam. Its name translates to ‘Feast of the First
+              Morning,’ as it marks the first day of the year, as well as the
+              arrival of spring, according to the Lunar calendar. During this
+              time, you will see the town filled with the colors red and yellow,
+              which the Vietnamese people believe will bring good fortune.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -55,7 +53,7 @@ export default function SaigonHouse() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/37f-tet2")}
                 >
                   Continue
                 </Button>

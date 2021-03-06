@@ -6,7 +6,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 
-export default function SaigonHouse() {
+export default function TeacherDay1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
 
@@ -29,7 +29,7 @@ export default function SaigonHouse() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/saigonhouses.jpg"
+              src="/saigon/teacherday2.png"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -44,9 +44,12 @@ export default function SaigonHouse() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You arrive at your family member's house. Like most of the houses
-              in the area, they have a small business on the first level and
-              live on the upper floors.
+              Fruits, flowers, and clothes are just some of the many gifts which
+              students offer to teachers on this day. Many alumni will also
+              visit their past teachers to reminisce over some old memories.
+              Ultimately, this celebration is not restricted to solely those who
+              teach in classrooms, but it recognizes people who have helped
+              build your moral education or aided in your development.
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={4}></Box>
@@ -57,7 +60,7 @@ export default function SaigonHouse() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/36-family")}
                 >
-                  Continue
+                  Back to family
                 </Button>
               </>
             )}

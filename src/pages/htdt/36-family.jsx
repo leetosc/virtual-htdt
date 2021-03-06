@@ -86,29 +86,29 @@ export default function SaigonFamily() {
               <Button
                 colorScheme="cyan"
                 isDisabled={appState.locationsVisited.includes(
-                  "/htdt/31a-imperialcity"
+                  "/htdt/37a-teacherday1"
                 )}
-                onClick={() => router.push("/htdt/31a-imperialcity")}
+                onClick={() => router.push("/htdt/37a-teacherday1")}
               >
-                Ngay Nha Giao
+                Ngày Nhà Giáo
               </Button>
               <Button
                 colorScheme="cyan"
                 isDisabled={appState.locationsVisited.includes(
-                  "/htdt/31b-pagoda"
+                  "/htdt/37c-trungthu1"
                 )}
-                onClick={() => router.push("/htdt/31b-pagoda")}
+                onClick={() => router.push("/htdt/37c-trungthu1")}
               >
-                Tet Trung Thu
+                Tết Trung Thu
               </Button>
               <Button
                 colorScheme="cyan"
                 isDisabled={appState.locationsVisited.includes(
-                  "/htdt/31c-dongba"
+                  "/htdt/37e-tet1"
                 )}
-                onClick={() => router.push("/htdt/31c-dongba")}
+                onClick={() => router.push("/htdt/37e-tet1")}
               >
-                Tet Nguyen Dan
+                Tết Nguyên Đán
               </Button>
             </Stack>
             {appState.SHOW_ANSWERS && (
@@ -117,7 +117,7 @@ export default function SaigonFamily() {
                 colorScheme="red"
                 onClick={() => router.push("/htdt/31d-airport")}
               >
-                Go to airport
+                Continue
               </Button>
             )}
           </Box>
