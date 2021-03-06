@@ -39,7 +39,7 @@ export default function Tet1() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              Tet Nguyen Dan, which we often just shorten to Tet, is the biggest
+              Tết Nguyên Đán, which we often just shorten to Tết, is the biggest
               holiday in Vietnam. Its name translates to ‘Feast of the First
               Morning,’ as it marks the first day of the year, as well as the
               arrival of spring, according to the Lunar calendar. During this

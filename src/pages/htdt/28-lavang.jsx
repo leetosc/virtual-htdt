@@ -25,7 +25,7 @@ export default function HaLongContact() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [, setModalOpened] = useState(false);
+  const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
 
   const { appState } = useAppState();
@@ -147,7 +147,7 @@ export default function HaLongContact() {
             <Text>Read about Our Lady of La Vang</Text>
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {modalOpened && (
               <>
                 <Text>
                   Before continuing, each team member share one thing you would
