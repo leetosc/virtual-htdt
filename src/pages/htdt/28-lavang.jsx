@@ -150,9 +150,12 @@ export default function HaLongContact() {
             {typingDone && (
               <>
                 <Text>
-                  Before continuing, each team member offer one prayer intention
-                  to Đức Mẹ La Vang, then as a team pray one Hail Mary together.
+                  Before continuing, each team member share one thing you would
+                  like your team to pray for. Then say one Hail Mary together as
+                  a team.
                 </Text>
+                <Text my={2}>Đức Mẹ La Vang</Text>
+                <Text my={2}>Cầu cho chúng con</Text>
                 <Button
                   mt={2}
                   colorScheme="cyan"

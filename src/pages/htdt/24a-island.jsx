@@ -29,6 +29,7 @@ import { GiCook } from "react-icons/gi";
 import YouTube from "react-youtube";
 import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function HaLongContact() {
   const router = useRouter();
@@ -105,13 +106,25 @@ export default function HaLongContact() {
               Congratulations. You successsfully build the boat and go to the
               island. There is a path that leads to an empty hut.
             </Typist>
+          </Box>
+          <Box w="100%" pt={1}>
             {videoEnded && typingDone && (
               <>
                 <Text>
-                  Inside, you find a chest labeled with the letter "T".
+                  Inside, you find a chest labeled with the letter "T". It seems
+                  to need a code to unlock.
                 </Text>
+                <Input
+                  backgroundColor="white"
+                  value={puzzleInput}
+                  placeholder="Message on the boat"
+                  onChange={(e) => setPuzzleInput(e.target.value)}
+                />
                 <Button
                   mt={2}
+                  isDisabled={
+                    puzzleInput.toLowerCase() !== "pop drop unlock it"
+                  }
                   colorScheme="cyan"
                   onClick={() => {
                     stateContext.setInventory([
@@ -128,9 +141,9 @@ export default function HaLongContact() {
                 </Button>
               </>
             )}
-          </Box>
-          <Box w="100%" pt={1}>
-            <Text>Look for clues.</Text>
+            {appState.SHOW_ANSWERS && (
+              <ShowAnswerButton answer="pop drop unlock it" />
+            )}
           </Box>
           <Box p={2}>
             {modalOpened && (
