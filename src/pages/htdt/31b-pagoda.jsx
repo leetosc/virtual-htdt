@@ -57,7 +57,7 @@ export default function ThienMu() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/hue/hue-thienmu2.jpg"
+              src="/hue/ChuaThienMu-5.JPG"
               maxW="unset"
               maxH="100%"
               h="100%"

@@ -55,7 +55,7 @@ export default function DongBa() {
             <Image
               src={
                 clickCounter % 2 === 0
-                  ? "/hue/dongba1.webp"
+                  ? "/hue/ChoDongBa-3.JPG"
                   : "/hue/dongbainside.jpg"
               }
               maxW="unset"

@@ -58,7 +58,12 @@ export default function Peoples() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/placeholder.png" maxW="unset" h="100%" maxH="100%" />
+            <Image
+              src="/sapa/sapapeoplesmain.jpg"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 
@@ -118,11 +123,7 @@ export default function Peoples() {
           <ModalBody overflow="auto" maxH="100%">
             <Carousel showThumbs={false} infiniteLoop={true}>
               <Box maxH="100%" display="flex" flexDir="column">
-                <Image
-                  src="https://picsum.photos/300/200"
-                  maxW="unset"
-                  maxH="100%"
-                />
+                <Image src="/sapa/hmong.jpg" maxW="unset" maxH="100%" />
                 <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
                   <Text fontSize="sm">
                     Hmong People: Worship their ancestors, the god of the house,
@@ -134,11 +135,7 @@ export default function Peoples() {
                 </Box>
               </Box>
               <Box maxH="100%" display="flex" flexDir="column">
-                <Image
-                  src="https://picsum.photos/300/200"
-                  maxW="unset"
-                  maxH="100%"
-                />
+                <Image src="/sapa/dao.jpg" maxW="unset" maxH="100%" />
                 <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
                   <Text fontSize="sm">
                     Yao (Dao) People: Mixes elements of Confucianism, Buddhism,
@@ -149,11 +146,7 @@ export default function Peoples() {
                 </Box>
               </Box>
               <Box maxH="100%" display="flex" flexDir="column">
-                <Image
-                  src="https://picsum.photos/300/200"
-                  maxW="unset"
-                  maxH="100%"
-                />
+                <Image src="/sapa/tay.jpg" maxW="unset" maxH="100%" />
                 <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
                   <Text fontSize="sm">
                     Tay People: They believe in gods of their natural
@@ -163,11 +156,7 @@ export default function Peoples() {
                 </Box>
               </Box>
               <Box maxH="100%" display="flex" flexDir="column">
-                <Image
-                  src="https://picsum.photos/300/200"
-                  maxW="unset"
-                  maxH="100%"
-                />
+                <Image src="/sapa/giay.jpg" maxW="unset" maxH="100%" />
                 <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
                   <Text fontSize="sm">
                     Giay People: They worship the God of Kitchen, Heaven and
