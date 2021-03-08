@@ -21,7 +21,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ReactPlayer from "react-player";
 
-export default function LaVang() {
+export default function LaVang2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
