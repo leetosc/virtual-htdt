@@ -113,7 +113,7 @@ export default function HaLongContact() {
             )}
           </Box>
           <Box w="100%" pt={1}>
-            <Text>Look for clues from your uncle.</Text>
+            <Text>Continue looking for clues.</Text>
           </Box>
           <Box p={2}>
             {modalOpened && (

@@ -130,7 +130,7 @@ export default function HaLongContact() {
               Our Lady of La Vang in his message for the conclusion of the
               Marian Year in La Vang, Vietnam.
             </Typist>
-            {typingDone && (
+            {/* {typingDone && (
               <Button
                 onClick={() => {
                   setModalOpened(true);
@@ -141,13 +141,13 @@ export default function HaLongContact() {
               >
                 See the original church{" "}
               </Button>
-            )}
+            )} */}
           </Box>
           <Box w="100%" pt={1}>
             <Text>Read about Our Lady of La Vang</Text>
           </Box>
           <Box p={2}>
-            {modalOpened && (
+            {typingDone && (
               <>
                 <Text>
                   Before continuing, each team member share one thing you would
