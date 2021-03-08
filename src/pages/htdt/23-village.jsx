@@ -125,10 +125,12 @@ export default function HaLongVillage() {
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
-            <Text>
-              You arrive at the floating village. The village leader comes out
-              to greet you.
-            </Text>
+            {typingDone && (
+              <Text>
+                You arrive at the floating village. The village leader comes out
+                to greet you.
+              </Text>
+            )}
             {allowContinue && typingDone && (
               <Button
                 mt={2}

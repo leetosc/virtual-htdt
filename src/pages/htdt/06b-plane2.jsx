@@ -111,6 +111,7 @@ export default function Map() {
                 <Input
                   my={2}
                   backgroundColor="white"
+                  placeholder="Answer"
                   value={puzzleInput}
                   onChange={(e) => setPuzzleInput(e.target.value)}
                 />

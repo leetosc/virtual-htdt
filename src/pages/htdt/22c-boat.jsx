@@ -79,7 +79,7 @@ export default function HaLongBoat() {
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={1.5}
+                playbackRate={1.75}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}

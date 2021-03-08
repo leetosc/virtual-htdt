@@ -93,24 +93,12 @@ export default function HaLongActivity() {
             )}
           </Box>
           <Box p={2}>
-            <Text>What is the message?</Text>
-            <Input
-              value={puzzleInput}
-              my={2}
-              onChange={(e) => setPuzzleInput(e.target.value)}
-              backgroundColor="white"
-            />
-
             <Button
               colorScheme="cyan"
-              disabled={puzzleInput !== "boat mat thu"}
               onClick={() => router.push("/htdt/24a-island")}
             >
-              Continue
+              Boat successfully built
             </Button>
-            {appState.SHOW_ANSWERS && (
-              <ShowAnswerButton answer="boat mat thu" />
-            )}
           </Box>
         </Hud>
       </GameLayout>

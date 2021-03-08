@@ -79,7 +79,7 @@ export default function HaLongContact() {
                 controls={false}
                 muted={true}
                 playing={true}
-                playbackRate={0.75}
+                playbackRate={1}
                 onEnded={() => {
                   setVideoEnded(true);
                 }}

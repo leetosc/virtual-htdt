@@ -138,35 +138,31 @@ export default function SapaMarket() {
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[0]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(1);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[0] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Lemongrass",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(1);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[0] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Lemongrass",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[0]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(1);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[0] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Lemongrass",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(1);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[0] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Lemongrass",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -183,37 +179,33 @@ export default function SapaMarket() {
                   cursor: "pointer",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[1]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(2);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[1] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Carrots",
-                        "Pineapple",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(2);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[1] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Carrots",
+                      "Pineapple",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[1]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(2);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[1] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Carrots",
-                        "Pineapple",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(2);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[1] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Carrots",
+                      "Pineapple",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -230,35 +222,31 @@ export default function SapaMarket() {
                     : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[2]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(3);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[2] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Lettuce",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(3);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[2] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Lettuce",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[2]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(3);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[2] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Lettuce",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(3);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[2] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Lettuce",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -275,35 +263,31 @@ export default function SapaMarket() {
                     : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[3]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(4);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[3] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Bean Sprouts",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(4);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[3] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Bean Sprouts",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[3]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(4);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[3] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Bean Sprouts",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(4);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[3] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Bean Sprouts",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>
@@ -320,35 +304,31 @@ export default function SapaMarket() {
                     : "2px solid blue",
                 }}
                 onClick={(e) => {
-                  if (!personClicked[4]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(5);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[4] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Onions and Garlic",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(5);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[4] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Onions and Garlic",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
                 onTouchEnd={(e) => {
-                  if (!personClicked[4]) {
-                    if (!e.defaultPrevented) {
-                      setCurrentKid(5);
-                      const newPersonClicked = [...personClicked];
-                      newPersonClicked[4] = true;
-                      setPersonClicked(newPersonClicked);
-                      stateContext.setInventory([
-                        ...appState.inventory,
-                        "Onions and Garlic",
-                      ]);
+                  if (!e.defaultPrevented) {
+                    setCurrentKid(5);
+                    const newPersonClicked = [...personClicked];
+                    newPersonClicked[4] = true;
+                    setPersonClicked(newPersonClicked);
+                    stateContext.setInventory([
+                      ...appState.inventory,
+                      "Onions and Garlic",
+                    ]);
 
-                      onOpen();
-                    }
+                    onOpen();
                   }
                 }}
               ></Box>

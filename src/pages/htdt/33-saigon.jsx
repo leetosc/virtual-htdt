@@ -18,7 +18,7 @@ export default function Saigon() {
   useEffect(() => {
     setTimeout(() => {
       setAllowContinue(true);
-    }, 50000);
+    }, 45000);
   }, []);
 
   return (
