@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from "react";
+import { useLocalStorageState } from "../utils/utils";
 
 const AppContext = createContext();
 
@@ -13,17 +14,16 @@ export const useAppState = () => {
 };
 
 function useProvideState() {
-  const [locations, setLocations] = useState([]);
-  const [locationsVisited, setLocationsVisited] = useState([]);
-  const [inventory, setInventory] = useState([]);
-  const [navbarTitle, setNavbarTitle] = useState("Virtual Camp - HTDT");
-  const [userNotes, setUserNotes] = useState("");
+  const [locationsVisited, setLocationsVisited] = useLocalStorageState(
+    "locationsVisited",
+    []
+  );
+  const [inventory, setInventory] = useLocalStorageState("inventory", []);
+  const [userNotes, setUserNotes] = useLocalStorageState("notes", "");
 
-  const SHOW_ANSWERS = userNotes.toLowerCase() === "i am a huynh truong";
+  const SHOW_ANSWERS = userNotes.toLowerCase().includes("i am a huynh truong");
 
   const appState = {
-    locations,
-    navbarTitle,
     locationsVisited,
     inventory,
     SHOW_ANSWERS,
@@ -32,8 +32,6 @@ function useProvideState() {
 
   return {
     appState,
-    setLocations,
-    setNavbarTitle,
     setLocationsVisited,
     setInventory,
     setUserNotes,

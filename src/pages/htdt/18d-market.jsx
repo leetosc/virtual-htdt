@@ -143,10 +143,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[0] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Lemongrass",
-                    ]);
+                    if (!appState.inventory.includes("Lemongrass")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Lemongrass",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -157,10 +159,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[0] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Lemongrass",
-                    ]);
+                    if (!appState.inventory.includes("Lemongrass")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Lemongrass",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -184,11 +188,13 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[1] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Carrots",
-                      "Pineapple",
-                    ]);
+                    if (!appState.inventory.includes("Carrots")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Carrots",
+                        "Pineapple",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -199,11 +205,13 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[1] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Carrots",
-                      "Pineapple",
-                    ]);
+                    if (!appState.inventory.includes("Carrots")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Carrots",
+                        "Pineapple",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -227,10 +235,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[2] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Lettuce",
-                    ]);
+                    if (!appState.inventory.includes("Lettuce")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Lettuce",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -241,10 +251,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[2] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Lettuce",
-                    ]);
+                    if (!appState.inventory.includes("Lettuce")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Lettuce",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -268,10 +280,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[3] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Bean Sprouts",
-                    ]);
+                    if (!appState.inventory.includes("Bean Sprouts")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Bean Sprouts",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -282,10 +296,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[3] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Bean Sprouts",
-                    ]);
+                    if (!appState.inventory.includes("Bean Sprouts")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Bean Sprouts",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -309,10 +325,13 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[4] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Onions and Garlic",
-                    ]);
+                    if (!appState.inventory.includes("Onions")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Onions",
+                        "Garlic",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -323,10 +342,13 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[4] = true;
                     setPersonClicked(newPersonClicked);
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Onions and Garlic",
-                    ]);
+                    if (!appState.inventory.includes("Onions")) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        "Onions",
+                        "Garlic",
+                      ]);
+                    }
 
                     onOpen();
                   }
@@ -362,8 +384,6 @@ export default function SapaMarket() {
                 />
               ) : null
             )}
-
-            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="31" />}
           </Box>
 
           <Box p={4}>

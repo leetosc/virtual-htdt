@@ -99,20 +99,27 @@ export default function Phone() {
         <ModalContent background="none">
           <ModalBody overflow="auto" maxH="100%">
             <Box
-              w={{ base: "400px", sm: "469px" }}
-              h={{ base: "800px", sm: "942px" }}
+              // w={{ base: "400px", sm: "469px" }}
+              // h={{ base: "800px", sm: "942px" }}
+              w="400px"
+              h="800px"
               position="relative"
               backgroundImage="url(/lavang/phone.png)"
               backgroundRepeat="no-repeat"
-              backgroundSize={{ base: "contain", sm: "inherit" }}
+              backgroundSize="contain"
+              // backgroundSize={{ base: "contain", sm: "inherit" }}
             >
               <Image
                 src="/lavang/texts.gif"
-                w={{ base: "342px", sm: "400px" }}
-                h={{ base: "607px", sm: "710px" }}
+                // w={{ base: "342px", sm: "400px" }}
+                // h={{ base: "607px", sm: "710px" }}
+                w="342px"
+                h="607px"
                 position="absolute"
-                left={{ base: "30px", sm: "36px" }}
-                top={{ base: "100px", sm: "116px" }}
+                // left={{ base: "30px", sm: "36px" }}
+                // top={{ base: "100px", sm: "116px" }}
+                left="30px"
+                top="100px"
               />
             </Box>
           </ModalBody>

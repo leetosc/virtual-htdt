@@ -13,7 +13,10 @@ const GameLayout = (props) => {
   console.log(appState.locationsVisited);
 
   useEffect(() => {
-    if (!appState.locationsVisited.includes(router.pathname)) {
+    if (
+      appState.locationsVisited[appState.locationsVisited.length - 1] !==
+      router.pathname
+    ) {
       stateContext.setLocationsVisited([
         ...appState.locationsVisited,
         router.pathname,

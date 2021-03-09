@@ -19,6 +19,7 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import { Carousel } from "react-responsive-carousel";
 import ReactPlayer from "react-player";
 
 export default function LaVang() {
@@ -50,7 +51,7 @@ export default function LaVang() {
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
               <Image
-                src="/lavang/lavang.jpg"
+                src="/lavang/NhaThoLaVang-31.JPG"
                 maxW="unset"
                 h="100%"
                 maxH="100%"
@@ -75,14 +76,14 @@ export default function LaVang() {
                 playing={true}
                 playbackRate={1.25}
                 onProgress={({ playedSeconds }) => {
-                  if (playedSeconds > 154) {
+                  if (playedSeconds > 232) {
                     setVideoEnded(true);
                   }
                 }}
                 config={{
                   youtube: {
                     playerVars: {
-                      start: 47,
+                      start: 171,
                     },
                   },
                 }}
@@ -130,7 +131,10 @@ export default function LaVang() {
               Our Lady of La Vang in his message for the conclusion of the
               Marian Year in La Vang, Vietnam.
             </Typist>
-            {/* {typingDone && (
+          </Box>
+          <Box w="100%" pt={1}>
+            <Text>Read about Our Lady of La Vang</Text>
+            {typingDone && (
               <Button
                 onClick={() => {
                   setModalOpened(true);
@@ -139,15 +143,12 @@ export default function LaVang() {
                 colorScheme="cyan"
                 mt={3}
               >
-                See the original church{" "}
+                See more
               </Button>
-            )} */}
-          </Box>
-          <Box w="100%" pt={1}>
-            <Text>Read about Our Lady of La Vang</Text>
+            )}
           </Box>
           <Box p={2}>
-            {typingDone && (
+            {videoEnded && (
               <>
                 <Text>
                   Before continuing, each team member share one thing you would
@@ -155,7 +156,7 @@ export default function LaVang() {
                   a team.
                 </Text>
                 <Text my={2}>Đức Mẹ La Vang</Text>
-                <Text my={2}>Cầu cho chúng con</Text>
+                <Text my={1}>Cầu cho chúng con</Text>
                 <Button
                   mt={2}
                   colorScheme="cyan"
@@ -188,23 +189,43 @@ export default function LaVang() {
           <ModalHeader>Old church</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <Image
-              src="/lavang/lavangchurchold.jpg"
-              h={72}
-              m={2}
-              float="left"
-            />
-            <Image
-              src="/lavang/lavangchurchruin.jpeg"
-              h={64}
-              m={2}
-              float="left"
-            />
+            <Carousel showThumbs={false} infiniteLoop={true}>
+              <Box maxH="100%" display="flex" flexDir="column">
+                <Image
+                  src="/lavang/lavangchurchold.jpg"
+                  maxW="unset"
+                  maxH="100%"
+                />
 
-            <Text>
-              The Church of our Lady of La Vang was built in 1928 and was
-              destroyed in 1972 during the war.
-            </Text>
+                <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
+                  <Text fontSize="sm">
+                    The Church of our Lady of La Vang was built in 1928
+                  </Text>
+                </Box>
+              </Box>
+              <Box maxH="100%" display="flex" flexDir="column">
+                <Image
+                  src="/lavang/NhaThoLaVang-17.JPG"
+                  maxW="unset"
+                  maxH="100%"
+                />
+                <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
+                  <Text fontSize="sm">
+                    The Church was destroyed in 1972 during the war, and only
+                    the front remains standing today.
+                  </Text>
+                </Box>
+              </Box>
+              <Box maxH="100%" display="flex" flexDir="column">
+                <Image src="/lavang/minhlavang.jpg" maxW="unset" maxH="100%" />
+                <Box textColor="white" textAlign="left" px={2} mt={2} mb={4}>
+                  <Text fontSize="sm">
+                    The site a popular pilgrimage location, and thousands of
+                    people come every year to pray.
+                  </Text>
+                </Box>
+              </Box>
+            </Carousel>
           </ModalBody>
 
           <ModalFooter>

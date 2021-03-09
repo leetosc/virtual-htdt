@@ -21,6 +21,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { GiLightBackpack } from "react-icons/gi";
+import { AiOutlineReload } from "react-icons/ai";
 import { TiEdit } from "react-icons/ti";
 import { useAppState } from "@/context/state";
 
@@ -40,7 +41,12 @@ const Header = () => {
   } = useDisclosure();
 
   const stateContext = useAppState();
-  const { appState, setUserNotes } = stateContext;
+  const {
+    appState,
+    setUserNotes,
+    setLocationsVisited,
+    setInventory,
+  } = stateContext;
 
   const MenuItem = ({ href, children }) => (
     <NextLink href={href} passHref>
@@ -89,19 +95,37 @@ const Header = () => {
           <Heading size="md" pl={2} color="white">
             Virtual Camp - HTDT
           </Heading>
-          {appState.SHOW_ANSWERS && (
+        </Flex>
+        {appState.SHOW_ANSWERS && (
+          <Flex alignItems="center">
             <Heading size="md" pl={2} color="red.500">
               {`HUYNH TRUONG MODE`}
             </Heading>
-          )}
-        </Flex>
+          </Flex>
+        )}
         <Box display="flex">
+          {appState.SHOW_ANSWERS && (
+            <Button
+              variant="ghost"
+              size="sm"
+              display={{ base: "block" }}
+              _hover={{ backgroundColor: "cyan.900" }}
+              onClick={() => {
+                setInventory([]);
+                setLocationsVisited([]);
+              }}
+              title="Clear locations and inventory"
+            >
+              <Icon as={AiOutlineReload} h={6} w={6} color="red.500" />
+            </Button>
+          )}
           <Button
             variant="ghost"
             size="sm"
             display={{ base: "block" }}
             _hover={{ backgroundColor: "cyan.900" }}
             onClick={notesOnOpen}
+            title="Your Notes"
           >
             <Icon as={TiEdit} h={8} w={8} color="white" />
           </Button>
@@ -111,6 +135,7 @@ const Header = () => {
             display={{ base: "block" }}
             _hover={{ backgroundColor: "cyan.900" }}
             onClick={inventoryOnOpen}
+            title="Inventory"
           >
             <Icon as={GiLightBackpack} h={8} w={8} color="white" />
           </Button>
