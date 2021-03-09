@@ -180,7 +180,13 @@ export default function Wordcloud() {
             </Box>
           </Box>
           <Box w="100%" pt={2}>
-            <Text>View your word cloud</Text>
+            <Text fontWeight="semibold">View your word cloud</Text>
+            <Text>Your comments:</Text>
+            {saMacSinhs
+              .find((i) => i.name === selectedName)
+              .comments.map((comment, index) => (
+                <Text my={2} key={index}>{`"${comment}"`}</Text>
+              ))}
           </Box>
           <Box p={2}>
             {typingDone && (
