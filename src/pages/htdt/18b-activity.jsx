@@ -90,9 +90,9 @@ export default function SapaActivity() {
                 <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/18c-morning")}
+                  onClick={() => router.push("/htdt/18b2-input")}
                 >
-                  Continue
+                  Go to activity
                 </Button>
               </>
             )}

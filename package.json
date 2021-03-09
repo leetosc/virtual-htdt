@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^1.1.6",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "axios": "^0.21.1",
     "framer-motion": "^3.2.2-rc.1",
     "next": "10.0.5",
     "prop-types": "^15.7.2",
@@ -27,6 +28,7 @@
     "react-responsive-carousel": "^3.2.11",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
+    "react-wordcloud": "^1.2.7",
     "react-youtube": "^7.13.1",
     "use-sound": "^2.0.1"
   },
