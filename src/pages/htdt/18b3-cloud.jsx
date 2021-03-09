@@ -96,7 +96,7 @@ export default function Wordcloud() {
         <Box
           w="100%"
           h="100%"
-          backgroundColor="gray.800"
+          backgroundColor="white"
           textColor="white"
           display="flex"
           // alignItems="center"
@@ -113,7 +113,9 @@ export default function Wordcloud() {
             justifyContent="space-between"
             overflow="auto"
             p={6}
+            maxW="800px"
             w="100%"
+            mx="auto"
             backgroundColor="white"
           >
             {process.browser && (
