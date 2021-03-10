@@ -1,8 +1,12 @@
 import Head from "next/head";
 import { Box, Heading, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { useAppState } from "@/context/state";
 
 export default function Home() {
+  const { setInventory, setLocationsVisited } = useAppState();
+  const router = useRouter();
+
   return (
     <Box
       w="100%"
@@ -44,11 +48,19 @@ export default function Home() {
       </Head>
       <Box mx="auto" textAlign="center">
         <Heading mb={4}>Welcome to Virtual Camp 2021 HTDT!</Heading>
-        <Link href="/landing">
-          <Button colorScheme="cyan" textTransform="uppercase" size="lg">
-            Start
-          </Button>
-        </Link>
+
+        <Button
+          colorScheme="cyan"
+          textTransform="uppercase"
+          size="lg"
+          onClick={() => {
+            setInventory([]);
+            setLocationsVisited([]);
+            router.push("/landing");
+          }}
+        >
+          Start
+        </Button>
       </Box>
     </Box>
   );

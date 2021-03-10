@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Box, Button, Icon } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
-import { GiCook } from "react-icons/gi";
 import { useAppState } from "@/context/state";
 
-export default function Introduction() {
+export default function SampleNoHud() {
   const [typingDone, setTypingDone] = useState(false);
+
   const { appState } = useAppState();
   return (
     <Box
@@ -28,60 +28,57 @@ export default function Introduction() {
           avgTypingDelay={5}
           onTypingDone={() => setTypingDone(true)}
         >
-          An old Vietnamese man shows up at your door. &nbsp;&nbsp;
+          This is a sample of a page with no HUD, used for things like storyline
+          and interludes.
           <Typist.Delay ms={500} />
-          You let him in.
-          <Typist.Delay ms={1000} />
           <br />
           <br />
-          &quot;My name is Tiền. I&apos;m your long-lost uncle. I was in charge
-          of safeguarding our family treasure. It is worth millions of
-          dollars!&quot;
-          <Typist.Delay ms={1000} />
+          Are you ready to begin your journey?
           <br />
           <br />
-          &quot;My time has passed. I am entrusting the treasure to one of my
-          nephews or nieces. The first person to find it gets to keep
-          it!&quot;&nbsp;&nbsp;
-          <Typist.Delay ms={1000} />
-          <br />
-          &quot;However, only the one who is familiar with our family history
-          and culture will deserve to keep our Family Treasure!&quot;
-          <br />
-          &quot;Will it be you?&quot;
-          <Typist.Delay ms={1000} />
+          Get all team members into your team Discord channel.
           <br />
           <br />
-          &quot;Oh, and if you talk to anyone about food
-          <Icon as={GiCook} h={6} w={6} />, pay attention. I think I will want
-          something good to eat later.&quot;
+          Note: This site is best viewed on a desktop.
+          <Text fontWeight="semibold" fontSize="2xl" mt={2}>
+            One person on your team will be the <b>main</b> player.
+            <br />
+            The main player will share their screen in the team Discord channel.
+            <br />
+            When needed, the main player can share the URL of the page they are
+            on to the rest of the team to help find clues or solve puzzles, but
+            the main player should only navigate using the buttons on the page.
+          </Text>
+          <Text fontWeight="bold" my={4} fontSize="2xl">
+            Main player: Do NOT refresh the page or go back and forth using the
+            browser back/forward buttons. ONLY navigate using the buttons on the
+            page.
+          </Text>
           <br />
           <br />
-          &quot;Good luck!&quot;
+          When everyone is ready, press Start to begin.
         </Typist>
         {typingDone && (
-          <Link href="/htdt/01-hvmcc">
+          <Link href="/storyline/introduction">
             <Button
               colorScheme="cyan"
               textTransform="uppercase"
               size="lg"
               mt={4}
             >
-              Go to first location
+              Start
             </Button>
           </Link>
         )}
         {appState.SHOW_ANSWERS && (
-          <Link href="/htdt/01-hvmcc">
+          <Link href="/storyline/introduction">
             <Button
               colorScheme="red"
               textTransform="uppercase"
               size="lg"
               mt={4}
             >
-              {typingDone
-                ? `Go to first location`
-                : `Skip and Go to first location`}
+              Start
             </Button>
           </Link>
         )}
