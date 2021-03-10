@@ -57,32 +57,33 @@ export default function Map() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              You are leaving the country. Let's take a few minutes to reflect
-              on what we know about the USA before we get to Vietnam.
+              You are leaving the country. Let&apos;s take a few minutes to
+              reflect on what we know about the USA before we get to Vietnam.
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
             <Text fontWeight="semibold">
               States are abbreviated by two letters. Both are important, but if
-              we can't decide, let's just alternate the letters starting with
-              the first.
+              we can&apos;t decide, let&apos;s just alternate the letters
+              starting with the first.
             </Text>
             <OrderedList>
               <ListItem>
                 State with best TNTT doan in USA and the only state to be an
                 independent nation for a period of time.
                 <ListItem>
-                  Known as Hoosier State, also the birth place of the "King of
-                  Pop"
+                  Known as Hoosier State, also the birth place of the &quot;King
+                  of Pop&quot;
                 </ListItem>
               </ListItem>
               <ListItem>
-                Earned it's nickname "Volunteer State" during the War of 1812.
-                It is also home to the largest underground lake in USA.
+                Earned it&apos;s nickname &quot;Volunteer State&quot; during the
+                War of 1812. It is also home to the largest underground lake in
+                USA.
               </ListItem>
               <ListItem>
                 Home of Glacier National Park, this state has the grizzly bear
-                as it's state animal
+                as it&apos;s state animal
               </ListItem>
               <ListItem>
                 The Sunshine State, the only place where you can find crocodiles
@@ -93,19 +94,19 @@ export default function Map() {
                 system, and first police force in USA.
               </ListItem>
               <ListItem>
-                Nick name of "Land of 10,000 Lakes", and has the largest network
-                of skyways due it's winters
+                Nick name of &quot;Land of 10,000 Lakes&qpot;, and has the
+                largest network of skyways due it&apos;s winters
               </ListItem>
               <ListItem>
                 Known as Auto state, it is the home of GM, Chysler, and Ford. It
                 is also the only state made of 2 penisulas.
               </ListItem>
               <ListItem>
-                Filled with French Influence, this state bears it's name from
-                the major land purchase from the French in 1803.
+                Filled with French Influence, this state bears it&apos;s name
+                from the major land purchase from the French in 1803.
               </ListItem>
               <ListItem>
-                Home of the oldest derby that bears it's name, this is also
+                Home of the oldest derby that bears it&apos;s name, this is also
                 where Post It Notes are made.
               </ListItem>
             </OrderedList>

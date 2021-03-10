@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -17,10 +14,7 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Link as ChakraLink,
   Icon,
-  UnorderedList,
-  ListItem,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import { MapInteractionCSS } from "react-map-interaction";
@@ -29,7 +23,6 @@ import { FaCheck } from "react-icons/fa";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function SapaMarket() {
   const router = useRouter();

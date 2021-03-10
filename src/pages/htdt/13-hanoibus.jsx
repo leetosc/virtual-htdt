@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
   Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,12 +17,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
-import YouTube from "react-youtube";
 
 export default function Hanoibus() {
   const router = useRouter();
@@ -115,8 +110,10 @@ export default function Hanoibus() {
           <ModalCloseButton />
           <ModalBody>
             <Image src="/hanoi/hanoi-busdriver.png" h={36} m={2} float="left" />
-            "You are heading to Sa Pa? I'm expecting someone."
-            {puzzleInput === "31" ? <Text mt={3}>Great, let's go!</Text> : null}
+            &quot;You are heading to Sa Pa? I&apos;m expecting someone.&quot;
+            {puzzleInput === "31" ? (
+              <Text mt={3}>Great, let&apos;s go!</Text>
+            ) : null}
             <Input
               backgroundColor="white"
               placeholder="Tell him the password"

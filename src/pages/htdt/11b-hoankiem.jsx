@@ -1,39 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
-import Typist from "react-typist";
 
 export default function HoanKiem() {
   const router = useRouter();
-  const stateContext = useAppState();
-  const { appState } = stateContext;
-  const [typingDone, setTypingDone] = useState(false);
-  const [imageClicked, setImageClicked] = useState(false);
   const [clickCounter, setClickCounter] = useState(1);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -122,29 +96,6 @@ export default function HoanKiem() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Floating capsule</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text fontWeight="semibold">Chìa khoá : A1 = a ; E5 = y</Text>
-
-            <Text mt={2}>
-              A4 – A4 – A1 – E4 - / A4 – A4 – A5 – A5 – C4 – D4 - / C4 – C5 – E3
-              – B4 / D3 – C5 – C5 – B4 – B1 /AR
-            </Text>
-            {/* solution: Đã đến nơi rồi. */}
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

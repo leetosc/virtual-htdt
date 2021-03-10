@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,18 +16,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
 export default function HaLongContact() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -143,10 +134,10 @@ export default function HaLongContact() {
           <ModalBody overflow="auto" maxH="100%">
             <Image src="/halong/halongphi2.png" h={96} m={2} float="left" />
 
-            <Text>"What are you doing here?"</Text>
+            <Text>&quot;What are you doing here?&quot;</Text>
             <Text mt={6}>
-              "Oh, you're looking for Uncle Tien? He spent some time at one of
-              the floating villages. I can take you there."
+              &quot;Oh, you&apos;re looking for Uncle Tien? He spent some time
+              at one of the floating villages. I can take you there.&quot;
             </Text>
           </ModalBody>
 

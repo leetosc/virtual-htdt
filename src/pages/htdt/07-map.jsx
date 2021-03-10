@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Box, Text, Button, Image, Input } from "@chakra-ui/react";
+import { Box, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 
 import Hud from "@/components/Hud/Hud";
