@@ -43,13 +43,15 @@ export default function SapaActivity2() {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     return (
-      <Box key={id} backgroundColor="gray.700" p={3}>
+      <Box key={id} backgroundColor="gray.700" p={3} rounded="md">
         <Text fontWeight="semibold">{name}</Text>
         <Input
           my={2}
           color="black"
           backgroundColor="white"
           value={comment}
+          isDisabled={submitted}
+          placeholder="Something nice"
           onChange={(e) => setComment(e.target.value)}
         />
         <Button
