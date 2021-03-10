@@ -21,6 +21,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ReactPlayer from "react-player";
 import { GoogleFonts } from "next-google-fonts";
+import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function NhaThoDucBa() {
   const router = useRouter();
@@ -183,6 +184,7 @@ export default function NhaThoDucBa() {
               /TV - HMALK - VZEFT/L - MEHZI - MWAIVT - Y - FHYAZ/
             </Text>
             <Text mt={4}>Key: HA = F, HEHE = N</Text>
+            {appState.SHOW_ANSWERS && <ShowAnswerButton answer="DON BOSCO" />}
           </ModalBody>
 
           <ModalFooter>

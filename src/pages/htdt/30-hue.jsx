@@ -1,39 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image, Stack } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
 export default function Hue() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
 
   const { appState } = useAppState();
@@ -101,11 +77,10 @@ export default function Hue() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               You arrive in Hue, the former imperial capital of Vietnam. You
-              decide to check out some of the city's popular attractions to see
-              if your uncle left any clues.
+              decide to check out some of the city&apos;s popular attractions to
+              see if your uncle left any clues.
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
@@ -171,34 +146,6 @@ export default function Hue() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Man in the shadows</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody overflow="auto" maxH="100%">
-            <Image src="/halong/halongphi2.png" h={96} m={2} float="left" />
-
-            <Text>"What are you doing here?"</Text>
-            <Text mt={6}>
-              "Oh, you're looking for Uncle Tien? He spent some time at one of
-              the floating villages. I can take you there."
-            </Text>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

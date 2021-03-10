@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -21,16 +17,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import { GiCook } from "react-icons/gi";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 
 export default function ThienMu() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -70,7 +63,6 @@ export default function ThienMu() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={10}
-              onTypingDone={() => setTypingDone(true)}
             >
               The name of the pagoda derives from a special legend. Long time
               ago, an old woman appeared on the hill where the pagoda stands
@@ -131,9 +123,9 @@ export default function ThienMu() {
               crack in the wall along with a bag of spices.
             </Text>
             <Text my={2}>
-              "These special ingriedients are for you: Coriander Seeds, Star
-              Anise, Fennel Seeds, Cinnamon, and Peppercorn. Take them with you
-              to Saigon."
+              &quot;These special ingriedients are for you: Coriander Seeds,
+              Star Anise, Fennel Seeds, Cinnamon, and Peppercorn. Take them with
+              you to Saigon.&quot;
             </Text>
             <Text my={2}>
               <Icon as={GiCook} h={6} w={6} /> These spices are needed to make

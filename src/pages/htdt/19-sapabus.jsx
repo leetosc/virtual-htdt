@@ -1,40 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
 
 export default function Sapabus() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
-  const [imageClicked, setImageClicked] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
   const [clickCounter, setClickCounter] = useState(0);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -65,7 +39,6 @@ export default function Sapabus() {
               h="100%"
               onClick={() => {
                 setClickCounter(clickCounter + 1);
-                setImageClicked(true);
               }}
               _hover={{ cursor: "pointer" }}
             />
@@ -77,7 +50,6 @@ export default function Sapabus() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={10}
-              onTypingDone={() => setTypingDone(true)}
             >
               It is time to leave. You bid farewell to the villagers, then get
               back on the bus and depart for Ha Long Bay.
@@ -99,38 +71,6 @@ export default function Sapabus() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Bus Driver</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Image src="/hanoi/hanoi-busdriver.png" h={36} m={2} float="left" />
-            "You are heading to Sa Pa? I'm expecting someone."
-            {puzzleInput === "31" ? <Text mt={3}>Great, let's go!</Text> : null}
-            <Input
-              backgroundColor="white"
-              placeholder="Tell him the password"
-              value={puzzleInput}
-              onChange={(e) => setPuzzleInput(e.target.value)}
-            />
-          </ModalBody>
-
-          <ModalFooter>
-            <Button
-              mt={2}
-              colorScheme="cyan"
-              isDisabled={puzzleInput !== "31"}
-              onClick={() => {
-                onClose();
-              }}
-            >
-              Submit
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

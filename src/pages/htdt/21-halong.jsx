@@ -1,45 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import { Carousel } from "react-responsive-carousel";
-import ReactCardFlip from "react-card-flip";
 import ReactPlayer from "react-player";
 
 export default function HaLong1() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
 
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const [puzzleCorrect, setPuzzleCorrect] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const toast = useToast();
   const [allowContinue, setAllowContinue] = useState(false);
 
   const { appState } = useAppState();
@@ -47,7 +18,7 @@ export default function HaLong1() {
   useEffect(() => {
     setTimeout(() => {
       setAllowContinue(true);
-    }, 180000);
+    }, 120000);
   }, []);
 
   return (
@@ -96,7 +67,6 @@ export default function HaLong1() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               <Text>
                 You arrive at Ha Long Bay. The scenery is breathtaking.
@@ -151,37 +121,6 @@ export default function HaLong1() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Note</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody overflow="auto" maxH="100%">
-            <Text>
-              <Image src="/sapa/fansipan.png" h={48} mb={3} />I was going to
-              leave some clues for you at the top of <b>Fansipan</b> mountain,
-              but since it is the tallest mountain in Southeast Asia at 10,312
-              feet, it might be a tough climb.
-              <br />
-              Instead, you should visit one of the floating villages in Ha Long
-              Bay. I left something for you there.
-            </Text>
-            <Text textAlign="right">-Uncle Tien</Text>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

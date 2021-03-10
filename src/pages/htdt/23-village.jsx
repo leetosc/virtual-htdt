@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   Box,
-  Heading,
   Text,
   Button,
   Image,
-  Input,
-  Stack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,18 +16,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
 import ReactPlayer from "react-player";
 
 export default function HaLongVillage() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -183,9 +175,9 @@ export default function HaLongVillage() {
             <Image src="/halong/villager.png" h={48} m={2} float="left" />
 
             <Text>
-              "You're looking for Uncle Tien? He was here recently and left a
-              package on one of the islands. If you want to reach it you will
-              need to build a special boat."
+              &quot;You&apos;re looking for Uncle Tien? He was here recently and
+              left a package on one of the islands. If you want to reach it you
+              will need to build a special boat.&quot;
             </Text>
           </ModalBody>
 
