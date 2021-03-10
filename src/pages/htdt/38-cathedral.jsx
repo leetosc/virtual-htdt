@@ -19,13 +19,11 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import { Carousel } from "react-responsive-carousel";
 import ReactPlayer from "react-player";
 import { GoogleFonts } from "next-google-fonts";
 
 export default function NhaThoDucBa() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalOpened, setModalOpened] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -98,7 +96,6 @@ export default function NhaThoDucBa() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               Your cousin takes you to the Notre-Dame Cathedral Basilica of
               Saigon, known as Nhà Thờ Đức Bà.

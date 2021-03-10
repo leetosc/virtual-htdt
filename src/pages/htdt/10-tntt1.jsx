@@ -108,7 +108,7 @@ export default function Tntt1() {
           <ModalHeader>Tr. Tony</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
-            <Image src="/trtony.png" h={28} m={2} float="left" />
+            <Image src="/hanoi/trtony.png" h={28} m={2} float="left" />
             <Text>
               The Vietnamese Eurcharistic Youth Movement in Vietnam started in
               Hanoi in 1929, and was initiated by Priests Léon Paliard and Paul
