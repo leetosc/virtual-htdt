@@ -50,7 +50,7 @@ export default function Airport() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/abia.jpg" maxW="unset" maxH="100%" h="100%" />
+            <Image src="/begin/abia.jpg" maxW="unset" maxH="100%" h="100%" />
           </Box>
         </Box>
 

@@ -29,7 +29,11 @@ export default function Bus() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src={buttonClicked ? "/hvmccToEagleWing.jpg" : "/businside.jpg"}
+              src={
+                buttonClicked
+                  ? "/begin/hvmccToEagleWing.jpg"
+                  : "/begin/businside.jpg"
+              }
               maxW="unset"
               maxH="100%"
               h="100%"

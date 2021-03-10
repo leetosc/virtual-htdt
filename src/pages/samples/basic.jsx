@@ -28,7 +28,7 @@ export default function SampleBasic() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/hvmcc.jpg" maxW="unset" h="100%" maxH="100%" />
+            <Image src="/begin/hvmcc.jpg" maxW="unset" h="100%" maxH="100%" />
           </Box>
         </Box>
 

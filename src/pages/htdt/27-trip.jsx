@@ -39,7 +39,12 @@ export default function Trip() {
 
           {videoEnded ? (
             <Box h="100%" position="relative" overflow="auto">
-              <Image src="/buswindow.png" maxW="unset" h="100%" maxH="100%" />
+              <Image
+                src="/lavang/buswindow.png"
+                maxW="unset"
+                h="100%"
+                maxH="100%"
+              />
             </Box>
           ) : (
             <Box h="100%" position="relative" overflow="auto" w="100%">

@@ -29,7 +29,7 @@ export default function Map() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/eagleWingToABIA.jpg"
+              src="/begin/eagleWingToABIA.jpg"
               maxW="unset"
               h="100%"
               maxH="100%"
