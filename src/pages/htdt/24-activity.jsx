@@ -1,42 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
+
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import ReactPlayer from "react-player";
-import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
 
 export default function HaLongActivity() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [modalOpened, setModalOpened] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
-  const { appState } = useAppState();
 
   return (
     <>
@@ -70,27 +42,24 @@ export default function HaLongActivity() {
             <Typist
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
-              onTypingDone={() => setTypingDone(true)}
             >
               Follow the instructions to build the boat.
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
             <Text mt={3} fontSize="sm">
-              Open your Care Package and find the envelope marked "HTDT".
+              Open your Care Package and find the envelope marked &quot;Do not
+              open until HTDT&quot;. Open it now.
             </Text>
-            {videoEnded && typingDone && (
-              <Button
-                mt={2}
-                colorScheme="cyan"
-                onClick={() => {
-                  setModalOpened(true);
-                  onOpen();
-                }}
-              >
-                Talk to the village leader
-              </Button>
-            )}
+            <Text my={4}>
+              One person on your team will be the instruction-giver. Each other
+              team member will try to follow the instructions as best they can
+              to build the boat.
+            </Text>
+            <Text>
+              Instruction-giver cannot use their hands and can only give verbal
+              instructions.
+            </Text>
           </Box>
           <Box p={2}>
             <Button
@@ -102,37 +71,6 @@ export default function HaLongActivity() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Village leader</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody overflow="auto" maxH="100%">
-            <Image src="/halong/halongphi2.png" h={48} m={2} float="left" />
-
-            <Text>
-              "You're looking for Uncle Tien? He was here recently and left a
-              package on one of the islands. If you want to reach it you will
-              need to build a special boat."
-            </Text>
-            <Text mt={6} fontSize="sm">
-              Open your Care Package and find the envelope marked "HTDT".
-            </Text>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }

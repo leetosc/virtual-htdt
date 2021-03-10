@@ -148,7 +148,7 @@ export default function NhaThoDucBa() {
                 <Button
                   mt={2}
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/29-map")}
+                  onClick={() => router.push("/htdt/39-benthanh")}
                 >
                   Continue
                 </Button>
@@ -157,7 +157,7 @@ export default function NhaThoDucBa() {
             {appState.SHOW_ANSWERS && (
               <Button
                 colorScheme="red"
-                onClick={() => router.push("/htdt/29-map")}
+                onClick={() => router.push("/htdt/39-benthanh")}
               >
                 Continue
               </Button>
