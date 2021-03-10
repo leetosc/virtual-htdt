@@ -131,7 +131,7 @@ export default function ThienMu() {
               <Icon as={GiCook} h={6} w={6} /> These spices are needed to make
               the flavor of Pho.
             </Text>
-            <Text textAlign="right">-Uncle Tien</Text>
+            <Text textAlign="right">-Uncle Tiền</Text>
           </ModalBody>
 
           <ModalFooter>

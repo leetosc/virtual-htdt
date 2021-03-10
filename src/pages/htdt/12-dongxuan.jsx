@@ -113,7 +113,7 @@ export default function DongXuan() {
               float="left"
             />
             <Text>
-              &quot;Uncle Tien was here just a while ago. He was talking to a
+              &quot;Uncle Tiền was here just a while ago. He was talking to a
               lady in the meat market.&quot;
             </Text>
           </ModalBody>

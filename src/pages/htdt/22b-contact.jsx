@@ -136,7 +136,7 @@ export default function HaLongContact() {
 
             <Text>&quot;What are you doing here?&quot;</Text>
             <Text mt={6}>
-              &quot;Oh, you&apos;re looking for Uncle Tien? He spent some time
+              &quot;Oh, you&apos;re looking for Uncle Tiền? He spent some time
               at one of the floating villages. I can take you there.&quot;
             </Text>
           </ModalBody>

@@ -177,7 +177,7 @@ export default function HaLongContact() {
               Yellow ginger adds to the color of Bun Bo Hue, and fish sauce adds
               to its flavor.
             </Text>
-            <Text textAlign="right">-Uncle Tien</Text>
+            <Text textAlign="right">-Uncle Tiền</Text>
           </ModalBody>
 
           <ModalFooter>

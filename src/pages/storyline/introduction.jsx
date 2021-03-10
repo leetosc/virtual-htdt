@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Box, Heading, Text, Button, Icon } from "@chakra-ui/react";
+import { Box, Button, Icon } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 import { GiCook } from "react-icons/gi";
@@ -34,28 +34,30 @@ export default function Introduction() {
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          "My name is Tiền. I'm your long-lost uncle. I was in charge of
-          safeguarding our family treasure. It is worth millions of dollars!"
+          &quot;My name is Tiền. I&apos;m your long-lost uncle. I was in charge
+          of safeguarding our family treasure. It is worth millions of
+          dollars!&quot;
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          "My time has passed. I am entrusting the treasure to one of my nephews
-          or nieces. The first person to find it gets to keep it!"&nbsp;&nbsp;
+          &quot;My time has passed. I am entrusting the treasure to one of my
+          nephews or nieces. The first person to find it gets to keep
+          it!&quot;&nbsp;&nbsp;
           <Typist.Delay ms={1000} />
           <br />
-          "However, only the one who is familiar with our family history and
-          culture will deserve to keep our Family Treasure!"
+          &quot;However, only the one who is familiar with our family history
+          and culture will deserve to keep our Family Treasure!&quot;
           <br />
-          "Will it be you?"
+          &quot;Will it be you?&quot;
           <Typist.Delay ms={1000} />
           <br />
           <br />
-          "Oh, and if you talk to anyone about food{" "}
+          &quot;Oh, and if you talk to anyone about food
           <Icon as={GiCook} h={6} w={6} />, pay attention. I think I will want
-          something good to eat later."
+          something good to eat later.&quot;
           <br />
           <br />
-          "Good luck!"
+          &quot;Good luck!&quot;
         </Typist>
         {typingDone && (
           <Link href="/htdt/01-hvmcc">

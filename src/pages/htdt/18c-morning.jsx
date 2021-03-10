@@ -114,7 +114,7 @@ export default function SapaMorning() {
               Instead, you should visit one of the floating villages in Ha Long
               Bay. I left something for you there.
             </Text>
-            <Text textAlign="right">-Uncle Tien</Text>
+            <Text textAlign="right">-Uncle Tiền</Text>
           </ModalBody>
 
           <ModalFooter>

@@ -177,7 +177,7 @@ export default function NhaThoDucBa() {
           <ModalBody overflow="auto" maxH="100%">
             <Image src="/saigon/denny.png" h={28} m={2} float="left" />
             <Text>
-              &quot;Are you looking for Uncle Tien? His house is in the city.
+              &quot;Are you looking for Uncle Tiền? His house is in the city.
               You will need a password to get in.&quot;
             </Text>
             <Text mt={8} fontWeight="semibold" fontFamily="Assistant">

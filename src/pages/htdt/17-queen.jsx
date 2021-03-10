@@ -46,7 +46,7 @@ export default function Queen() {
               avgTypingDelay={5}
             >
               &quot;They call me the Queen of Sapa. I&apos;m not actually a
-              queen, I&apos;m just in charge of this village here. Uncle Tien
+              queen, I&apos;m just in charge of this village here. Uncle Tiền
               liked to come to my village to get away from the hustle and bustle
               of city life. Before I tell you any more, I need the code
               word.&quot; <br />

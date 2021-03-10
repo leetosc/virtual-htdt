@@ -84,7 +84,7 @@ export default function DongXuanMarket() {
       <Box>
         <Image src="/hanoi/hanoi-dongxuanmeat2.png" h={28} m={3} float="left" />
         <Text>
-          &quot;Hey, are you Uncle Tien&apos;s cháu? Here is the meat he
+          &quot;Hey, are you Uncle Tiền&apos;s cháu? Here is the meat he
           ordered.&quot;
         </Text>
         <UnorderedList listStylePosition="inside">

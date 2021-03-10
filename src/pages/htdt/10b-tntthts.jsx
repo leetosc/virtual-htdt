@@ -86,9 +86,9 @@ export default function Tntt1() {
             >
               One of the HTs comes up to you. <br />
               <br />
-              &quot;Uncle Tien? I know him. He was fond of visiting Sa Pa. You
+              &quot;Uncle Tiền? I know him. He was fond of visiting Sa Pa. You
               should go there and check it out! You will need a password though.
-              Maybe you can find that in the market, Uncle Tien spent a lot of
+              Maybe you can find that in the market, Uncle Tiền spent a lot of
               time there.&quot;
             </Typist>
           </Box>

@@ -107,7 +107,7 @@ export default function ImperialCity() {
           <ModalBody>
             <Image src="/hue/mysteriousWoman.png" h={28} m={2} float="left" />
             <Text>
-              &quot;Hi there. Uncle Tien told me to give this to you.&quot;
+              &quot;Hi there. Uncle Tiền told me to give this to you.&quot;
             </Text>
             <Text my={2}>
               <Icon as={GiCook} h={6} w={6} /> This shrimp sauce adds flavor to

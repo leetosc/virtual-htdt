@@ -175,7 +175,7 @@ export default function HaLongVillage() {
             <Image src="/halong/villager.png" h={48} m={2} float="left" />
 
             <Text>
-              &quot;You&apos;re looking for Uncle Tien? He was here recently and
+              &quot;You&apos;re looking for Uncle Tiền? He was here recently and
               left a package on one of the islands. If you want to reach it you
               will need to build a special boat.&quot;
             </Text>
