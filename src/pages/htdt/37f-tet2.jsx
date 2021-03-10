@@ -5,10 +5,12 @@ import { Box, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import ReactPlayer from "react-player";
 
 export default function Tet2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   return (
     <>
@@ -27,9 +29,45 @@ export default function Tet2() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Box h="100%" position="relative" overflow="auto">
-            <Image src="/saigon/tet2.jpg" maxW="unset" h="100%" maxH="100%" />
-          </Box>
+          {videoEnded ? (
+            <Box h="100%" position="relative" overflow="auto">
+              <Image src="/saigon/tet2.jpg" maxW="unset" h="100%" maxH="100%" />
+            </Box>
+          ) : (
+            <Box h="100%" position="relative" overflow="auto" w="100%">
+              <Box
+                // overlay to prevent clicking video
+                opacity={0}
+                h="100%"
+                w="100%"
+                position="absolute"
+                top={0}
+                left={0}
+              />
+
+              <ReactPlayer
+                url="https://youtu.be/wthTWwWCjIM"
+                controls={false}
+                muted={true}
+                playing={true}
+                playbackRate={1}
+                onProgress={({ playedSeconds }) => {
+                  if (playedSeconds > 131) {
+                    setVideoEnded(true);
+                  }
+                }}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      start: 86,
+                    },
+                  },
+                }}
+                width="100%"
+                height="100%"
+              />
+            </Box>
+          )}
         </Box>
 
         <Hud>

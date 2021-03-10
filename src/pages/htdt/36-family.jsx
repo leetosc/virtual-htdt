@@ -116,7 +116,7 @@ export default function SaigonFamily() {
               <Button
                 mt={2}
                 colorScheme="red"
-                onClick={() => router.push("/storyline/finish")}
+                onClick={() => router.push("/htdt/38-cathedral")}
               >
                 Continue
               </Button>
@@ -134,7 +134,7 @@ export default function SaigonFamily() {
                   <Button
                     mt={2}
                     colorScheme="cyan"
-                    onClick={() => router.push("/storyline/finish")}
+                    onClick={() => router.push("/htdt/38-cathedral")}
                   >
                     Go
                   </Button>

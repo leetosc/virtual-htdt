@@ -29,7 +29,7 @@ export default function TrungThu2() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/trungthu2.jpg"
+              src="/saigon/tettrungthuu.jpg"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -53,7 +53,9 @@ export default function TrungThu2() {
               joyous time for friends and family to enjoy.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" display="flex" pt={4}>
+            Listen to your cousin&apos;s story
+          </Box>
           <Box p={2}>
             {typingDone && (
               <>

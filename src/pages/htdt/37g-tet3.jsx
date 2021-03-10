@@ -43,7 +43,12 @@ export default function Tet2() {
           </Head>
 
           <Box h="100%" position="relative" overflow="auto">
-            <Image src="/saigon/tet3.png" maxW="unset" h="100%" maxH="100%" />
+            <Image
+              src="/saigon/band_tet.png"
+              maxW="unset"
+              h="100%"
+              maxH="100%"
+            />
           </Box>
         </Box>
 
@@ -63,7 +68,7 @@ export default function Tet2() {
               upcoming year.
             </Typist>
           </Box>
-          <Box w="100%" pt={4}>
+          <Box w="100%" pt={2}>
             <Text fontWeight="semibold">Team Activity:</Text>
             <Text>
               Take 5 minutes to come up with a Tết greeting (Chúc Tết) for a

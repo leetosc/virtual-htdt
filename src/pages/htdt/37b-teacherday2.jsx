@@ -29,7 +29,7 @@ export default function TeacherDay1() {
 
           <Box h="100%" position="relative" overflow="auto">
             <Image
-              src="/saigon/teacherday2.png"
+              src="/saigon/ttj_ngaynhagiao.png"
               maxW="unset"
               h="100%"
               maxH="100%"
@@ -52,7 +52,9 @@ export default function TeacherDay1() {
               build your moral education or aided in your development.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" display="flex" pt={4}>
+            Listen to your cousin&apos;s story
+          </Box>
           <Box p={2}>
             {typingDone && (
               <>

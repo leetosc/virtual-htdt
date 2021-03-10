@@ -53,7 +53,9 @@ export default function TeacherDay1() {
               their teachers and peers.
             </Typist>
           </Box>
-          <Box w="100%" display="flex" pt={4}></Box>
+          <Box w="100%" display="flex" pt={4}>
+            Listen to your cousin&apos;s story
+          </Box>
           <Box p={2}>
             {typingDone && (
               <>

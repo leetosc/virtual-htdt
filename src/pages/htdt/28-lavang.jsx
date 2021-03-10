@@ -148,7 +148,7 @@ export default function LaVang() {
             )}
           </Box>
           <Box p={2}>
-            {videoEnded && (
+            {videoEnded && modalOpened && (
               <>
                 <Text>
                   Before continuing, each team member share one thing you would
@@ -186,7 +186,7 @@ export default function LaVang() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Old church</ModalHeader>
+          <ModalHeader>La Vang</ModalHeader>
           <ModalCloseButton />
           <ModalBody overflow="auto" maxH="100%">
             <Carousel showThumbs={false} infiniteLoop={true}>
