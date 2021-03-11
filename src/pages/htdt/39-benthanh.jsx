@@ -106,11 +106,10 @@ export default function BenThanh() {
                     setModalOpened(true);
                     stateContext.setInventory([
                       ...appState.inventory,
-                      "Noodles",
-                      "Rice Flour",
-                      "Bread",
-                      "White Rice Flour",
-                      "Rice Flour",
+                      { name: "Noodles", image: "/items/noodles.png" },
+                      { name: "Rice Flour", image: "/items/riceflour.jpg" },
+                      { name: "Bread", image: "/items/bread.png" },
+                      { name: "Flour", image: "/items/flour.jpg" },
                     ]);
                     onOpen();
                   }}

@@ -19,11 +19,13 @@ import {
   Textarea,
   useDisclosure,
   Icon,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { GiLightBackpack } from "react-icons/gi";
 import { AiOutlineReload } from "react-icons/ai";
 import { TiEdit } from "react-icons/ti";
 import { useAppState } from "@/context/state";
+import InventoryItem from "../InventoryItem/InventoryItem";
 
 const Header = () => {
   const router = useRouter();
@@ -169,11 +171,19 @@ const Header = () => {
           <ModalHeader>Inventory</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {appState.inventory.length > 0 ? (
-              appState.inventory.map((i) => <Text key={i}>{i}</Text>)
-            ) : (
-              <Text>Inventory is empty</Text>
-            )}
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={1}>
+              {appState.inventory.length > 0 ? (
+                appState.inventory.map((i) =>
+                  typeof i === "object" ? (
+                    <InventoryItem key={i.name} name={i.name} image={i.image} />
+                  ) : (
+                    <Text key={i}>{i}</Text>
+                  )
+                )
+              ) : (
+                <Text>Inventory is empty</Text>
+              )}
+            </SimpleGrid>
           </ModalBody>
 
           <ModalFooter>

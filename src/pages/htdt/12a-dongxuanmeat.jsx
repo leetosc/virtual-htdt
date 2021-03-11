@@ -117,10 +117,10 @@ export default function DongXuanMarket() {
             setPersonClicked(newPersonClicked);
             stateContext.setInventory([
               ...appState.inventory,
-              "5kg Beef",
-              "5kg Pork",
-              "3kg Shrimp",
-              "1kg Pate",
+              { name: "5kg Beef", image: "/items/beef.png" },
+              { name: "5kg Pork", image: "/items/pork.png" },
+              { name: "3kg Shrimp", image: "/items/shrimp.png" },
+              { name: "1kg Pate", image: "/items/pate.png" },
             ]);
 
             onClose();

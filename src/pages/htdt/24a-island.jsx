@@ -121,11 +121,15 @@ export default function HaLongContact() {
                   }
                   colorScheme="cyan"
                   onClick={() => {
-                    stateContext.setInventory([
-                      ...appState.inventory,
-                      "Fish Sauce",
-                      "Ginger",
-                    ]);
+                    if (
+                      !appState.inventory.some((i) => i.name !== "Fish Sauce")
+                    ) {
+                      stateContext.setInventory([
+                        ...appState.inventory,
+                        { name: "Fish Sauce", image: "/items/fishsauce.png" },
+                        { name: "Ginger", image: "/items/ginger.png" },
+                      ]);
+                    }
 
                     setModalOpened(true);
                     onOpen();

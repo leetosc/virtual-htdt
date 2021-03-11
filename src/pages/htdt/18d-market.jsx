@@ -136,10 +136,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[0] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Lemongrass")) {
+                    if (
+                      !appState.inventory.some((i) => i.name === "Lemongrass")
+                    ) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Lemongrass",
+                        { name: "Lemongrass", image: "/items/lemongrass.png" },
                       ]);
                     }
 
@@ -152,10 +154,12 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[0] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Lemongrass")) {
+                    if (
+                      !appState.inventory.some((i) => i.name === "Lemongrass")
+                    ) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Lemongrass",
+                        { name: "Lemongrass", image: "/items/lemongrass.png" },
                       ]);
                     }
 
@@ -181,11 +185,11 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[1] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Carrots")) {
+                    if (!appState.inventory.some((i) => i.name === "Carrots")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Carrots",
-                        "Pineapple",
+                        { name: "Carrots", image: "/items/carrot.svg" },
+                        { name: "Pineapple", image: "/items/pineapple.svg" },
                       ]);
                     }
 
@@ -198,11 +202,11 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[1] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Carrots")) {
+                    if (!appState.inventory.some((i) => i.name === "Carrots")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Carrots",
-                        "Pineapple",
+                        { name: "Carrots", image: "/items/carrot.svg" },
+                        { name: "Pineapple", image: "/items/pineapple.svg" },
                       ]);
                     }
 
@@ -228,10 +232,10 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[2] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Lettuce")) {
+                    if (!appState.inventory.some((i) => i.name === "Lettuce")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Lettuce",
+                        { name: "Lettuce", image: "/items/lettuce.svg" },
                       ]);
                     }
 
@@ -244,10 +248,10 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[2] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Lettuce")) {
+                    if (!appState.inventory.some((i) => i.name === "Lettuce")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Lettuce",
+                        { name: "Lettuce", image: "/items/lettuce.svg" },
                       ]);
                     }
 
@@ -273,10 +277,15 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[3] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Bean Sprouts")) {
+                    if (
+                      !appState.inventory.some((i) => i.name === "Bean Sprouts")
+                    ) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Bean Sprouts",
+                        {
+                          name: "Bean Sprouts",
+                          image: "/items/beansprouts.png",
+                        },
                       ]);
                     }
 
@@ -289,13 +298,17 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[3] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Bean Sprouts")) {
+                    if (
+                      !appState.inventory.some((i) => i.name === "Bean Sprouts")
+                    ) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Bean Sprouts",
+                        {
+                          name: "Bean Sprouts",
+                          image: "/items/beansprouts.png",
+                        },
                       ]);
                     }
-
                     onOpen();
                   }
                 }}
@@ -318,11 +331,11 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[4] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Onions")) {
+                    if (!appState.inventory.some((i) => i.name === "Onions")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Onions",
-                        "Garlic",
+                        { name: "Onions", image: "/items/onion.svg" },
+                        { name: "Garlic", image: "/items/garlic.png" },
                       ]);
                     }
 
@@ -335,11 +348,11 @@ export default function SapaMarket() {
                     const newPersonClicked = [...personClicked];
                     newPersonClicked[4] = true;
                     setPersonClicked(newPersonClicked);
-                    if (!appState.inventory.includes("Onions")) {
+                    if (!appState.inventory.some((i) => i.name === "Onions")) {
                       stateContext.setInventory([
                         ...appState.inventory,
-                        "Onions",
-                        "Garlic",
+                        { name: "Onions", image: "/items/onion.svg" },
+                        { name: "Garlic", image: "/items/garlic.png" },
                       ]);
                     }
 

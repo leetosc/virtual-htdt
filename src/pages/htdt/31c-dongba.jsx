@@ -101,10 +101,13 @@ export default function DongBa() {
                     setModalOpened(true);
                     stateContext.setInventory([
                       ...appState.inventory,
-                      "Coconut Milk",
-                      "Corn Starch",
-                      "Tapioca Starch",
-                      "Mayonnaise",
+                      { name: "Coconut Milk", image: "/items/coconutmilk.png" },
+                      { name: "Corn Starch", image: "/items/cornstarch.png" },
+                      {
+                        name: "Tapioca Starch",
+                        image: "/items/tapiocastarch.jpg",
+                      },
+                      { name: "Mayonnaise", image: "/items/mayonnaise.png" },
                     ]);
                     onOpen();
                   }}

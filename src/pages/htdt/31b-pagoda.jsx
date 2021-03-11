@@ -81,14 +81,19 @@ export default function ThienMu() {
               mt={2}
               onClick={() => {
                 setModalOpened(true);
-                stateContext.setInventory([
-                  ...appState.inventory,
-                  "Coriander Seeds",
-                  "Star Anise",
-                  "Fennel Seeds",
-                  "Cinnamon",
-                  "Peppercorn",
-                ]);
+                if (
+                  !appState.inventory.some((i) => i.name !== "Coriander Seeds")
+                ) {
+                  stateContext.setInventory([
+                    ...appState.inventory,
+                    { name: "Coriander Seeds", image: "/items/coriander.png" },
+                    { name: "Star Anise", image: "/items/anise.png" },
+                    { name: "Fennel Seeds", image: "/items/fennel.png" },
+                    { name: "Cinnnamon", image: "/items/cinnamon.png" },
+                    { name: "Peppercorn", image: "/items/peppercorn.png" },
+                  ]);
+                }
+
                 onOpen();
               }}
             >

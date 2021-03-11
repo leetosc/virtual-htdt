@@ -82,7 +82,7 @@ export default function UncleHouseInside() {
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/36-family")}
+                  onClick={() => router.push("/htdt/41-kitchen")}
                 >
                   Go to kitchen
                 </Button>

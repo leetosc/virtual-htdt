@@ -76,10 +76,14 @@ export default function ImperialCity() {
               disabled={modalOpened}
               onClick={() => {
                 setModalOpened(true);
-                stateContext.setInventory([
-                  ...appState.inventory,
-                  "Shrimp Sauce",
-                ]);
+                if (
+                  !appState.inventory.some((i) => i.name !== "Shrimp Sauce")
+                ) {
+                  stateContext.setInventory([
+                    ...appState.inventory,
+                    { name: "Shrimp Sauce", image: "/items/shrimpsauce.png" },
+                  ]);
+                }
                 onOpen();
               }}
             >
