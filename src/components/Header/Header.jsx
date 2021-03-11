@@ -177,7 +177,7 @@ const Header = () => {
                   typeof i === "object" ? (
                     <InventoryItem key={i.name} name={i.name} image={i.image} />
                   ) : (
-                    <Text key={i}>{i}</Text>
+                    <InventoryItem name={i} key={i} />
                   )
                 )
               ) : (
