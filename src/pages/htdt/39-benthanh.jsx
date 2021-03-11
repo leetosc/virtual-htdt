@@ -122,12 +122,18 @@ export default function BenThanh() {
           </Box>
           <Box p={2}>
             {modalOpened && (
-              <Button
-                colorScheme="cyan"
-                onClick={() => router.push("/htdt/30-hue")}
-              >
-                Return to city
-              </Button>
+              <>
+                <Text>
+                  After hanging out in the city, your cousin takes you to your
+                  uncle&apos;s house.{" "}
+                </Text>
+                <Button
+                  colorScheme="cyan"
+                  onClick={() => router.push("/htdt/40-unclehouse")}
+                >
+                  Go
+                </Button>
+              </>
             )}
           </Box>
         </Hud>
