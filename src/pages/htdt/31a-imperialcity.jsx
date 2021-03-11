@@ -77,7 +77,7 @@ export default function ImperialCity() {
               onClick={() => {
                 setModalOpened(true);
                 if (
-                  !appState.inventory.some((i) => i.name !== "Shrimp Sauce")
+                  !appState.inventory.some((i) => i.name === "Shrimp Sauce")
                 ) {
                   stateContext.setInventory([
                     ...appState.inventory,

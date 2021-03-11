@@ -122,7 +122,7 @@ export default function HaLongContact() {
                   colorScheme="cyan"
                   onClick={() => {
                     if (
-                      !appState.inventory.some((i) => i.name !== "Fish Sauce")
+                      !appState.inventory.some((i) => i.name === "Fish Sauce")
                     ) {
                       stateContext.setInventory([
                         ...appState.inventory,

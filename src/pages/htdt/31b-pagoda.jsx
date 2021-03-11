@@ -82,7 +82,7 @@ export default function ThienMu() {
               onClick={() => {
                 setModalOpened(true);
                 if (
-                  !appState.inventory.some((i) => i.name !== "Coriander Seeds")
+                  !appState.inventory.some((i) => i.name === "Coriander Seeds")
                 ) {
                   stateContext.setInventory([
                     ...appState.inventory,
