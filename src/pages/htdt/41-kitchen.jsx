@@ -21,7 +21,6 @@ import BoxTarget from "@/components/BoxTarget/BoxTarget";
 import { usePreview } from "react-dnd-multi-backend";
 export const CardContext = createContext({
   updateLocation: null,
-  removeLocation: null,
 });
 
 const generatePreview = (item, style) => {
@@ -62,6 +61,19 @@ export default function Kitchen() {
 
   console.log("ingredientsList", ingredientsList);
 
+  const listPho = ingredientsList.filter((i) => i.locations.includes("pho"));
+  const listBbh = ingredientsList.filter((i) => i.locations.includes("bbh"));
+  const listBanhBeo = ingredientsList.filter((i) =>
+    i.locations.includes("banhbeo")
+  );
+  const listBanhXeo = ingredientsList.filter((i) =>
+    i.locations.includes("banhxeo")
+  );
+  const listBanhMi = ingredientsList.filter((i) =>
+    i.locations.includes("banhmi")
+  );
+  console.log("pho", listPho);
+
   const updateLocation = (id, location) => {
     const itemIndex = ingredientsList.findIndex((i) => i.id === id);
 
@@ -81,7 +93,7 @@ export default function Kitchen() {
   };
 
   return (
-    <CardContext.Provider value={{ updateLocation, removeLocation }}>
+    <CardContext.Provider value={{ updateLocation }}>
       <>
         <GameLayout>
           <Box
@@ -109,7 +121,11 @@ export default function Kitchen() {
                 columns={{ base: 1, sm: 2, md: 3, xl: 3 }}
                 spacing={4}
               >
-                <BoxTarget food="pho" foodName="Pho">
+                <BoxTarget
+                  food="pho"
+                  foodName="Pho"
+                  image="/food/phoimage.jpeg"
+                >
                   {ingredientsList.length > 0 &&
                     ingredientsList
                       .filter((i) => i.locations.includes("pho"))
@@ -125,7 +141,11 @@ export default function Kitchen() {
                         />
                       ))}
                 </BoxTarget>
-                <BoxTarget food="bbh" foodName="Bun Bo Hue">
+                <BoxTarget
+                  food="bbh"
+                  foodName="Bun Bo Hue"
+                  image="/food/bbh.jpg"
+                >
                   {ingredientsList.length > 0 &&
                     ingredientsList
                       .filter((i) => i.locations.includes("bbh"))
@@ -141,7 +161,11 @@ export default function Kitchen() {
                         />
                       ))}
                 </BoxTarget>
-                <BoxTarget food="banhbeo" foodName="Banh Beo">
+                <BoxTarget
+                  food="banhbeo"
+                  foodName="Banh Beo"
+                  image="/food/banhbeo.jpg"
+                >
                   {ingredientsList.length > 0 &&
                     ingredientsList
                       .filter((i) => i.locations.includes("banhbeo"))
@@ -157,7 +181,11 @@ export default function Kitchen() {
                         />
                       ))}
                 </BoxTarget>
-                <BoxTarget food="banhxeo" foodName="Banh Xeo">
+                <BoxTarget
+                  food="banhxeo"
+                  foodName="Banh Xeo"
+                  image="/food/banhxeo.jpg"
+                >
                   {ingredientsList.length > 0 &&
                     ingredientsList
                       .filter((i) => i.locations.includes("banhxeo"))
@@ -173,7 +201,11 @@ export default function Kitchen() {
                         />
                       ))}
                 </BoxTarget>
-                <BoxTarget food="banhmi" foodName="Banh Mi">
+                <BoxTarget
+                  food="banhmi"
+                  foodName="Banh Mi"
+                  image="/food/banhmi.jpg"
+                >
                   {ingredientsList.length > 0 &&
                     ingredientsList
                       .filter((i) => i.locations.includes("banhmi"))
@@ -200,15 +232,17 @@ export default function Kitchen() {
               </Box>
             </Box>
             <Box w="100%" pt={2}>
-              {ingredientsList.length > 0 &&
-                ingredientsList.map((i) => (
-                  <InventoryItemDraggable
-                    key={i.id}
-                    name={i.name}
-                    image={i.image}
-                    id={i.id}
-                  />
-                ))}
+              <SimpleGrid columns={{ base: 1, xl: 2 }} spacing={1}>
+                {ingredientsList.length > 0 &&
+                  ingredientsList.map((i) => (
+                    <InventoryItemDraggable
+                      key={i.id}
+                      name={i.name}
+                      image={i.image}
+                      id={i.id}
+                    />
+                  ))}
+              </SimpleGrid>
             </Box>
             <Box p={2}>
               <>

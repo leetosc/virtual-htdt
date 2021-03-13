@@ -1,15 +1,16 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../../utils/items";
 import { useContext } from "react";
 import { CardContext } from "../../pages/htdt/41-kitchen";
 
-const BoxTarget = (props) => {
-  const { updateLocation, removeLocation } = useContext(CardContext);
+const BoxTarget = ({ foodName, food, children, image }) => {
+  const { updateLocation } = useContext(CardContext);
 
   const [{ isOver }, drop] = useDrop({
     accept: ItemTypes.CARD,
-    drop: (item, monitor) => updateLocation(item.id, props.food),
+    drop: (item, monitor) => updateLocation(item.id, food),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
@@ -28,15 +29,43 @@ const BoxTarget = (props) => {
       rounded="md"
       color="white"
       overflow="hidden"
+      backgroundImage={`url(${image})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
     >
-      <Heading fontSize="lg" textColor="black">
-        {props.foodName}
-      </Heading>
+      <Box
+        backgroundColor="white"
+        h={8}
+        rounded="md"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Heading fontSize="lg" textColor="black">
+          {foodName}
+        </Heading>
+      </Box>
       <Box mt={2} overflow="auto" h="100%">
-        {props.children}
+        {/* {children.length > 0 ? children : <Image src={image} w="100%" />} */}
+        {children}
       </Box>
     </Box>
   );
+};
+
+BoxTarget.propTypes = {
+  foodName: PropTypes.string,
+  food: PropTypes.string,
+  children: PropTypes.node,
+  image: PropTypes.string,
+};
+
+BoxTarget.defaultProps = {
+  foodName: "",
+  food: "",
+  children: null,
+  image: null,
 };
 
 export default BoxTarget;
