@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -15,68 +15,215 @@ import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import axios from "axios";
 import InventoryItem from "@/components/InventoryItem/InventoryItem";
+import InventoryItemDraggable from "@/components/InventoryItem/InventoryItemDraggable";
+import { useAppState } from "@/context/state";
+import BoxTarget from "@/components/BoxTarget/BoxTarget";
+import { usePreview } from "react-dnd-multi-backend";
+export const CardContext = createContext({
+  updateLocation: null,
+  removeLocation: null,
+});
+
+const generatePreview = (item, style) => {
+  return (
+    <div
+      style={{
+        ...style,
+        backgroundColor: item.color,
+        width: "250px",
+        height: "50px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      <InventoryItem name={item.name} image={item.image} />
+    </div>
+  );
+};
+
+const HookPreview = () => {
+  const { display, style, item } = usePreview();
+  if (!display) {
+    return null;
+  }
+  return generatePreview(item, style);
+};
 
 export default function Kitchen() {
   const router = useRouter();
+  const { appState } = useAppState();
+  const [ingredientsList, setIngredientsList] = useState(
+    appState.inventory.map((item) => ({
+      name: item.name,
+      image: item.image,
+      id: item.name,
+      locations: [],
+    }))
+  );
+
+  console.log("ingredientsList", ingredientsList);
+
+  const updateLocation = (id, location) => {
+    const itemIndex = ingredientsList.findIndex((i) => i.id === id);
+
+    const newIngredientsList = [...ingredientsList];
+    newIngredientsList[itemIndex].locations.push(location);
+    setIngredientsList(newIngredientsList);
+  };
+
+  const removeLocation = (id, location) => {
+    const itemIndex = ingredientsList.findIndex((i) => i.id === id);
+    const newIngredientsList = [...ingredientsList];
+    const newLocations = newIngredientsList[itemIndex].locations.filter(
+      (i) => i !== location
+    );
+    newIngredientsList[itemIndex].locations = newLocations;
+    setIngredientsList(newIngredientsList);
+  };
 
   return (
-    <>
-      <GameLayout>
-        <Box
-          w="100%"
-          h="100%"
-          backgroundColor="gray.800"
-          textColor="white"
-          display="flex"
-        >
-          <Head>
-            <title>Virtual HTDT</title>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
-
+    <CardContext.Provider value={{ updateLocation, removeLocation }}>
+      <>
+        <GameLayout>
           <Box
-            h="100%"
-            position="relative"
-            justifyContent="space-between"
-            overflow="auto"
-            p={6}
             w="100%"
+            h="100%"
+            backgroundColor="gray.800"
+            textColor="white"
+            display="flex"
           >
-            <Text mb={4} fontSize="xl" fontWeight="semibold" textColor="white">
-              Select your team and name below. Each person open this page URL on
-              your own device.
-            </Text>
-            <InventoryItem />
-          </Box>
-        </Box>
+            <Head>
+              <title>Virtual HTDT</title>
+              <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-        <Hud>
-          <Box whiteSpace="pre-line">
-            <Box>
-              <FormLabel>Select your team</FormLabel>
+            <Box
+              h="100%"
+              position="relative"
+              justifyContent="space-between"
+              overflow="auto"
+              p={6}
+              w="100%"
+            >
+              <HookPreview />
+              <SimpleGrid
+                columns={{ base: 1, sm: 2, md: 3, xl: 3 }}
+                spacing={4}
+              >
+                <BoxTarget food="pho" foodName="Pho">
+                  {ingredientsList.length > 0 &&
+                    ingredientsList
+                      .filter((i) => i.locations.includes("pho"))
+                      .map(({ id, name, image }) => (
+                        <InventoryItemDraggable
+                          key={id}
+                          id={id}
+                          name={name}
+                          image={image}
+                          showButton
+                          location={"pho"}
+                          removeLocation={removeLocation}
+                        />
+                      ))}
+                </BoxTarget>
+                <BoxTarget food="bbh" foodName="Bun Bo Hue">
+                  {ingredientsList.length > 0 &&
+                    ingredientsList
+                      .filter((i) => i.locations.includes("bbh"))
+                      .map(({ id, name, image }) => (
+                        <InventoryItemDraggable
+                          key={id}
+                          id={id}
+                          name={name}
+                          image={image}
+                          showButton
+                          location={"bbh"}
+                          removeLocation={removeLocation}
+                        />
+                      ))}
+                </BoxTarget>
+                <BoxTarget food="banhbeo" foodName="Banh Beo">
+                  {ingredientsList.length > 0 &&
+                    ingredientsList
+                      .filter((i) => i.locations.includes("banhbeo"))
+                      .map(({ id, name, image }) => (
+                        <InventoryItemDraggable
+                          key={id}
+                          id={id}
+                          name={name}
+                          image={image}
+                          showButton
+                          location={"banhbeo"}
+                          removeLocation={removeLocation}
+                        />
+                      ))}
+                </BoxTarget>
+                <BoxTarget food="banhxeo" foodName="Banh Xeo">
+                  {ingredientsList.length > 0 &&
+                    ingredientsList
+                      .filter((i) => i.locations.includes("banhxeo"))
+                      .map(({ id, name, image }) => (
+                        <InventoryItemDraggable
+                          key={id}
+                          id={id}
+                          name={name}
+                          image={image}
+                          showButton
+                          location={"banhxeo"}
+                          removeLocation={removeLocation}
+                        />
+                      ))}
+                </BoxTarget>
+                <BoxTarget food="banhmi" foodName="Banh Mi">
+                  {ingredientsList.length > 0 &&
+                    ingredientsList
+                      .filter((i) => i.locations.includes("banhmi"))
+                      .map(({ id, name, image }) => (
+                        <InventoryItemDraggable
+                          key={id}
+                          id={id}
+                          name={name}
+                          image={image}
+                          showButton
+                          location={"banhmi"}
+                          removeLocation={removeLocation}
+                        />
+                      ))}
+                </BoxTarget>
+              </SimpleGrid>
             </Box>
           </Box>
-          <Box w="100%" pt={2}>
-            <Text fontWeight="semibold">Each Team Member:</Text>
-            <Text>
-              Take 15 minutes to think about your virtual camp experience with
-              your teammates so far. For each teammate, write something that you
-              have learned or appreciate about them.
-            </Text>
-          </Box>
-          <Box p={2}>
-            <>
-              <Text my={2}></Text>
-              <Button
-                colorScheme="cyan"
-                onClick={() => router.push("/htdt/18c-morning")}
-              >
-                Return to journey
-              </Button>
-            </>
-          </Box>
-        </Hud>
-      </GameLayout>
-    </>
+
+          <Hud>
+            <Box whiteSpace="pre-line">
+              <Box>
+                <FormLabel>Select your team</FormLabel>
+              </Box>
+            </Box>
+            <Box w="100%" pt={2}>
+              {ingredientsList.length > 0 &&
+                ingredientsList.map((i) => (
+                  <InventoryItemDraggable
+                    key={i.id}
+                    name={i.name}
+                    image={i.image}
+                    id={i.id}
+                  />
+                ))}
+            </Box>
+            <Box p={2}>
+              <>
+                <Text my={2}></Text>
+                <Button
+                  colorScheme="cyan"
+                  onClick={() => router.push("/htdt/18c-morning")}
+                >
+                  Return to journey
+                </Button>
+              </>
+            </Box>
+          </Hud>
+        </GameLayout>
+      </>
+    </CardContext.Provider>
   );
 }
