@@ -45,6 +45,7 @@ See `/src/pages/samples` for sample pages
 - type `I am a Huynh Truong` in the notes to see answers and skip videos
 - assets (images, sound, etc) are in `/public` directory
 - User notes, locations visited, and inventory are stored in localStorage - clear in Huynh Truong mode or by starting journey over from first page
+- see `/htdt/41-kitchen` for an example of drag and drop. Getting drag and drop to work correctly was nontrivial. (fill inventory in HT mode, then refresh the page)
 
 Future ideas
  - More inventory interaction
