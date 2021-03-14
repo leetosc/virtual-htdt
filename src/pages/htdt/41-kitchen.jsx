@@ -63,6 +63,7 @@ export default function Kitchen() {
     }))
   );
 
+  const [showAnswer, setShowAnswer] = useState(false);
   const [incorrectTries, setIncorrectTries] = useState(0);
   const [cookedCorrect, setCookedCorrect] = useState({
     pho: false,
@@ -96,14 +97,25 @@ export default function Kitchen() {
     const itemsAtLocation = ingredientsList.filter((i) =>
       i.locations.includes(location)
     );
+
+    // too many or too few items 
     if (itemsAtLocation.length > CORRECT_ANSWERS[location].length) {
+      setCookedCorrect((prevState) => ({
+        ...prevState,
+        [location]: false,
+      }));
       setIncorrectTries(incorrectTries + 1);
       return RESPONSE_TYPES.tooHigh;
     }
     if (itemsAtLocation.length < CORRECT_ANSWERS[location].length) {
+      setCookedCorrect((prevState) => ({
+        ...prevState,
+        [location]: false,
+      }));
       setIncorrectTries(incorrectTries + 1);
       return RESPONSE_TYPES.tooLow;
     }
+    // correct number of items
     if (itemsAtLocation.length === CORRECT_ANSWERS[location].length) {
       const itemNames = itemsAtLocation.map((i) => i.name);
       if (isEqual(itemNames.sort(), CORRECT_ANSWERS[location].sort())) {
@@ -113,6 +125,10 @@ export default function Kitchen() {
         }));
         return RESPONSE_TYPES.correct;
       } else {
+        setCookedCorrect((prevState) => ({
+          ...prevState,
+          [location]: false,
+        }));
         setIncorrectTries(incorrectTries + 1);
         return RESPONSE_TYPES.incorrectItems;
       }
@@ -262,6 +278,22 @@ export default function Kitchen() {
                   the advice people gave you during your journey!
                 </Text>
                 <Text mt={6}>Incorrect attempts: {incorrectTries}</Text>
+
+                {appState.SHOW_ANSWERS && (
+                  <>
+                    <Button
+                      colorScheme="red"
+                      onClick={() => {
+                        setShowAnswer(!showAnswer);
+                      }}
+                    >
+                      Show Answer
+                    </Button>
+                    {showAnswer && (
+                      <pre>{JSON.stringify(CORRECT_ANSWERS, null, 2)}</pre>
+                    )}
+                  </>
+                )}
               </Box>
             </Box>
             <Box w="100%" pt={2}>
@@ -288,7 +320,7 @@ export default function Kitchen() {
                   onClick={() => {
                     console.log("correct answers");
                     // send tries count to server
-                    // router.push("/htdt/18c-morning")
+                    router.push("/htdt/42-uncle");
                   }}
                 >
                   Submit Dishes
