@@ -1,16 +1,7 @@
-import React, { useState, useEffect, createContext } from "react";
-import PropTypes from "prop-types";
+import React, { useState, createContext } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Text,
-  Button,
-  Input,
-  Select,
-  FormLabel,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import axios from "axios";
@@ -73,13 +64,15 @@ export default function Kitchen() {
     banhmi: false,
   });
 
-  console.log("ingredientsList", ingredientsList);
-
   const updateLocation = (id, location) => {
     const itemIndex = ingredientsList.findIndex((i) => i.id === id);
     const newIngredientsList = [...ingredientsList];
     newIngredientsList[itemIndex].locations.push(location);
     setIngredientsList(newIngredientsList);
+    setCookedCorrect((prevState) => ({
+      ...prevState,
+      [location]: false,
+    }));
   };
 
   const removeLocation = (id, location) => {
@@ -90,6 +83,10 @@ export default function Kitchen() {
     );
     newIngredientsList[itemIndex].locations = newLocations;
     setIngredientsList(newIngredientsList);
+    setCookedCorrect((prevState) => ({
+      ...prevState,
+      [location]: false,
+    }));
   };
 
   const checkAnswer = (location) => {
@@ -98,7 +95,7 @@ export default function Kitchen() {
       i.locations.includes(location)
     );
 
-    // too many or too few items 
+    // too many or too few items
     if (itemsAtLocation.length > CORRECT_ANSWERS[location].length) {
       setCookedCorrect((prevState) => ({
         ...prevState,
@@ -118,6 +115,8 @@ export default function Kitchen() {
     // correct number of items
     if (itemsAtLocation.length === CORRECT_ANSWERS[location].length) {
       const itemNames = itemsAtLocation.map((i) => i.name);
+      console.log("items", itemNames.sort());
+      console.log("correct", CORRECT_ANSWERS[location].sort());
       if (isEqual(itemNames.sort(), CORRECT_ANSWERS[location].sort())) {
         setCookedCorrect((prevState) => ({
           ...prevState,
@@ -134,8 +133,6 @@ export default function Kitchen() {
       }
     }
   };
-
-  console.log("cookedCorrect", cookedCorrect);
 
   return (
     <CardContext.Provider value={{ updateLocation, checkAnswer }}>

@@ -10,11 +10,14 @@ import { GiCookingPot } from "react-icons/gi";
 const BoxTarget = ({ foodName, food, children, image }) => {
   const { updateLocation, checkAnswer } = useContext(CardContext);
 
-  const [status, setStatus] = useState(-1);
+  const [status, setStatus] = useState(RESPONSE_TYPES.blank);
 
   const [{ isOver }, drop] = useDrop({
     accept: ItemTypes.CARD,
-    drop: (item, monitor) => updateLocation(item.id, food),
+    drop: (item, monitor) => {
+      setStatus(RESPONSE_TYPES.blank);
+      updateLocation(item.id, food);
+    },
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
@@ -41,7 +44,7 @@ const BoxTarget = ({ foodName, food, children, image }) => {
         backgroundColor={
           isOver
             ? "gray.400"
-            : status === -1
+            : status === RESPONSE_TYPES.blank
             ? "white"
             : status !== RESPONSE_TYPES.correct
             ? "red.100"

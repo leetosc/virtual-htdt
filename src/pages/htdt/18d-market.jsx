@@ -284,7 +284,7 @@ export default function SapaMarket() {
                         ...appState.inventory,
                         {
                           name: "Bean Sprouts",
-                          image: "/items/beansprouts.png",
+                          image: "/items/beansprouts.jpg",
                         },
                       ]);
                     }
@@ -305,7 +305,7 @@ export default function SapaMarket() {
                         ...appState.inventory,
                         {
                           name: "Bean Sprouts",
-                          image: "/items/beansprouts.png",
+                          image: "/items/beansprouts.jpg",
                         },
                       ]);
                     }

@@ -89,7 +89,7 @@ export default function ThienMu() {
                     { name: "Coriander Seeds", image: "/items/coriander.png" },
                     { name: "Star Anise", image: "/items/anise.png" },
                     { name: "Fennel Seeds", image: "/items/fennel.png" },
-                    { name: "Cinnnamon", image: "/items/cinnamon.png" },
+                    { name: "Cinnamon", image: "/items/cinnamon.png" },
                     { name: "Peppercorn", image: "/items/peppercorn.png" },
                   ]);
                 }
