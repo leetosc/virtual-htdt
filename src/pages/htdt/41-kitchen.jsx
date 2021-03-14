@@ -285,7 +285,11 @@ export default function Kitchen() {
                   disabled={Object.values(cookedCorrect).some(
                     (i) => i === false
                   )}
-                  // onClick={() => router.push("/htdt/18c-morning")}
+                  onClick={() => {
+                    console.log("correct answers");
+                    // send tries count to server
+                    // router.push("/htdt/18c-morning")
+                  }}
                 >
                   Submit Dishes
                 </Button>

@@ -14,10 +14,7 @@ import { TouchBackend } from "react-dnd-touch-backend";
 import MultiBackend, {
   TouchTransition,
   MouseTransition,
-  usePreview,
 } from "react-dnd-multi-backend";
-// import { HTML5toTouch } from "rdndmb-html5-to-touch";
-import InventoryItem from "@/components/InventoryItem/InventoryItem";
 
 const HTML5toTouch = {
   backends: [
@@ -36,13 +33,7 @@ const HTML5toTouch = {
   ],
 };
 
-// const MyPreview = () => {
-//   const { display, itemType, item, style, ref } = usePreview();
-//   if (!display) {
-//     return null;
-//   }
-//   return <InventoryItem style={{ ...style }} name="" ref={ref} item={item} />;
-// };
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>

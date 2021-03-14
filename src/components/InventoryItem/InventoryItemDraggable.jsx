@@ -76,11 +76,17 @@ InventoryItemDraggable.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
+  removeLocation: PropTypes.func,
+  showButton: PropTypes.bool,
+  location: PropTypes.string,
 };
 
 InventoryItemDraggable.defaultProps = {
   image: "/items/box.png",
   id: Math.floor(Math.random() * 1000).toString(),
+  removeLocation: () => {},
+  showButton: false,
+  location: undefined,
 };
 
 export default InventoryItemDraggable;
