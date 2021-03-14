@@ -1,12 +1,16 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, Button, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../../utils/items";
-import { useContext } from "react";
+import { RESPONSE_TYPES } from "../../utils/kitchen";
+import { useContext, useState } from "react";
 import { CardContext } from "../../pages/htdt/41-kitchen";
+import { GiCookingPot } from "react-icons/gi";
 
 const BoxTarget = ({ foodName, food, children, image }) => {
-  const { updateLocation } = useContext(CardContext);
+  const { updateLocation, checkAnswer } = useContext(CardContext);
+
+  const [status, setStatus] = useState(-1);
 
   const [{ isOver }, drop] = useDrop({
     accept: ItemTypes.CARD,
@@ -22,7 +26,6 @@ const BoxTarget = ({ foodName, food, children, image }) => {
       m={2}
       p={3}
       boxShadow="sm"
-      bg={isOver ? "gray.500" : "gray.300"}
       h={96}
       textAlign="center"
       w="100%"
@@ -35,19 +38,50 @@ const BoxTarget = ({ foodName, food, children, image }) => {
       backgroundRepeat="no-repeat"
     >
       <Box
-        backgroundColor="white"
-        h={8}
+        backgroundColor={
+          isOver
+            ? "gray.400"
+            : status === -1
+            ? "white"
+            : status !== RESPONSE_TYPES.correct
+            ? "red.100"
+            : status === RESPONSE_TYPES.correct
+            ? "green.100"
+            : "white"
+        }
+        h={12}
         rounded="md"
         display="flex"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-between"
+        px={4}
       >
         <Heading fontSize="lg" textColor="black">
           {foodName}
         </Heading>
+        <Text textColor="black" fontSize="sm">
+          {status === RESPONSE_TYPES.tooHigh
+            ? "Too many ingredients"
+            : status === RESPONSE_TYPES.tooLow
+            ? "Not enough ingredients"
+            : status === RESPONSE_TYPES.incorrectItems
+            ? "Incorrect ingredients"
+            : status === RESPONSE_TYPES.correct
+            ? "Correct"
+            : ""}
+        </Text>
+        <Button
+          rightIcon={<GiCookingPot />}
+          colorScheme="cyan"
+          size="sm"
+          onClick={() => {
+            setStatus(checkAnswer(food));
+          }}
+        >
+          Cook
+        </Button>
       </Box>
-      <Box mt={2} overflow="auto" h="100%">
-        {/* {children.length > 0 ? children : <Image src={image} w="100%" />} */}
+      <Box mt={2} overflow="auto" h="90%">
         {children}
       </Box>
     </Box>

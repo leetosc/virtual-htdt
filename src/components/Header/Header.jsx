@@ -26,6 +26,7 @@ import { AiOutlineReload } from "react-icons/ai";
 import { TiEdit } from "react-icons/ti";
 import { useAppState } from "@/context/state";
 import InventoryItem from "../InventoryItem/InventoryItem";
+import { fullInventory } from "../../utils/kitchen";
 
 const Header = () => {
   const router = useRouter();
@@ -107,19 +108,33 @@ const Header = () => {
         )}
         <Box display="flex">
           {appState.SHOW_ANSWERS && (
-            <Button
-              variant="ghost"
-              size="sm"
-              display={{ base: "block" }}
-              _hover={{ backgroundColor: "cyan.900" }}
-              onClick={() => {
-                setInventory([]);
-                setLocationsVisited([]);
-              }}
-              title="Clear locations and inventory"
-            >
-              <Icon as={AiOutlineReload} h={6} w={6} color="red.500" />
-            </Button>
+            <>
+              <Button
+                variant="ghost"
+                size="sm"
+                display={{ base: "block" }}
+                _hover={{ backgroundColor: "cyan.900" }}
+                onClick={() => {
+                  setInventory([]);
+                  setLocationsVisited([]);
+                }}
+                title="Clear locations and inventory"
+              >
+                <Icon as={AiOutlineReload} h={6} w={6} color="red.500" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                display={{ base: "block" }}
+                _hover={{ backgroundColor: "cyan.900" }}
+                onClick={() => {
+                  setInventory(fullInventory);
+                }}
+                title="Fill Inventory"
+              >
+                <Icon as={GiLightBackpack} h={8} w={8} color="red.500" />
+              </Button>
+            </>
           )}
           <Button
             variant="ghost"

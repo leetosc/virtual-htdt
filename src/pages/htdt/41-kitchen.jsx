@@ -19,8 +19,12 @@ import InventoryItemDraggable from "@/components/InventoryItem/InventoryItemDrag
 import { useAppState } from "@/context/state";
 import BoxTarget from "@/components/BoxTarget/BoxTarget";
 import { usePreview } from "react-dnd-multi-backend";
+import { CORRECT_ANSWERS, RESPONSE_TYPES } from "../../utils/kitchen";
+import isEqual from "lodash/isEqual";
+
 export const CardContext = createContext({
   updateLocation: null,
+  checkAnswer: null,
 });
 
 const generatePreview = (item, style) => {
@@ -59,24 +63,19 @@ export default function Kitchen() {
     }))
   );
 
-  console.log("ingredientsList", ingredientsList);
+  const [incorrectTries, setIncorrectTries] = useState(0);
+  const [cookedCorrect, setCookedCorrect] = useState({
+    pho: false,
+    bbh: false,
+    banhbeo: false,
+    banhxeo: false,
+    banhmi: false,
+  });
 
-  const listPho = ingredientsList.filter((i) => i.locations.includes("pho"));
-  const listBbh = ingredientsList.filter((i) => i.locations.includes("bbh"));
-  const listBanhBeo = ingredientsList.filter((i) =>
-    i.locations.includes("banhbeo")
-  );
-  const listBanhXeo = ingredientsList.filter((i) =>
-    i.locations.includes("banhxeo")
-  );
-  const listBanhMi = ingredientsList.filter((i) =>
-    i.locations.includes("banhmi")
-  );
-  console.log("pho", listPho);
+  console.log("ingredientsList", ingredientsList);
 
   const updateLocation = (id, location) => {
     const itemIndex = ingredientsList.findIndex((i) => i.id === id);
-
     const newIngredientsList = [...ingredientsList];
     newIngredientsList[itemIndex].locations.push(location);
     setIngredientsList(newIngredientsList);
@@ -92,8 +91,38 @@ export default function Kitchen() {
     setIngredientsList(newIngredientsList);
   };
 
+  const checkAnswer = (location) => {
+    // constants defined in utils/kitchen.js
+    const itemsAtLocation = ingredientsList.filter((i) =>
+      i.locations.includes(location)
+    );
+    if (itemsAtLocation.length > CORRECT_ANSWERS[location].length) {
+      setIncorrectTries(incorrectTries + 1);
+      return RESPONSE_TYPES.tooHigh;
+    }
+    if (itemsAtLocation.length < CORRECT_ANSWERS[location].length) {
+      setIncorrectTries(incorrectTries + 1);
+      return RESPONSE_TYPES.tooLow;
+    }
+    if (itemsAtLocation.length === CORRECT_ANSWERS[location].length) {
+      const itemNames = itemsAtLocation.map((i) => i.name);
+      if (isEqual(itemNames.sort(), CORRECT_ANSWERS[location].sort())) {
+        setCookedCorrect((prevState) => ({
+          ...prevState,
+          [location]: true,
+        }));
+        return RESPONSE_TYPES.correct;
+      } else {
+        setIncorrectTries(incorrectTries + 1);
+        return RESPONSE_TYPES.incorrectItems;
+      }
+    }
+  };
+
+  console.log("cookedCorrect", cookedCorrect);
+
   return (
-    <CardContext.Provider value={{ updateLocation }}>
+    <CardContext.Provider value={{ updateLocation, checkAnswer }}>
       <>
         <GameLayout>
           <Box
@@ -228,7 +257,11 @@ export default function Kitchen() {
           <Hud>
             <Box whiteSpace="pre-line">
               <Box>
-                <FormLabel>Select your team</FormLabel>
+                <Text>
+                  Prepare the foods from the ingredients you collected. Remember
+                  the advice people gave you during your journey!
+                </Text>
+                <Text mt={6}>Incorrect attempts: {incorrectTries}</Text>
               </Box>
             </Box>
             <Box w="100%" pt={2}>
@@ -249,9 +282,12 @@ export default function Kitchen() {
                 <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/18c-morning")}
+                  disabled={Object.values(cookedCorrect).some(
+                    (i) => i === false
+                  )}
+                  // onClick={() => router.push("/htdt/18c-morning")}
                 >
-                  Return to journey
+                  Submit Dishes
                 </Button>
               </>
             </Box>
