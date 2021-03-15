@@ -107,20 +107,25 @@ export default function Cyclo() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/13-hanoibus")}
                 >
-                  Go to bus station (after going to all 4)
+                  Go to bus station
                 </Button>
               </>
             ) : (
               <Text>Look for clues around the city</Text>
             )}
             {appState.SHOW_ANSWERS && (
-              <Button
-                mt={2}
-                colorScheme="red"
-                onClick={() => router.push("/htdt/13-hanoibus")}
-              >
-                Go to bus station
-              </Button>
+              <>
+                <Text textColor="red.500">
+                  should only click after visiting all 4
+                </Text>
+                <Button
+                  mt={2}
+                  colorScheme="red"
+                  onClick={() => router.push("/htdt/13-hanoibus")}
+                >
+                  Go to bus station
+                </Button>
+              </>
             )}
           </Box>
           <Box>

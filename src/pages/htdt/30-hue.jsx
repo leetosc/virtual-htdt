@@ -97,20 +97,25 @@ export default function Hue() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/31d-airport")}
                 >
-                  Go to airport (after)
+                  Go to airport
                 </Button>
               </>
             ) : (
               <Text>Look for clues around the city</Text>
             )}
             {appState.SHOW_ANSWERS && (
-              <Button
-                mt={2}
-                colorScheme="red"
-                onClick={() => router.push("/htdt/31d-airport")}
-              >
-                Go to airport
-              </Button>
+              <>
+                <Text textColor="red.500">
+                  Should only click after visiting all 3
+                </Text>
+                <Button
+                  mt={2}
+                  colorScheme="red"
+                  onClick={() => router.push("/htdt/31d-airport")}
+                >
+                  Go to airport
+                </Button>
+              </>
             )}
           </Box>
           <Box p={2}>
