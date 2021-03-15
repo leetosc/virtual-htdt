@@ -120,7 +120,7 @@ export default function Hanoibus() {
               value={puzzleInput}
               onChange={(e) => setPuzzleInput(e.target.value)}
             />
-            <Text fontSize="xs">Hint: weight of meat in kg</Text>
+            <Text fontSize="xs">Hint: weight of meat in lbs</Text>
           </ModalBody>
 
           <ModalFooter>

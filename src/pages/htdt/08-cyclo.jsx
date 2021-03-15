@@ -107,7 +107,7 @@ export default function Cyclo() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/13-hanoibus")}
                 >
-                  Go to bus station
+                  Go to bus station (after going to all 4)
                 </Button>
               </>
             ) : (

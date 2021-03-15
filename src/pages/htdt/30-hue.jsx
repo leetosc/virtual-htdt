@@ -97,7 +97,7 @@ export default function Hue() {
                   colorScheme="cyan"
                   onClick={() => router.push("/htdt/31d-airport")}
                 >
-                  Go to airport
+                  Go to airport (after)
                 </Button>
               </>
             ) : (
