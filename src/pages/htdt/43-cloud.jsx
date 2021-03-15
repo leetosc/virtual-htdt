@@ -180,11 +180,9 @@ export default function Wordcloud() {
             </Box>
           </Box>
           <Box w="100%" pt={2}>
-            <Text fontWeight="semibold">View your word cloud</Text>
-
             {selectedName !== "" && (
               <>
-                <Text>Your comments:</Text>
+                <Text>Comments from your teammates:</Text>
                 {saMacSinhs
                   .find((i) => i.name === selectedName)
                   .comments.map((comment, index) => (
@@ -194,12 +192,16 @@ export default function Wordcloud() {
             )}
           </Box>
           <Box p={2}>
-            {typingDone && (
+            <Text>
+              Share this page URL with your teammates. Each person can view
+              their own word cloud.
+            </Text>
+            {selectedName !== "" && (
               <>
                 <Text my={2}></Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/18c-morning")}
+                  onClick={() => router.push("/storyline/finish")}
                 >
                   Continue
                 </Button>

@@ -46,6 +46,7 @@ See `/src/pages/samples` for sample pages
 - assets (images, sound, etc) are in `/public` directory
 - User notes, locations visited, and inventory are stored in localStorage - clear in Huynh Truong mode or by starting journey over from first page
 - see `/htdt/41-kitchen` for an example of drag and drop. Getting drag and drop to work correctly (including working for both mouse and touch) was nontrivial. (fill inventory in HT mode, then refresh the page)
+- Changing pages uses `next/router` to `push` routes instead of links to hide the url of the next when user hovers button
 
 Future ideas
  - More inventory interaction

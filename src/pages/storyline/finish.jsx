@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 
@@ -22,23 +22,37 @@ export default function Finish() {
       <Box px={8} py={4} fontSize="xl">
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
-          avgTypingDelay={20}
+          avgTypingDelay={5}
           onTypingDone={() => setTypingDone(true)}
         >
-          that is the end of the story for now
+          You have reached the end of the journey. Although it would be very
+          cliché to say something like &quot;Maybe the real treasure was the
+          friends we made along the way&quot;, it is true in this case.
+          <br />I hope that through this journey you had a chance to enjoy the
+          company of your teammates and get to know each other better, as well
+          as gain an appreciation for our homeland. I hope each of you has a
+          chance to visit Vietnam someday (if you haven&apos;t already).
+          <br />
+          <br />
+          In the envelope marked &quot;Do not open until HTDT&quot; there is a
+          small envelope. You can open it now, it is a small treasure for you! I
+          hope you enjoyed the journey!
+          <br />
+          <br />
+          -Tr. Denny
         </Typist>
-        {/* {typingDone && (
-          <Link href="/htdt/sample1">
+        {typingDone && (
+          <Link href="/">
             <Button
               colorScheme="cyan"
               textTransform="uppercase"
               size="lg"
               mt={4}
             >
-              Go to first location
+              Home
             </Button>
           </Link>
-        )} */}
+        )}
       </Box>
     </Box>
   );
