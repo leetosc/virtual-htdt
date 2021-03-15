@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Button, Text } from "@chakra-ui/react";
+import { Box, Heading, Button, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../../utils/items";
@@ -14,6 +14,7 @@ const BoxTarget = ({ foodName, food, children, image }) => {
 
   const [{ isOver }, drop] = useDrop({
     accept: ItemTypes.CARD,
+    // eslint-disable-next-line no-unused-vars
     drop: (item, monitor) => {
       setStatus(RESPONSE_TYPES.blank);
       updateLocation(item.id, food);

@@ -9,7 +9,6 @@ import Typist from "react-typist";
 export default function Uncle() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
 
   return (
     <>

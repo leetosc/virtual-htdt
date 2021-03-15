@@ -1,50 +1,14 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Input,
-  Stack,
-  Select,
-  FormLabel,
-  Modal,
-  SimpleGrid,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Text, Button, Select, FormLabel } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { MapInteractionCSS } from "react-map-interaction";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
-import Typist from "react-typist";
-import YouTube from "react-youtube";
-import Typing from "react-typing-animation";
-import { Carousel } from "react-responsive-carousel";
-import ReactCardFlip from "react-card-flip";
 import axios from "axios";
 import ReactWordcloud from "react-wordcloud";
 
 export default function Wordcloud() {
   const router = useRouter();
-  const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
-
-  const [puzzleInput, setPuzzleInput] = useState("");
-  const [puzzleCorrect, setPuzzleCorrect] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const toast = useToast();
 
   const [saMacSinhs, setSaMacSinhs] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
@@ -99,8 +63,6 @@ export default function Wordcloud() {
           backgroundColor="white"
           textColor="white"
           display="flex"
-          // alignItems="center"
-          // justifyContent="center"
         >
           <Head>
             <title>Virtual HTDT</title>
@@ -210,28 +172,6 @@ export default function Wordcloud() {
           </Box>
         </Hud>
       </GameLayout>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={false}
-        size="lg"
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Reflection</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody overflow="auto" maxH="100%">
-            <Text></Text>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="gray" mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </>
   );
 }
