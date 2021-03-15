@@ -34,12 +34,18 @@ export default function Finish() {
           chance to visit Vietnam someday (if you haven&apos;t already).
           <br />
           <br />
+          We will now find out which team is the most deserving of the family
+          treasure. Open the Twitch stream and stand by for the Kahoot code. I
+          hope you took good notes!
+          <br />
+          <br />
           In the envelope marked &quot;Do not open until HTDT&quot; there is a
           small envelope. You can open it now, it is a small treasure for you! I
           hope you enjoyed the journey!
           <br />
           <br />
           -Tr. Denny
+          <br />
         </Typist>
         {typingDone && (
           <Link href="/">
