@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Box, Text, Button, SimpleGrid } from "@chakra-ui/react";
@@ -55,7 +55,7 @@ export default function Kitchen() {
   );
 
   const [showAnswer, setShowAnswer] = useState(false);
-  const [incorrectTries, setIncorrectTries] = useState(0);
+  const [cookAttempts, setCookAttempts] = useState(0);
   const [cookedCorrect, setCookedCorrect] = useState({
     pho: false,
     bbh: false,
@@ -63,6 +63,18 @@ export default function Kitchen() {
     banhxeo: false,
     banhmi: false,
   });
+
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://dbdev.ga/teams").then((res) => {
+      const teamList = res.data.map((team) => ({
+        name: team.Name,
+        id: team.id,
+      }));
+      setTeams(teamList);
+    });
+  }, []);
 
   const updateLocation = (id, location) => {
     const itemIndex = ingredientsList.findIndex((i) => i.id === id);
@@ -94,6 +106,7 @@ export default function Kitchen() {
     const itemsAtLocation = ingredientsList.filter((i) =>
       i.locations.includes(location)
     );
+    setCookAttempts(cookAttempts + 1);
 
     // too many or too few items
     if (itemsAtLocation.length > CORRECT_ANSWERS[location].length) {
@@ -101,7 +114,7 @@ export default function Kitchen() {
         ...prevState,
         [location]: false,
       }));
-      setIncorrectTries(incorrectTries + 1);
+
       return RESPONSE_TYPES.tooHigh;
     }
     if (itemsAtLocation.length < CORRECT_ANSWERS[location].length) {
@@ -109,7 +122,7 @@ export default function Kitchen() {
         ...prevState,
         [location]: false,
       }));
-      setIncorrectTries(incorrectTries + 1);
+
       return RESPONSE_TYPES.tooLow;
     }
     // correct number of items
@@ -128,7 +141,7 @@ export default function Kitchen() {
           ...prevState,
           [location]: false,
         }));
-        setIncorrectTries(incorrectTries + 1);
+
         return RESPONSE_TYPES.incorrectItems;
       }
     }
@@ -274,7 +287,7 @@ export default function Kitchen() {
                   Prepare the foods from the ingredients you collected. Remember
                   the advice people gave you during your journey!
                 </Text>
-                <Text mt={6}>Incorrect attempts: {incorrectTries}</Text>
+                <Text mt={6}>Cook attempts: {cookAttempts}</Text>
 
                 {appState.SHOW_ANSWERS && (
                   <>
@@ -317,11 +330,55 @@ export default function Kitchen() {
                   onClick={() => {
                     console.log("correct answers");
                     // send tries count to server
-                    router.push("/htdt/42-uncle");
+                    axios
+                      .put(
+                        `https://dbdev.ga/teams/${
+                          teams.find((i) => i.name === appState.team).id
+                        }`,
+                        {
+                          cookAttempts: cookAttempts,
+                        }
+                      )
+                      .then((res) => {
+                        console.log(res.data);
+                        router.push("/htdt/42-uncle");
+                      })
+                      .catch((error) => {
+                        console.log("error", error);
+                        router.push("/htdt/42-uncle");
+                      });
                   }}
                 >
                   Submit Dishes
                 </Button>
+                {showAnswer && appState.SHOW_ANSWERS && (
+                  <Button
+                    colorScheme="red"
+                    onClick={() => {
+                      console.log("correct answers");
+                      // send tries count to server
+                      axios
+                        .put(
+                          `https://dbdev.ga/teams/${
+                            teams.find((i) => i.name === appState.team).id
+                          }`,
+                          {
+                            cookAttempts: cookAttempts,
+                          }
+                        )
+                        .then((res) => {
+                          console.log(res.data);
+                          router.push("/htdt/42-uncle");
+                        })
+                        .catch((error) => {
+                          console.log("error", error);
+                          router.push("/htdt/42-uncle");
+                        });
+                    }}
+                  >
+                    Skip and Submit
+                  </Button>
+                )}
               </>
             </Box>
           </Hud>

@@ -148,10 +148,11 @@ export default function SapaActivity2() {
         <Hud>
           <Box whiteSpace="pre-line">
             <Box>
-              <FormLabel>Select your team</FormLabel>
+              <FormLabel>Team</FormLabel>
               <Select
                 backgroundColor="white"
                 placeholder="Select your team"
+                value={selectedTeam}
                 onChange={(e) => setSelectedTeam(e.target.value)}
               >
                 {teams.map((team) => (

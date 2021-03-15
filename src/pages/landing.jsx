@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button, Select } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 import { useAppState } from "@/context/state";
+import axios from "axios";
 
 export default function Landing() {
   const [typingDone, setTypingDone] = useState(false);
+  const [teams, setTeams] = useState([]);
 
-  const { appState } = useAppState();
+  useEffect(() => {
+    axios.get("https://dbdev.ga/teams").then((res) => {
+      const teamList = res.data.map((team) => team.Name);
+      setTeams(teamList);
+    });
+  }, []);
+
+  const { appState, setTeam } = useAppState();
+
   return (
     <Box
       w="100%"
@@ -22,7 +32,25 @@ export default function Landing() {
         <title>Virtual HTDT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box px={8} py={4} fontSize="xl">
+      <Box px={8} py={4} fontSize="xl" w="100%">
+        <Text fontSize="lg" mb={2}>
+          Select Team
+        </Text>
+        <Select
+          color="black"
+          mb={4}
+          backgroundColor="white"
+          placeholder="Select your team"
+          onChange={(e) => setTeam(e.target.value)}
+          maxW={64}
+        >
+          {teams.map((team) => (
+            <option value={team} key={team}>
+              {team}
+            </option>
+          ))}
+        </Select>
+
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
           avgTypingDelay={5}
@@ -57,7 +85,7 @@ export default function Landing() {
           <br />
           When everyone is ready, press Start to begin.
         </Typist>
-        {typingDone && (
+        {appState.team !== "" && typingDone && (
           <Link href="/storyline/introduction">
             <Button
               colorScheme="cyan"
@@ -69,7 +97,7 @@ export default function Landing() {
             </Button>
           </Link>
         )}
-        {appState.SHOW_ANSWERS && (
+        {appState.team !== "" && appState.SHOW_ANSWERS && (
           <Link href="/storyline/introduction">
             <Button
               colorScheme="red"

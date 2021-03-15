@@ -59,9 +59,7 @@ export default function Uncle() {
               avgTypingDelay={5}
               onTypingDone={() => setTypingDone(true)}
             >
-              The house is pretty nice on the inside. <br />
-              <br />
-              Your uncle comes down the stairs to greet you.
+              "Good job! All the dishes you made were great!"
             </Typist>
           </Box>
           <Box w="100%" display="flex" pt={2}>

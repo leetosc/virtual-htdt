@@ -20,6 +20,7 @@ function useProvideState() {
   );
   const [inventory, setInventory] = useLocalStorageState("inventory", []);
   const [userNotes, setUserNotes] = useLocalStorageState("notes", "");
+  const [team, setTeam] = useLocalStorageState("team", "");
 
   const SHOW_ANSWERS = userNotes.toLowerCase().includes("i am a huynh truong");
 
@@ -28,6 +29,7 @@ function useProvideState() {
     inventory,
     SHOW_ANSWERS,
     userNotes,
+    team,
   };
 
   return {
@@ -35,5 +37,6 @@ function useProvideState() {
     setLocationsVisited,
     setInventory,
     setUserNotes,
+    setTeam,
   };
 }
