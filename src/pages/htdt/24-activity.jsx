@@ -66,7 +66,7 @@ export default function HaLongActivity() {
               colorScheme="cyan"
               onClick={() => router.push("/htdt/24a-island")}
             >
-              Boat successfully built
+              Click when Boat successfully built
             </Button>
           </Box>
         </Hud>

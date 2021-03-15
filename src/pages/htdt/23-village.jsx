@@ -135,22 +135,26 @@ export default function HaLongVillage() {
                 Talk to the village leader
               </Button>
             )}
+            {appState.SHOW_ANSWERS && (
+              <>
+                <Button
+                  mt={2}
+                  colorScheme="red"
+                  onClick={() => {
+                    setModalOpened(true);
+                    onOpen();
+                  }}
+                >
+                  Talk to the village leader
+                </Button>
+              </>
+            )}
           </Box>
           <Box p={2}>
             {modalOpened && (
               <>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/24-activity")}
-                >
-                  Build the boat
-                </Button>
-              </>
-            )}
-            {appState.SHOW_ANSWERS && (
-              <>
-                <Button
-                  colorScheme="red"
                   onClick={() => router.push("/htdt/24-activity")}
                 >
                   Build the boat
