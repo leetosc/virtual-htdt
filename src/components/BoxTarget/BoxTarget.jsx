@@ -30,7 +30,7 @@ const BoxTarget = ({ foodName, food, children, image }) => {
       m={2}
       p={3}
       boxShadow="sm"
-      h={96}
+      h={{ base: 72, xl: 96 }}
       textAlign="center"
       w="100%"
       rounded="md"

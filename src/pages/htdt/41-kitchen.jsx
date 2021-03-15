@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Box, Text, Button, SimpleGrid } from "@chakra-ui/react";
+import { Box, Text, Button, SimpleGrid, Code } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import axios from "axios";
@@ -300,7 +300,9 @@ export default function Kitchen() {
                       Show Answer
                     </Button>
                     {showAnswer && (
-                      <pre>{JSON.stringify(CORRECT_ANSWERS, null, 2)}</pre>
+                      <Code p={2}>
+                        <pre>{JSON.stringify(CORRECT_ANSWERS, null, 2)}</pre>
+                      </Code>
                     )}
                   </>
                 )}
