@@ -71,7 +71,7 @@ export default function DongXuanMarket() {
         <Image src="/hanoi/hanoi-dongxuanmeat4.png" h={28} m={2} float="left" />
         <Text>
           <Icon as={GiCook} h={6} w={6} /> Shrimp is sweet and light, great for
-          Banh Beo and Banh Xeo
+          Banh Beo and Banh Xeo. Pork is great for Banh Xeo too.
         </Text>
       </Box>
     );

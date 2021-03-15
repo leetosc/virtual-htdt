@@ -17,6 +17,7 @@ export const CORRECT_ANSWERS = {
     "Garlic",
     "Star Anise",
     "Fennel Seeds",
+    "Bean Sprouts",
   ],
   bbh: [
     "Beef",
@@ -27,6 +28,7 @@ export const CORRECT_ANSWERS = {
     "Garlic",
     "Pork",
     "Shrimp Sauce",
+    "Bean Sprouts",
   ],
   banhxeo: [
     "Bean Sprouts",
@@ -34,6 +36,7 @@ export const CORRECT_ANSWERS = {
     "Flour",
     "Lettuce",
     "Shrimp",
+    "Pork",
     "Rice Flour",
   ],
   banhmi: ["Bread", "Carrots", "Mayonnaise", "Pate", "Pork"],
