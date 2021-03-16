@@ -29,6 +29,8 @@ export const CORRECT_ANSWERS = {
     "Pork",
     "Shrimp Sauce",
     "Bean Sprouts",
+    "Pineapple",
+    "Lemongrass",
   ],
   banhxeo: [
     "Bean Sprouts",
