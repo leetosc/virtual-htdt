@@ -290,7 +290,7 @@ export default function Kitchen() {
                 <Text mt={6}>Cook attempts: {cookAttempts}</Text>
 
                 {appState.SHOW_ANSWERS && (
-                  <>
+                  <Box display="flex" flexDir="column">
                     <Button
                       colorScheme="red"
                       onClick={() => {
@@ -304,7 +304,7 @@ export default function Kitchen() {
                         <pre>{JSON.stringify(CORRECT_ANSWERS, null, 2)}</pre>
                       </Code>
                     )}
-                  </>
+                  </Box>
                 )}
               </Box>
             </Box>

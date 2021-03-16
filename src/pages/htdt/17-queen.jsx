@@ -89,9 +89,14 @@ export default function Queen() {
                 <Text my={2}>
                   &quot;Great. I will take you to my village.&quot;
                 </Text>
+                <Text my={2}>
+                  &quot;You must be tired after climbing the mountain. Here is
+                  the house your uncle liked to stay at when he visited. Get
+                  some rest!&quot;
+                </Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/17b-peoples")}
+                  onClick={() => router.push("/htdt/18-cabin")}
                 >
                   Continue
                 </Button>

@@ -76,15 +76,18 @@ export default function SapaMorning() {
             )}
           </Box>
           <Box w="100%" pt={2}>
-            <Text>You decide to stop by the market before leaving.</Text>
+            <Text></Text>
           </Box>
           <Box p={2}>
             {modalOpened && (
               <>
-                <Text my={2}></Text>
+                <Text my={2}>
+                  {" "}
+                  You go out and meet with a local guide to explore the area.
+                </Text>
                 <Button
                   colorScheme="cyan"
-                  onClick={() => router.push("/htdt/18d-market")}
+                  onClick={() => router.push("/htdt/18c1-tour")}
                 >
                   Continue
                 </Button>
