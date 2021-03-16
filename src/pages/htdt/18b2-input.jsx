@@ -13,10 +13,12 @@ import {
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
+import { useAppState } from "@/context/state";
 import axios from "axios";
 
 export default function SapaActivity2() {
   const router = useRouter();
+  const { appState } = useAppState();
 
   const [saMacSinhs, setSaMacSinhs] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
@@ -161,6 +163,11 @@ export default function SapaActivity2() {
                   </option>
                 ))}
               </Select>
+              {appState.SHOW_ANSWERS && (
+                <Text textColor="red.500" fontSize="sm">
+                  Huynh Truong Tester - just pick any name to do the activity
+                </Text>
+              )}
               <FormLabel mt={4}>Select your name</FormLabel>
               <Select
                 backgroundColor="white"
