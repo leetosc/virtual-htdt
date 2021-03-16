@@ -18,12 +18,14 @@ import {
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import { useAppState } from "@/context/state";
 import ReactPlayer from "react-player";
 
 export default function Tet2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { appState } = useAppState();
 
   return (
     <>
@@ -80,6 +82,12 @@ export default function Tet2() {
             </Button>
           </Box>
           <Box p={2}>
+            {appState.SHOW_ANSWERS && (
+              <Text mb={4} textColor="red.500" fontSize="sm">
+                The HT will tell the team to take 5 minutes to come up with a
+                dance to one of the songs in the link
+              </Text>
+            )}
             <Text>
               After completing the activity, return to the family lunch.
             </Text>
