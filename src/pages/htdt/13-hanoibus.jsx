@@ -21,11 +21,11 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function Hanoibus() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
-  const [modalOpened, setModalOpened] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -74,7 +74,6 @@ export default function Hanoibus() {
                 colorScheme="teal"
                 mt={2}
                 onClick={() => {
-                  setModalOpened(true);
                   onOpen();
                 }}
               >
@@ -85,21 +84,7 @@ export default function Hanoibus() {
           <Box w="100%" display="flex" pt={4}>
             {appState.SHOW_ANSWERS && <ShowAnswerButton answer="31" />}
           </Box>
-          <Box p={2}>
-            {modalOpened && puzzleInput === "31" && (
-              <>
-                <Button
-                  colorScheme="cyan"
-                  mx="auto"
-                  onClick={() => {
-                    router.push("/htdt/14-map");
-                  }}
-                >
-                  Depart
-                </Button>
-              </>
-            )}
-          </Box>
+          <Box p={2}></Box>
         </Hud>
       </GameLayout>
 
@@ -124,16 +109,16 @@ export default function Hanoibus() {
           </ModalBody>
 
           <ModalFooter>
-            <Button
+            <CooldownButton
               mt={2}
               colorScheme="cyan"
-              isDisabled={puzzleInput !== "31"}
-              onClick={() => {
-                onClose();
+              clickAction={() => {
+                router.push("/htdt/14-map");
               }}
+              validate={() => puzzleInput === "31"}
             >
-              Submit
-            </Button>
+              Depart
+            </CooldownButton>
           </ModalFooter>
         </ModalContent>
       </Modal>
