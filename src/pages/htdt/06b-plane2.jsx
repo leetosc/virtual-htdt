@@ -94,7 +94,7 @@ export default function Map() {
                 system, and first police force in USA.
               </ListItem>
               <ListItem>
-                Nick name of &quot;Land of 10,000 Lakes&qpot;, and has the
+                Nick name of &quot;Land of 10,000 Lakes&quot;, and has the
                 largest network of skyways due it&apos;s winters
               </ListItem>
               <ListItem>
