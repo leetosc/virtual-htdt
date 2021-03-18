@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import {
   Box,
   Text,
-  Button,
   Image,
   Input,
   OrderedList,
@@ -48,6 +47,67 @@ export default function Map() {
               h="100%"
               maxH="100%"
             />
+            <Box
+              backgroundColor="white"
+              color="black"
+              w="100%"
+              position="absolute"
+              top="0"
+              left="0"
+              opacity={0.9}
+              p={4}
+              mt={6}
+            >
+              <Text fontWeight="semibold">
+                States are abbreviated by two letters. Both are important, but
+                if we can&apos;t decide, let&apos;s just alternate the letters
+                starting with the first.
+              </Text>
+              <OrderedList>
+                <ListItem>
+                  State with best TNTT doan in USA and the only state to be an
+                  independent nation for a period of time.
+                  <ListItem>
+                    Known as Hoosier State, also the birth place of the
+                    &quot;King of Pop&quot;
+                  </ListItem>
+                </ListItem>
+                <ListItem>
+                  Earned it&apos;s nickname &quot;Volunteer State&quot; during
+                  the War of 1812. It is also home to the largest underground
+                  lake in USA.
+                </ListItem>
+                <ListItem>
+                  Home of Glacier National Park, this state has the grizzly bear
+                  as it&apos;s state animal
+                </ListItem>
+                <br />
+                <ListItem>
+                  The Sunshine State, the only place where you can find
+                  crocodiles and alligators together in the wild
+                </ListItem>
+                <ListItem>
+                  Home of many first including; first public park, first subway
+                  system, and first police force in USA.
+                </ListItem>
+                <ListItem>
+                  Nick name of &quot;Land of 10,000 Lakes&quot;, and has the
+                  largest network of skyways due it&apos;s winters
+                </ListItem>
+                <ListItem>
+                  Known as Auto state, it is the home of GM, Chysler, and Ford.
+                  It is also the only state made of 2 penisulas.
+                </ListItem>
+                <ListItem>
+                  Filled with French Influence, this state bears it&apos;s name
+                  from the major land purchase from the French in 1803.
+                </ListItem>
+                <ListItem>
+                  Home of the oldest derby that bears it&apos;s name, this is
+                  also where Post It Notes are made.
+                </ListItem>
+              </OrderedList>
+            </Box>
           </Box>
         </Box>
 
@@ -63,54 +123,7 @@ export default function Map() {
             </Typist>
           </Box>
           <Box w="100%" pt={2}>
-            <Text fontWeight="semibold">
-              States are abbreviated by two letters. Both are important, but if
-              we can&apos;t decide, let&apos;s just alternate the letters
-              starting with the first.
-            </Text>
-            <OrderedList>
-              <ListItem>
-                State with best TNTT doan in USA and the only state to be an
-                independent nation for a period of time.
-                <ListItem>
-                  Known as Hoosier State, also the birth place of the &quot;King
-                  of Pop&quot;
-                </ListItem>
-              </ListItem>
-              <ListItem>
-                Earned it&apos;s nickname &quot;Volunteer State&quot; during the
-                War of 1812. It is also home to the largest underground lake in
-                USA.
-              </ListItem>
-              <ListItem>
-                Home of Glacier National Park, this state has the grizzly bear
-                as it&apos;s state animal
-              </ListItem>
-              <ListItem>
-                The Sunshine State, the only place where you can find crocodiles
-                and alligators together in the wild
-              </ListItem>
-              <ListItem>
-                Home of many first including; first public park, first subway
-                system, and first police force in USA.
-              </ListItem>
-              <ListItem>
-                Nick name of &quot;Land of 10,000 Lakes&quot;, and has the
-                largest network of skyways due it&apos;s winters
-              </ListItem>
-              <ListItem>
-                Known as Auto state, it is the home of GM, Chysler, and Ford. It
-                is also the only state made of 2 penisulas.
-              </ListItem>
-              <ListItem>
-                Filled with French Influence, this state bears it&apos;s name
-                from the major land purchase from the French in 1803.
-              </ListItem>
-              <ListItem>
-                Home of the oldest derby that bears it&apos;s name, this is also
-                where Post It Notes are made.
-              </ListItem>
-            </OrderedList>
+            Solve the Mat Thu
           </Box>
           <Box p={2}>
             {typingDone && (

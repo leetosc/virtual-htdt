@@ -16,7 +16,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
-import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ReactPlayer from "react-player";
@@ -25,9 +24,6 @@ export default function Tntt1() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const { isOpen, onClose } = useDisclosure();
-
-  const stateContext = useAppState();
-  const { appState } = stateContext;
 
   return (
     <>
@@ -99,10 +95,6 @@ export default function Tntt1() {
                 <Button
                   colorScheme="cyan"
                   onClick={() => {
-                    stateContext.setLocationsVisited([
-                      ...appState.locationsVisited,
-                      "09-stjoseph",
-                    ]);
                     router.push("/htdt/08-cyclo");
                   }}
                 >

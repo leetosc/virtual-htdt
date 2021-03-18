@@ -51,7 +51,8 @@ export default function SapaActivity() {
             <Text>
               As you rest in Sa Pa, take 15 minutes to think about your virtual
               camp experience with your teammates so far. For each teammate,
-              write one thing that you have learned or appreciate about them.
+              think of something that you have learned or appreciate about them.
+              Then continue to the activity.
             </Text>
           </Box>
           <Box p={2}>

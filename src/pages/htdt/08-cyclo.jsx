@@ -153,7 +153,7 @@ export default function Cyclo() {
                 colorScheme="cyan"
                 onClick={() => router.push("/htdt/09-stjoseph")}
                 isDisabled={appState.locationsVisited.includes(
-                  "/htdt/10a-tnttkids"
+                  "/htdt/09-stjoseph"
                 )}
               >
                 St Joseph&apos;s Cathedral
