@@ -16,6 +16,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import { useAppState } from "@/context/state";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function Map() {
   const router = useRouter();
@@ -121,16 +122,17 @@ export default function Map() {
                   value={puzzleInput}
                   onChange={(e) => setPuzzleInput(e.target.value)}
                 />
-                <Button
-                  isDisabled={
-                    puzzleInput.toLowerCase().replace(/\s/g, "") !==
+
+                <CooldownButton
+                  colorScheme="cyan"
+                  validate={
+                    puzzleInput.toLowerCase().replace(/\s/g, "") ===
                     "tnttfamily"
                   }
-                  colorScheme="cyan"
-                  onClick={() => router.push("/htdt/07-map")}
+                  clickAction={() => router.push("/htdt/07-map")}
                 >
                   Submit
-                </Button>
+                </CooldownButton>
               </>
             )}
             {appState.SHOW_ANSWERS && <ShowAnswerButton answer="tntt family" />}

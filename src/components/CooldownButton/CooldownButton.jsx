@@ -17,7 +17,7 @@ const CooldownButton = ({
       isLoading={coolingDown}
       loadingText="Incorrect"
       onClick={() => {
-        if (validate()) {
+        if (validate) {
           clickAction();
         } else {
           setCoolingDown(true);
@@ -35,7 +35,7 @@ const CooldownButton = ({
 CooldownButton.propTypes = {
   cooldown: PropTypes.number,
   clickAction: PropTypes.func.isRequired,
-  validate: PropTypes.func.isRequired,
+  validate: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };
 

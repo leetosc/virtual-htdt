@@ -115,7 +115,7 @@ export default function Hanoibus() {
               clickAction={() => {
                 router.push("/htdt/14-map");
               }}
-              validate={() => puzzleInput === "31"}
+              validate={puzzleInput === "31"}
             >
               Depart
             </CooldownButton>

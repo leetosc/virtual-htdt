@@ -7,6 +7,7 @@ import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import { useAppState } from "@/context/state";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function UncleHouse() {
   const router = useRouter();
@@ -67,13 +68,13 @@ export default function UncleHouse() {
                   onChange={(e) => setPuzzleInput(e.target.value)}
                 />
 
-                <Button
+                <CooldownButton
                   colorScheme="cyan"
-                  isDisabled={puzzleInput.toLowerCase() !== "don bosco"}
-                  onClick={() => router.push("/htdt/40a-inside")}
+                  clickAction={() => router.push("/htdt/40a-inside")}
+                  validate={puzzleInput.toLowerCase() === "don bosco"}
                 >
                   Enter
-                </Button>
+                </CooldownButton>
                 {appState.SHOW_ANSWERS && (
                   <ShowAnswerButton answer="don bosco" />
                 )}

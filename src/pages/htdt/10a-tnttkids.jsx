@@ -25,6 +25,7 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function Tnttkids() {
   const router = useRouter();
@@ -65,11 +66,12 @@ export default function Tnttkids() {
           value={puzzle1Input}
           onChange={(e) => setPuzzle1Input(e.target.value)}
         />
-        <Button
+
+        <CooldownButton
           mt={2}
           colorScheme="cyan"
-          isDisabled={puzzle1Input !== "136"}
-          onClick={() => {
+          validate={puzzle1Input === "136"}
+          clickAction={() => {
             const newAnswers = [...correctAnswers];
             newAnswers[0] = true;
             setCorrectAnswers(newAnswers);
@@ -77,7 +79,7 @@ export default function Tnttkids() {
           }}
         >
           Submit
-        </Button>
+        </CooldownButton>
       </Box>
     );
   };
@@ -96,11 +98,12 @@ export default function Tnttkids() {
           value={puzzle2Input}
           onChange={(e) => setPuzzle2Input(e.target.value)}
         />
-        <Button
+
+        <CooldownButton
           mt={2}
           colorScheme="cyan"
-          isDisabled={puzzle2Input !== "114"}
-          onClick={() => {
+          validate={puzzle2Input === "114"}
+          clickAction={() => {
             const newAnswers = [...correctAnswers];
             newAnswers[1] = true;
             setCorrectAnswers(newAnswers);
@@ -108,7 +111,7 @@ export default function Tnttkids() {
           }}
         >
           Submit
-        </Button>
+        </CooldownButton>
       </Box>
     );
   };
@@ -127,11 +130,12 @@ export default function Tnttkids() {
           value={puzzle3Input}
           onChange={(e) => setPuzzle3Input(e.target.value)}
         />
-        <Button
+
+        <CooldownButton
           mt={2}
           colorScheme="cyan"
-          isDisabled={puzzle3Input !== "35"}
-          onClick={() => {
+          validate={puzzle3Input === "35"}
+          clickAction={() => {
             const newAnswers = [...correctAnswers];
             newAnswers[2] = true;
             setCorrectAnswers(newAnswers);
@@ -139,7 +143,7 @@ export default function Tnttkids() {
           }}
         >
           Submit
-        </Button>
+        </CooldownButton>
       </Box>
     );
   };
@@ -159,11 +163,12 @@ export default function Tnttkids() {
           value={puzzle4Input}
           onChange={(e) => setPuzzle4Input(e.target.value)}
         />
-        <Button
+
+        <CooldownButton
           mt={2}
           colorScheme="cyan"
-          isDisabled={puzzle4Input !== "19377"}
-          onClick={() => {
+          validate={puzzle4Input === "19377"}
+          clickAction={() => {
             const newAnswers = [...correctAnswers];
             newAnswers[3] = true;
             setCorrectAnswers(newAnswers);
@@ -171,7 +176,7 @@ export default function Tnttkids() {
           }}
         >
           Submit
-        </Button>
+        </CooldownButton>
       </Box>
     );
   };

@@ -24,6 +24,7 @@ import Typist from "react-typist";
 import { GiCook } from "react-icons/gi";
 import ReactPlayer from "react-player";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function HaLongContact() {
   const router = useRouter();
@@ -114,13 +115,11 @@ export default function HaLongContact() {
                   placeholder="Message on the boat"
                   onChange={(e) => setPuzzleInput(e.target.value)}
                 />
-                <Button
+
+                <CooldownButton
                   mt={2}
-                  isDisabled={
-                    puzzleInput.toLowerCase() !== "pop drop unlock it"
-                  }
                   colorScheme="cyan"
-                  onClick={() => {
+                  clickAction={() => {
                     if (
                       !appState.inventory.some((i) => i.name === "Fish Sauce")
                     ) {
@@ -134,9 +133,10 @@ export default function HaLongContact() {
                     setModalOpened(true);
                     onOpen();
                   }}
+                  validate={puzzleInput.toLowerCase() === "pop drop unlock it"}
                 >
                   Open the chest
-                </Button>
+                </CooldownButton>
               </>
             )}
             {appState.SHOW_ANSWERS && (

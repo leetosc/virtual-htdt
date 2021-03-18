@@ -27,6 +27,7 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function DongXuanMarket() {
   const router = useRouter();
@@ -107,11 +108,12 @@ export default function DongXuanMarket() {
           placeholder="Weight in pounds"
           onChange={(e) => setPuzzleInput(e.target.value)}
         />
-        <Button
+
+        <CooldownButton
+          validate={puzzleInput === "31"}
           mt={2}
           colorScheme="cyan"
-          isDisabled={puzzleInput !== "31"}
-          onClick={() => {
+          clickAction={() => {
             const newPersonClicked = [...personClicked];
             newPersonClicked[3] = true;
             setPersonClicked(newPersonClicked);
@@ -127,7 +129,7 @@ export default function DongXuanMarket() {
           }}
         >
           Submit
-        </Button>
+        </CooldownButton>
       </Box>
     );
   };

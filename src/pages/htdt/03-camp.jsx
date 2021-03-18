@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import { Box, Button, Image, Input } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import { MapInteractionCSS } from "react-map-interaction";
@@ -8,10 +8,12 @@ import { useAppState } from "@/context/state";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
 import ShowAnswerButton from "@/components/ShowAnswerButton/ShowAnswerButton";
+import CooldownButton from "@/components/CooldownButton/CooldownButton";
 
 export default function Camp() {
   const [chiLoanClicked, setChiLoanClicked] = useState(false);
   const [puzzleInput, setPuzzleInput] = useState("");
+  const router = useRouter();
 
   const [information, setInformation] = useState("");
 
@@ -120,11 +122,13 @@ export default function Camp() {
                 value={puzzleInput}
                 onChange={(e) => setPuzzleInput(e.target.value)}
               />
-              <Link href="/htdt/04-map">
-                <Button colorScheme="cyan" isDisabled={puzzleInput !== "28"}>
-                  Submit
-                </Button>
-              </Link>
+              <CooldownButton
+                colorScheme="cyan"
+                validate={puzzleInput === "28"}
+                clickAction={() => router.push("/htdt/04-map")}
+              >
+                Submit
+              </CooldownButton>
               {appState.SHOW_ANSWERS && <ShowAnswerButton answer="28" />}
             </Box>
           )}
