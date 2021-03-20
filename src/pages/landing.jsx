@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Box, Text, Button, Select } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Button,
+  Select,
+  Code,
+  Link as ChakraLink,
+} from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 import { useAppState } from "@/context/state";
@@ -22,7 +29,7 @@ export default function Landing() {
   return (
     <Box
       w="100%"
-      h="100vh"
+      minH="100vh"
       backgroundColor="gray.900"
       textColor="white"
       display="flex"
@@ -80,6 +87,21 @@ export default function Landing() {
             Main player: Do NOT refresh the page or go back and forth using the
             browser back/forward buttons. ONLY navigate using the buttons on the
             page.
+          </Text>
+          <br />
+          <br />
+          <Text fontWeight="bold" my={4} fontSize="xl">
+            If you need a hint,{" "}
+            <ChakraLink
+              href="https://veym.net/resources/prayers#cauxinchuathanhthan"
+              isExternal
+              textColor="blue.300"
+              textDecoration="underline"
+            >
+              pray to the Holy Spirit
+            </ChakraLink>
+            . Then type <Code>!hint (message)</Code> in your team chat channel,
+            and help will come. Include the page URL in the message.
           </Text>
           <br />
           <br />
