@@ -187,7 +187,7 @@ export default function SapaActivity2() {
           <Box w="100%" pt={2}>
             <Text fontWeight="semibold">Each Team Member:</Text>
             <Text>
-              Take 15 minutes to think about your virtual camp experience with
+              Take 10 minutes to think about your virtual camp experience with
               your teammates so far. For each teammate, write something that you
               have learned or appreciate about them.
             </Text>

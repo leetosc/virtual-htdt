@@ -49,7 +49,7 @@ export default function SapaActivity() {
           </Box>
           <Box w="100%" pt={2}>
             <Text>
-              As you rest in Sa Pa, take 15 minutes to think about your virtual
+              As you rest in Sa Pa, take 10 minutes to think about your virtual
               camp experience with your teammates so far. For each teammate,
               think of something that you have learned or appreciate about them.
               Then continue to the activity.
