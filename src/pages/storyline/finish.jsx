@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import { Box, Button } from "@chakra-ui/react";
-import Typist from "react-typist";
 import Link from "next/link";
+import YouTube from "react-youtube";
 
 export default function Finish() {
-  const [typingDone, setTypingDone] = useState(false);
   return (
     <Box
       w="100%"
@@ -19,7 +18,9 @@ export default function Finish() {
         <title>Virtual HTDT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box px={8} py={4} fontSize="xl">
+      <Box px={8} py={4} w="100%" fontSize="xl">
+        <YouTube videoId="JP4W92ccRps" opts={{ width: "100%" }} />
+        {/* 
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
           avgTypingDelay={5}
@@ -46,8 +47,8 @@ export default function Finish() {
           <br />
           -Tr. Denny
           <br />
-        </Typist>
-        {typingDone && (
+        </Typist> */}
+        {/* {typingDone && (
           <Link href="/">
             <Button
               colorScheme="cyan"
@@ -58,7 +59,12 @@ export default function Finish() {
               Home
             </Button>
           </Link>
-        )}
+        )} */}
+        <Link href="/">
+          <Button colorScheme="cyan" textTransform="uppercase" size="lg" mt={4}>
+            Home
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

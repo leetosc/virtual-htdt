@@ -17,14 +17,13 @@ import {
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
-import ReactPlayer from "react-player";
 import { useAppState } from "@/context/state";
+import YouTube from "react-youtube";
 
 export default function Plane() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
   const { appState } = useAppState();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -104,46 +103,7 @@ export default function Plane() {
           <ModalHeader>In-Flight TV</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Box h="100%" position="relative" overflow="auto" w="100%">
-              <Box
-                // overlay to prevent clicking video
-                opacity={0}
-                h="100%"
-                w="100%"
-                position="absolute"
-                top={0}
-                left={0}
-              />
-              It&apos;s a video about Ha Noi!
-              {videoEnded ? (
-                <Box minH={64} h="100%" position="relative" overflow="auto">
-                  <Image src="/begin/planetv.webp" w="100%" maxH="100%" />
-                </Box>
-              ) : (
-                <ReactPlayer
-                  url="https://youtu.be/74dgLjjXABk"
-                  controls={false}
-                  muted={true}
-                  playing={true}
-                  playbackRate={2}
-                  onProgress={({ playedSeconds }) => {
-                    if (playedSeconds > 190) {
-                      setVideoEnded(true);
-                    }
-                  }}
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        start: 5,
-                      },
-                    },
-                  }}
-                  width="100%"
-                  h="100%"
-                  minH={64}
-                />
-              )}
-            </Box>
+            <YouTube videoId="oWKwm8OL5WA" opts={{ width: "100%" }} />
           </ModalBody>
 
           <ModalFooter>
@@ -152,12 +112,7 @@ export default function Plane() {
                 Close
               </Button>
             )}
-            <Button
-              disabled={!videoEnded}
-              colorScheme="gray"
-              mr={3}
-              onClick={onClose}
-            >
+            <Button colorScheme="gray" mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>
