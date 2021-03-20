@@ -178,7 +178,10 @@ export default function Kitchen() {
               >
                 <BoxTarget
                   food="pho"
-                  foodName="Pho"
+                  foodName={`Pho (${
+                    ingredientsList.filter((i) => i.locations.includes("pho"))
+                      .length
+                  }/10)`}
                   image="/food/phoimage.jpeg"
                 >
                   {ingredientsList.length > 0 &&
@@ -198,7 +201,10 @@ export default function Kitchen() {
                 </BoxTarget>
                 <BoxTarget
                   food="bbh"
-                  foodName="Bun Bo Hue"
+                  foodName={`Bun Bo Hue (${
+                    ingredientsList.filter((i) => i.locations.includes("bbh"))
+                      .length
+                  }/11)`}
                   image="/food/bbh.jpg"
                 >
                   {ingredientsList.length > 0 &&
@@ -218,7 +224,11 @@ export default function Kitchen() {
                 </BoxTarget>
                 <BoxTarget
                   food="banhbeo"
-                  foodName="Banh Beo"
+                  foodName={`Banh Beo (${
+                    ingredientsList.filter((i) =>
+                      i.locations.includes("banhbeo")
+                    ).length
+                  }/5)`}
                   image="/food/banhbeo.jpg"
                 >
                   {ingredientsList.length > 0 &&
@@ -238,7 +248,11 @@ export default function Kitchen() {
                 </BoxTarget>
                 <BoxTarget
                   food="banhxeo"
-                  foodName="Banh Xeo"
+                  foodName={`Banh Xeo (${
+                    ingredientsList.filter((i) =>
+                      i.locations.includes("banhxeo")
+                    ).length
+                  }/7)`}
                   image="/food/banhxeo.jpg"
                 >
                   {ingredientsList.length > 0 &&
@@ -258,7 +272,11 @@ export default function Kitchen() {
                 </BoxTarget>
                 <BoxTarget
                   food="banhmi"
-                  foodName="Banh Mi"
+                  foodName={`Banh Mi (${
+                    ingredientsList.filter((i) =>
+                      i.locations.includes("banhmi")
+                    ).length
+                  }/5)`}
                   image="/food/banhmi.jpg"
                 >
                   {ingredientsList.length > 0 &&
