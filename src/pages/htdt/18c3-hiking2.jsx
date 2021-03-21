@@ -5,10 +5,12 @@ import { Box, Text, Button, Image } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
 import Typist from "react-typist";
+import { useAppState } from "@/context/state";
 
 export default function Hiking2() {
   const router = useRouter();
   const [typingDone, setTypingDone] = useState(false);
+  const { appState } = useAppState();
 
   return (
     <>
@@ -60,6 +62,14 @@ export default function Hiking2() {
                   Continue
                 </Button>
               </>
+            )}
+            {appState.SHOW_ANSWERS && (
+              <Button
+                colorScheme="red"
+                onClick={() => router.push("/htdt/18c4-dao")}
+              >
+                Continue
+              </Button>
             )}
           </Box>
         </Hud>
