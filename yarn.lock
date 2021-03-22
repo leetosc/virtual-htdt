@@ -5217,10 +5217,10 @@ react-dom@17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
-react-easy-sort@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-easy-sort/-/react-easy-sort-0.2.0.tgz#50a4504d22c71ce3ac51b353831103e6be595c67"
-  integrity sha512-5inefMQ3RURxc6xnj4LXIktd+BZMPUc3gB2zI5W+jwii5iT0AJ4ctiltgrAtk96uw/zWYCazsAwPned/VkGDIg==
+react-easy-sort@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/react-easy-sort/-/react-easy-sort-0.2.1.tgz#844f842d673f791f889e82a3f9f5058f39a4affb"
+  integrity sha512-g+081ocdtLB41GxMIdn16c9Ri+hNEzQhdsnokVSJpcC1axnIuTQDhB0rc2TWkTJ750hsZtM1CK4jiyLdr8Vp9g==
   dependencies:
     array-move "^3.0.1"
     tslib "2.0.1"
