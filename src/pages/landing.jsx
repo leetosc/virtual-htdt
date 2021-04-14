@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import {
-  Box,
-  Text,
-  Button,
-  Select,
-  Code,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import Typist from "react-typist";
 import Link from "next/link";
 import { useAppState } from "@/context/state";
-import axios from "axios";
 
 export default function Landing() {
   const [typingDone, setTypingDone] = useState(false);
-  const [teams, setTeams] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://dbdev.ga/teams").then((res) => {
-      const teamList = res.data.map((team) => team.Name);
-      setTeams(teamList);
-    });
-  }, []);
-
-  const { appState, setTeam } = useAppState();
+  const { appState } = useAppState();
 
   return (
     <Box
@@ -40,24 +24,6 @@ export default function Landing() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box px={8} py={4} fontSize="xl" w="100%">
-        <Text fontSize="lg" mb={2}>
-          Select Team
-        </Text>
-        <Select
-          color="black"
-          mb={4}
-          backgroundColor="white"
-          placeholder="Select your team"
-          onChange={(e) => setTeam(e.target.value)}
-          maxW={64}
-        >
-          {teams.map((team) => (
-            <option value={team} key={team}>
-              {team}
-            </option>
-          ))}
-        </Select>
-
         <Typist
           cursor={{ hideWhenDone: true, blink: true }}
           avgTypingDelay={5}
@@ -82,26 +48,15 @@ export default function Landing() {
             When needed, the main player can share the URL of the page they are
             on to the rest of the team to help find clues or solve puzzles, but
             the main player should only navigate using the buttons on the page.
+            <br />
+            Other players may follow along on their own computers. Try to stay
+            on the same page as the main player.
           </Text>
+          <br />
           <Text fontWeight="bold" my={4} fontSize="2xl">
             Main player: Do NOT refresh the page or go back and forth using the
             browser back/forward buttons. ONLY navigate using the buttons on the
             page.
-          </Text>
-          <br />
-          <br />
-          <Text fontWeight="bold" my={4} fontSize="xl">
-            If you need a hint,{" "}
-            <ChakraLink
-              href="https://veym.net/resources/prayers#cauxinchuathanhthan"
-              isExternal
-              textColor="blue.300"
-              textDecoration="underline"
-            >
-              pray to the Holy Spirit
-            </ChakraLink>
-            . Then type <Code>!hint (message)</Code> in your team chat channel,
-            and help will come. Include the page URL in the message.
           </Text>
           <br />
           <br />
@@ -119,7 +74,7 @@ export default function Landing() {
             </Button>
           </Link>
         )}
-        {appState.team !== "" && appState.SHOW_ANSWERS && (
+        {appState.SHOW_ANSWERS && (
           <Link href="/storyline/introduction">
             <Button
               colorScheme="red"
