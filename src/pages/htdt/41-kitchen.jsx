@@ -1,10 +1,9 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Box, Text, Button, SimpleGrid, Code } from "@chakra-ui/react";
 import GameLayout from "@/components/Layouts/GameLayout";
 import Hud from "@/components/Hud/Hud";
-import axios from "axios";
 import InventoryItem from "@/components/InventoryItem/InventoryItem";
 import InventoryItemDraggable from "@/components/InventoryItem/InventoryItemDraggable";
 import { useAppState } from "@/context/state";
@@ -63,18 +62,6 @@ export default function Kitchen() {
     banhxeo: false,
     banhmi: false,
   });
-
-  const [teams, setTeams] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://dbdev.ga/teams").then((res) => {
-      const teamList = res.data.map((team) => ({
-        name: team.Name,
-        id: team.id,
-      }));
-      setTeams(teamList);
-    });
-  }, []);
 
   const updateLocation = (id, location) => {
     const itemIndex = ingredientsList.findIndex((i) => i.id === id);
@@ -349,24 +336,8 @@ export default function Kitchen() {
                   )}
                   onClick={() => {
                     console.log("correct answers");
-                    // send tries count to server
-                    axios
-                      .put(
-                        `https://dbdev.ga/teams/${
-                          teams.find((i) => i.name === appState.team).id
-                        }`,
-                        {
-                          cookAttempts: cookAttempts,
-                        }
-                      )
-                      .then((res) => {
-                        console.log(res.data);
-                        router.push("/htdt/42-uncle");
-                      })
-                      .catch((error) => {
-                        console.log("error", error);
-                        router.push("/htdt/42-uncle");
-                      });
+
+                    router.push("/htdt/42-uncle");
                   }}
                 >
                   Submit Dishes
@@ -376,24 +347,7 @@ export default function Kitchen() {
                     colorScheme="red"
                     onClick={() => {
                       console.log("correct answers");
-                      // send tries count to server
-                      axios
-                        .put(
-                          `https://dbdev.ga/teams/${
-                            teams.find((i) => i.name === appState.team).id
-                          }`,
-                          {
-                            cookAttempts: cookAttempts,
-                          }
-                        )
-                        .then((res) => {
-                          console.log(res.data);
-                          router.push("/htdt/42-uncle");
-                        })
-                        .catch((error) => {
-                          console.log("error", error);
-                          router.push("/htdt/42-uncle");
-                        });
+                      router.push("/htdt/42-uncle");
                     }}
                   >
                     Skip and Submit
