@@ -43,30 +43,25 @@ export default function HaLongActivity() {
               cursor={{ hideWhenDone: true, blink: true }}
               avgTypingDelay={5}
             >
-              Follow the instructions to build the boat.
+              Find the message in the boat.
             </Typist>
           </Box>
           <Box w="100%" pt={1}>
-            <Text mt={3} fontSize="sm">
-              Open your Care Package and find the envelope marked &quot;Do not
-              open until HTDT&quot;. Open it now.
+            <Text mt={3} fontSize="lg">
+            Người bảo các ông: “Các anh hãy theo tôi, tôi sẽ làm cho các anh thành những kẻ lưới <b>người</b> như lưới <b>cá</b>” (Mt 4, 19)
+              
             </Text>
             <Text my={4}>
-              One person on your team will be the instruction-giver. Each other
-              team member will try to follow the instructions as best they can
-              to build the boat.
-            </Text>
-            <Text>
-              Instruction-giver cannot use their hands and can only give verbal
-              instructions.
+         {`<message>`}
             </Text>
           </Box>
           <Box p={2}>
+            <Text>With the knowledge of the message, you take the boat out to the hidden island.</Text>
             <Button
               colorScheme="cyan"
               onClick={() => router.push("/htdt/24a-island")}
             >
-              Click when Boat successfully built
+              Continue
             </Button>
           </Box>
         </Hud>
